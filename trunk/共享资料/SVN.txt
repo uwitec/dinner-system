@@ -1,0 +1,4 @@
+https://dinner-system.googlecode.com/svn/trunk/ 
+
+userName:  jiahui.wen622111@gmail.com
+passWord:  eQ6uM6VQ7an6
