@@ -11,7 +11,43 @@
 	(object Attribute
 	    tool       	"Java"
 	    name       	"IDE"
-	    value      	"Internal Editor"))
+	    value      	"Internal Editor")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagName1"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagText1"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagApply1"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagName2"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagText2"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagApply2"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagName3"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagText3"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagApply3"
+	    value      	""))
     quid       	"50102D450315"
     enforceClosureAutoLoad 	FALSE
     defaults   	(object defaults
@@ -49,23 +85,194 @@
 		quid       	"5010326F0228"
 		stereotype 	"Actor")
 	    (object UseCase "查看历史订餐信息"
-		quid       	"50102DCF03DE")
+		quid       	"50102DCF03DE"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户已登录系统。
+|
+|2、后置条件
+|   无。
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）用户点击查阅历史交易记录。
+|（2）系统显示交易记录。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "订餐进度查询"
-		quid       	"50102E080394")
+		quid       	"50102E080394"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户有未完成的订单。
+|
+|2、后置条件
+|   无。
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）用户点击未完成的订单
+|（2）系统显示订单完成的进度。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "订餐"
-		quid       	"501031440385")
+		quid       	"501031440385"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户必须已经登录系统。
+|
+|2、后置条件
+|   显示订餐是否成功
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）用户点击订餐按钮
+|（2）用户输入电话，地址等信息。
+|（2）系统返回订餐结果。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "退餐"
-		quid       	"501031540048")
+		quid       	"501031540048"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户有未完成的订单。
+|
+|2、后置条件
+|   无。
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）用户点击退餐按钮。
+|（2）系统处理退餐流程（用户信誉分降低，通知店铺消除订单）。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "评价"
-		quid       	"501031630004")
+		quid       	"501031630004"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户已接收外卖，完成交易。
+|
+|2、后置条件
+|   无。
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）用户填写对店铺的评价
+|（2）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "积分兑奖"
-		quid       	"501031680342")
+		quid       	"501031680342"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户登录系统。
+|
+|2、后置条件
+|   无。
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）用户使用自己的积分兑换相应的礼品。
+|（2）积分相应的减少。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "确认订单"
-		quid       	"501031950271")
+		quid       	"501031950271"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户有未完成的订单。
+|
+|2、后置条件
+|   无。
+|
+|3、扩充点
+|   评价商家
+|
+|4、事件流 
+|4-1：基流
+|（1）用户点击完成按钮。
+|（2）系统显示订单完成的操作。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "餐厅基本信息"
-		quid       	"5010327C03AD")
+		quid       	"5010327C03AD"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，餐厅人员登录系统。
+|
+|2、后置条件
+|   无。
+|
+|3、扩充点
+|   上架餐厅的菜单信息。
+|
+|4、事件流 
+|4-1：基流
+|（1）餐厅的工作人员输入帐号密码登录系统。
+|（2）餐厅人员填写详细的餐厅信息。（电话，地址等）
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "上架菜单信息"
 		quid       	"50103288028B"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，餐厅人员登录系统。
+|
+|2、后置条件
+|   填写好菜单信息后返回主页面。
+|
+|3、扩充点
+|   预览页面
+|
+|4、事件流 
+|4-1：基流
+|（1）餐厅的工作人员输入帐号密码登录系统。
+|（2）餐厅人员为餐厅的食物填写信息。（图片，价格，分类）
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		
 		visible_modules 	(list dependency_list
 		    (object Dependency_Relationship
 			quid       	"5010336902DA"
@@ -73,9 +280,49 @@
 			supplier   	"Use Case View::食物分类"
 			quidu      	"5010335D0261")))
 	    (object UseCase "订餐提醒"
-		quid       	"50103298013D")
+		quid       	"50103298013D"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，餐厅人员登录系统。
+|
+|2、后置条件
+|   无
+|
+|3、扩充点
+|   无。
+|
+|4、事件流 
+|4-1：基流
+|（1）餐厅的工作人员输入帐号密码登录系统。
+|（2）系统显示请求的订单
+|（3）柜台人员选择接收订单或者拒绝。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "处理订单"
 		quid       	"501032A90001"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，餐厅已接受订单。
+|
+|2、后置条件
+|   进入订单处理流程。
+|
+|3、扩充点
+|   无。
+|
+|4、事件流 
+|4-1：基流
+|（1）餐厅的工作人员接受订单
+|（2）提醒厨师下厨
+|（3）外卖人员送单。
+|（4）用例完成
+|
+|4－2：代替流
+|无
+		
 		visible_modules 	(list dependency_list
 		    (object Dependency_Relationship
 			quid       	"50103305029F"
@@ -93,31 +340,267 @@
 			supplier   	"Use Case View::外卖送出"
 			quidu      	"501032F5034E")))
 	    (object UseCase "柜台接收订单"
-		quid       	"501032C101CB")
+		quid       	"501032C101CB"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，餐厅人员登录系统。
+|
+|2、后置条件
+|   显示已接收的订单结果
+|
+|3、扩充点
+|   无。
+|
+|4、事件流 
+|4-1：基流
+|（1）餐厅的工作人员输入帐号密码登录系统。
+|（2）系统显示请求的订单
+|（3）柜台人员选择接收订单或者拒绝。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "厨师下锅"
-		quid       	"501032CF01DC")
+		quid       	"501032CF01DC"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，厨师登录系统。
+|
+|2、后置条件
+|   显示还没下锅的订单。
+|
+|3、扩充点
+|   因食物缺乏等原因可以推迟订单。
+|
+|4、事件流 
+|4-1：基流
+|（1）厨师输入帐号密码登录系统。
+|（2）系统显示餐厅已接受的订单。
+|（3）厨师选择订单，按下已进行煮的按钮
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "外卖送出"
-		quid       	"501032F5034E")
+		quid       	"501032F5034E"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，外卖打包人员登录系统。
+|
+|2、后置条件
+|   无
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）外卖打包人员输入帐号密码登录系统。
+|（2）系统显示可以送出的订单。
+|（3）打包外卖。
+|（4）已送出的外卖，打包人员在对应的订单上点击已送出按钮。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "店铺装饰"
-		quid       	"501033330148")
+		quid       	"501033330148"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，餐厅人员登录系统。
+|
+|2、后置条件
+|   无
+|
+|3、扩充点
+|   预览装饰结果。
+|
+|4、事件流 
+|4-1：基流
+|（1）餐厅的工作人员输入帐号密码登录系统。
+|（2）餐厅人员为餐厅店铺选择页面皮肤或显示板块。
+|（3）进行店铺预览。
+|（4）提交确认或撤销。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "食物分类"
-		quid       	"5010335D0261")
+		quid       	"5010335D0261"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，餐厅人员登录系统。
+|
+|2、后置条件
+|   无
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）餐厅的工作人员输入帐号密码登录系统。
+|（2）餐厅人员为餐厅的食物分类。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "系统"
 		quid       	"5010338C03BD")
 	    (object UseCase "排行榜"
-		quid       	"50103395012E")
+		quid       	"50103395012E"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户访问系统。
+|
+|2、后置条件
+|   无
+|
+|3、扩充点
+|   点击排行榜的食物，查看详细信息。
+|
+|4、事件流 
+|4-1：基流
+|（1）用户访问网站
+|（2）系统显示排行榜信息
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "最新上架"
-		quid       	"501033A703E6")
+		quid       	"501033A703E6"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户访问系统。
+|
+|2、后置条件
+|   无
+|
+|3、扩充点
+|   点击上架食物，查看详细信息。
+|
+|4、事件流 
+|4-1：基流
+|（1）用户访问网站
+|（2）系统显示最新上架食物的信息
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "促销信息"
-		quid       	"501033B102E8")
+		quid       	"501033B102E8"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户访问系统。
+|
+|2、后置条件
+|   无
+|
+|3、扩充点
+|   点击促销信息，查看详细信息。
+|
+|4、事件流 
+|4-1：基流
+|（1）用户访问网站
+|（2）用户点击查看促销信息按钮。
+|（3）系统显示促销信息
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "收藏店铺/食物"
-		quid       	"501033D70059")
+		quid       	"501033D70059"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户已经登录系统。
+|
+|2、后置条件
+|   无。
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）用户在浏览店铺时点击收藏按钮。
+|（2）系统保存记录。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "搜索食物"
-		quid       	"501033F80398")
+		quid       	"501033F80398"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户必须输入搜索添加，点击搜索按钮。
+|
+|2、后置条件
+|   系统跳转到搜索结果的页面。
+|
+|3、扩充点
+|   无
+|
+|4、事件流 
+|4-1：基流
+|（1）用户在搜索框输入搜索的关键字
+|（2）用户点击搜索按钮。
+|（2）系统显示搜索的结果
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "聊天"
-		quid       	"501034460329")
+		quid       	"501034460329"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，餐厅人员登录系统。
+|
+|2、后置条件
+|   无
+|
+|3、扩充点
+|   无。
+|
+|4、事件流 
+|4-1：基流
+|（1）餐厅的工作人员输入帐号密码登录系统。
+|（2）餐厅工作人员与需要订餐的用户进行聊天。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object UseCase "咨询/聊天"
-		quid       	"501034680239")
+		quid       	"501034680239"
+		documentation 	
+|1、前置条件
+|   在这个用例开始前，用户必须登录系统。
+|
+|2、后置条件
+|   无。
+|
+|3、扩充点
+|   无。
+|
+|4、事件流 
+|4-1：基流
+|（1）用户点击与店铺人员交流按钮
+|（2）系统弹出聊天框。
+|（3）用例结束
+|
+|4－2：代替流
+|无
+		)
 	    (object Association "$UNNAMED$0"
 		quid       	"501031D900D6"
 		roles      	(list role_list
@@ -404,8 +887,8 @@
 			fill_color 	13434879
 			quidu      	"501033A703E6"
 			height     	118)
-		    (object UseCaseView "Use Case View::系统" @3
-			location   	(1150, 612)
+		    (object UseCaseView "Use Case View::促销信息" @3
+			location   	(728, 950)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -417,6 +900,30 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@3
+			    location   	(728, 1088)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"促销信息")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"501033B102E8"
+			height     	118)
+		    (object UseCaseView "Use Case View::系统" @4
+			location   	(1150, 612)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@4
 			    location   	(1150, 750)
 			    anchor_loc 	1
 			    nlines     	2
@@ -428,7 +935,7 @@
 			fill_color 	13434879
 			quidu      	"5010338C03BD"
 			height     	118)
-		    (object AssociationViewNew "$UNNAMED$33" @4
+		    (object AssociationViewNew "$UNNAMED$33" @5
 			location   	(1119, 479)
 			font       	(object Font
 			    size       	12
@@ -443,25 +950,25 @@
 			line_color 	3342489
 			quidu      	"501033BC027C"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$34" @5
-				Parent_View 	@4
+			    (object RoleView "$UNNAMED$34" @6
+				Parent_View 	@5
 				location   	(-31, -133)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033BD01B0"
-				client     	@4
+				client     	@5
 				supplier   	@1
 				line_style 	0)
-			    (object RoleView "$UNNAMED$35" @6
-				Parent_View 	@4
+			    (object RoleView "$UNNAMED$35" @7
+				Parent_View 	@5
 				location   	(-31, -133)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033BD01B2"
-				client     	@4
-				supplier   	@3
+				client     	@5
+				supplier   	@4
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$36" @7
+		    (object AssociationViewNew "$UNNAMED$36" @8
 			location   	(1449, 736)
 			font       	(object Font
 			    size       	12
@@ -476,48 +983,24 @@
 			line_color 	3342489
 			quidu      	"501033BF022B"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$37" @8
-				Parent_View 	@7
+			    (object RoleView "$UNNAMED$37" @9
+				Parent_View 	@8
 				location   	(299, 124)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033C000A2"
-				client     	@7
+				client     	@8
 				supplier   	@2
 				line_style 	0)
-			    (object RoleView "$UNNAMED$38" @9
-				Parent_View 	@7
+			    (object RoleView "$UNNAMED$38" @10
+				Parent_View 	@8
 				location   	(299, 124)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033C000A4"
-				client     	@7
-				supplier   	@3
+				client     	@8
+				supplier   	@4
 				line_style 	0)))
-		    (object UseCaseView "Use Case View::促销信息" @10
-			location   	(728, 950)
-			font       	(object Font
-			    size       	12
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@10
-			    location   	(728, 1088)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"促销信息")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"501033B102E8"
-			height     	118)
 		    (object AssociationViewNew "$UNNAMED$39" @11
 			location   	(936, 779)
 			font       	(object Font
@@ -540,7 +1023,7 @@
 				line_color 	3342489
 				quidu      	"501033C3010A"
 				client     	@11
-				supplier   	@10
+				supplier   	@3
 				line_style 	0)
 			    (object RoleView "$UNNAMED$41" @13
 				Parent_View 	@11
@@ -549,7 +1032,7 @@
 				line_color 	3342489
 				quidu      	"501033C3010C"
 				client     	@11
-				supplier   	@3
+				supplier   	@4
 				line_style 	0)))))
 	    (object UseCaseDiagram "消费者用例图"
 		quid       	"50102DA90244"
@@ -561,7 +1044,7 @@
 		origin_y   	0
 		items      	(list diagram_item_list
 		    (object UseCaseView "Use Case View::订餐" @14
-			location   	(1965, 471)
+			location   	(2303, 384)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -573,7 +1056,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@14
-			    location   	(1965, 609)
+			    location   	(2303, 522)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -585,7 +1068,7 @@
 			quidu      	"501031440385"
 			height     	118)
 		    (object UseCaseView "Use Case View::订餐进度查询" @15
-			location   	(2083, 803)
+			location   	(2463, 793)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -597,7 +1080,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@15
-			    location   	(2083, 941)
+			    location   	(2463, 931)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -609,7 +1092,7 @@
 			quidu      	"50102E080394"
 			height     	118)
 		    (object UseCaseView "Use Case View::退餐" @16
-			location   	(1980, 1115)
+			location   	(2219, 1271)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -621,7 +1104,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@16
-			    location   	(1980, 1253)
+			    location   	(2219, 1409)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -633,7 +1116,7 @@
 			quidu      	"501031540048"
 			height     	118)
 		    (object UseCaseView "Use Case View::确认订单" @17
-			location   	(1568, 1246)
+			location   	(1646, 1459)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -645,7 +1128,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@17
-			    location   	(1568, 1384)
+			    location   	(1646, 1597)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -657,7 +1140,7 @@
 			quidu      	"501031950271"
 			height     	118)
 		    (object UseCaseView "Use Case View::评价" @18
-			location   	(1187, 1184)
+			location   	(1015, 1387)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -669,7 +1152,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@18
-			    location   	(1187, 1322)
+			    location   	(1015, 1525)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -681,7 +1164,7 @@
 			quidu      	"501031630004"
 			height     	118)
 		    (object UseCaseView "Use Case View::积分兑奖" @19
-			location   	(905, 1000)
+			location   	(699, 1165)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -693,7 +1176,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@19
-			    location   	(905, 1138)
+			    location   	(699, 1303)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -705,7 +1188,7 @@
 			quidu      	"501031680342"
 			height     	118)
 		    (object UseCaseView "Use Case View::查看历史订餐信息" @20
-			location   	(898, 406)
+			location   	(589, 365)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -717,7 +1200,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@20
-			    location   	(898, 544)
+			    location   	(589, 503)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -729,7 +1212,7 @@
 			quidu      	"50102DCF03DE"
 			height     	118)
 		    (object UseCaseView "Use Case View::收藏店铺/食物" @21
-			location   	(803, 728)
+			location   	(481, 775)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -741,7 +1224,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@21
-			    location   	(803, 866)
+			    location   	(481, 913)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -753,7 +1236,7 @@
 			quidu      	"501033D70059"
 			height     	118)
 		    (object UseCaseView "Use Case View::搜索食物" @22
-			location   	(1271, 268)
+			location   	(1155, 178)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -765,7 +1248,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@22
-			    location   	(1271, 406)
+			    location   	(1155, 316)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -776,7 +1259,31 @@
 			fill_color 	13434879
 			quidu      	"501033F80398"
 			height     	118)
-		    (object ClassView "Class" "Use Case View::消费者" @23
+		    (object UseCaseView "Use Case View::咨询/聊天" @23
+			location   	(1740, 137)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@23
+			    location   	(1740, 275)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"咨询/聊天")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"501034680239"
+			height     	118)
+		    (object ClassView "Class" "Use Case View::消费者" @24
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -791,7 +1298,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@23
+			    Parent_View 	@24
 			    location   	(1492, 938)
 			    anchor_loc 	1
 			    nlines     	2
@@ -804,8 +1311,8 @@
 			quidu      	"50102DB8035D"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$0" @24
-			location   	(1710, 633)
+		    (object AssociationViewNew "$UNNAMED$0" @25
+			location   	(1870, 590)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -819,26 +1326,26 @@
 			line_color 	3342489
 			quidu      	"501031D900D6"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$1" @25
-				Parent_View 	@24
-				location   	(218, -145)
+			    (object RoleView "$UNNAMED$1" @26
+				Parent_View 	@25
+				location   	(378, -188)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031DA00B8"
-				client     	@24
+				client     	@25
 				supplier   	@14
 				line_style 	0)
-			    (object RoleView "$UNNAMED$2" @26
-				Parent_View 	@24
-				location   	(218, -145)
+			    (object RoleView "$UNNAMED$2" @27
+				Parent_View 	@25
+				location   	(378, -188)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031DA00BA"
-				client     	@24
-				supplier   	@23
+				client     	@25
+				supplier   	@24
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$3" @27
-			location   	(1761, 786)
+		    (object AssociationViewNew "$UNNAMED$3" @28
+			location   	(1951, 783)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -852,26 +1359,26 @@
 			line_color 	3342489
 			quidu      	"501031DE0254"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$4" @28
-				Parent_View 	@27
-				location   	(269, 8)
+			    (object RoleView "$UNNAMED$4" @29
+				Parent_View 	@28
+				location   	(459, 5)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031E001B4"
-				client     	@27
+				client     	@28
 				supplier   	@15
 				line_style 	0)
-			    (object RoleView "$UNNAMED$5" @29
-				Parent_View 	@27
-				location   	(269, 8)
+			    (object RoleView "$UNNAMED$5" @30
+				Parent_View 	@28
+				location   	(459, 5)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031E001B6"
-				client     	@27
-				supplier   	@23
+				client     	@28
+				supplier   	@24
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$6" @30
-			location   	(1722, 935)
+		    (object AssociationViewNew "$UNNAMED$6" @31
+			location   	(1840, 1013)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -885,26 +1392,26 @@
 			line_color 	3342489
 			quidu      	"501031E30176"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$7" @31
-				Parent_View 	@30
-				location   	(230, 157)
+			    (object RoleView "$UNNAMED$7" @32
+				Parent_View 	@31
+				location   	(348, 235)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031E303D1"
-				client     	@30
+				client     	@31
 				supplier   	@16
 				line_style 	0)
-			    (object RoleView "$UNNAMED$8" @32
-				Parent_View 	@30
-				location   	(230, 157)
+			    (object RoleView "$UNNAMED$8" @33
+				Parent_View 	@31
+				location   	(348, 235)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031E303D3"
-				client     	@30
-				supplier   	@23
+				client     	@31
+				supplier   	@24
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$9" @33
-			location   	(1538, 1076)
+		    (object AssociationViewNew "$UNNAMED$9" @34
+			location   	(1581, 1183)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -918,26 +1425,26 @@
 			line_color 	3342489
 			quidu      	"501031E602D8"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$10" @34
-				Parent_View 	@33
-				location   	(46, 298)
+			    (object RoleView "$UNNAMED$10" @35
+				Parent_View 	@34
+				location   	(89, 405)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031E7019B"
-				client     	@33
+				client     	@34
 				supplier   	@17
 				line_style 	0)
-			    (object RoleView "$UNNAMED$11" @35
-				Parent_View 	@33
-				location   	(46, 298)
+			    (object RoleView "$UNNAMED$11" @36
+				Parent_View 	@34
+				location   	(89, 405)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031E7019D"
-				client     	@33
-				supplier   	@23
+				client     	@34
+				supplier   	@24
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$12" @36
-			location   	(1318, 1006)
+		    (object AssociationViewNew "$UNNAMED$12" @37
+			location   	(1230, 1109)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -951,26 +1458,26 @@
 			line_color 	3342489
 			quidu      	"501031E901B7"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$13" @37
-				Parent_View 	@36
-				location   	(-174, 228)
+			    (object RoleView "$UNNAMED$13" @38
+				Parent_View 	@37
+				location   	(-262, 331)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031EA0158"
-				client     	@36
+				client     	@37
 				supplier   	@18
 				line_style 	0)
-			    (object RoleView "$UNNAMED$14" @38
-				Parent_View 	@36
-				location   	(-174, 228)
+			    (object RoleView "$UNNAMED$14" @39
+				Parent_View 	@37
+				location   	(-262, 331)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031EA015A"
-				client     	@36
-				supplier   	@23
+				client     	@37
+				supplier   	@24
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$15" @39
-			location   	(1222, 877)
+		    (object AssociationViewNew "$UNNAMED$15" @40
+			location   	(1120, 956)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -984,26 +1491,26 @@
 			line_color 	3342489
 			quidu      	"501031ED008F"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$16" @40
-				Parent_View 	@39
-				location   	(-270, 99)
+			    (object RoleView "$UNNAMED$16" @41
+				Parent_View 	@40
+				location   	(-372, 178)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031ED0340"
-				client     	@39
+				client     	@40
 				supplier   	@19
 				line_style 	0)
-			    (object RoleView "$UNNAMED$17" @41
-				Parent_View 	@39
-				location   	(-270, 99)
+			    (object RoleView "$UNNAMED$17" @42
+				Parent_View 	@40
+				location   	(-372, 178)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031ED0342"
-				client     	@39
-				supplier   	@23
+				client     	@40
+				supplier   	@24
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$18" @42
-			location   	(1268, 636)
+		    (object AssociationViewNew "$UNNAMED$18" @43
+			location   	(1113, 603)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1017,26 +1524,26 @@
 			line_color 	3342489
 			quidu      	"501031F00085"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$19" @43
-				Parent_View 	@42
-				location   	(-224, -142)
+			    (object RoleView "$UNNAMED$19" @44
+				Parent_View 	@43
+				location   	(-379, -175)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031F00313"
-				client     	@42
+				client     	@43
 				supplier   	@20
 				line_style 	0)
-			    (object RoleView "$UNNAMED$20" @44
-				Parent_View 	@42
-				location   	(-224, -142)
+			    (object RoleView "$UNNAMED$20" @45
+				Parent_View 	@43
+				location   	(-379, -175)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501031F00315"
-				client     	@42
-				supplier   	@23
+				client     	@43
+				supplier   	@24
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$42" @45
-			location   	(1172, 751)
+		    (object AssociationViewNew "$UNNAMED$42" @46
+			location   	(1010, 774)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1050,26 +1557,26 @@
 			line_color 	3342489
 			quidu      	"501033E90148"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$43" @46
-				Parent_View 	@45
-				location   	(-320, -27)
+			    (object RoleView "$UNNAMED$43" @47
+				Parent_View 	@46
+				location   	(-482, -4)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033EA00E1"
-				client     	@45
+				client     	@46
 				supplier   	@21
 				line_style 	0)
-			    (object RoleView "$UNNAMED$44" @47
-				Parent_View 	@45
-				location   	(-320, -27)
+			    (object RoleView "$UNNAMED$44" @48
+				Parent_View 	@46
+				location   	(-482, -4)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033EA00E3"
-				client     	@45
-				supplier   	@23
+				client     	@46
+				supplier   	@24
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$45" @48
-			location   	(1398, 566)
+		    (object AssociationViewNew "$UNNAMED$45" @49
+			location   	(1347, 521)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1083,50 +1590,26 @@
 			line_color 	3342489
 			quidu      	"5010340C017D"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$46" @49
-				Parent_View 	@48
-				location   	(-94, -212)
+			    (object RoleView "$UNNAMED$46" @50
+				Parent_View 	@49
+				location   	(-145, -257)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5010340C0367"
-				client     	@48
+				client     	@49
 				supplier   	@22
 				line_style 	0)
-			    (object RoleView "$UNNAMED$47" @50
-				Parent_View 	@48
-				location   	(-94, -212)
+			    (object RoleView "$UNNAMED$47" @51
+				Parent_View 	@49
+				location   	(-145, -257)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5010340C0369"
-				client     	@48
-				supplier   	@23
+				client     	@49
+				supplier   	@24
 				line_style 	0)))
-		    (object UseCaseView "Use Case View::咨询/聊天" @51
-			location   	(1637, 268)
-			font       	(object Font
-			    size       	12
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@51
-			    location   	(1637, 406)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"咨询/聊天")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"501034680239"
-			height     	118)
 		    (object AssociationViewNew "$UNNAMED$54" @52
-			location   	(1549, 566)
+			location   	(1595, 500)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1142,21 +1625,21 @@
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$55" @53
 				Parent_View 	@52
-				location   	(57, -212)
+				location   	(103, -278)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5010347B0243"
 				client     	@52
-				supplier   	@51
+				supplier   	@23
 				line_style 	0)
 			    (object RoleView "$UNNAMED$56" @54
 				Parent_View 	@52
-				location   	(57, -212)
+				location   	(103, -278)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5010347B0246"
 				client     	@52
-				supplier   	@23
+				supplier   	@24
 				line_style 	0)))))
 	    (object UseCaseDiagram "餐厅用例图"
 		quid       	"50103238028C"
@@ -1168,7 +1651,7 @@
 		origin_y   	0
 		items      	(list diagram_item_list
 		    (object UseCaseView "Use Case View::柜台接收订单" @55
-			location   	(496, 1487)
+			location   	(409, 1402)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1180,7 +1663,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@55
-			    location   	(496, 1625)
+			    location   	(409, 1540)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
@@ -1239,8 +1722,8 @@
 			fill_color 	13434879
 			quidu      	"501032F5034E"
 			height     	118)
-		    (object UseCaseView "Use Case View::处理订单" @58
-			location   	(1137, 1225)
+		    (object UseCaseView "Use Case View::食物分类" @58
+			location   	(2575, 578)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1252,6 +1735,30 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@58
+			    location   	(2575, 716)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"食物分类")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5010335D0261"
+			height     	118)
+		    (object UseCaseView "Use Case View::处理订单" @59
+			location   	(1137, 1225)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@59
 			    location   	(1137, 1363)
 			    anchor_loc 	1
 			    nlines     	2
@@ -1263,7 +1770,7 @@
 			fill_color 	13434879
 			quidu      	"501032A90001"
 			height     	118)
-		    (object DependencyView "" @59
+		    (object DependencyView "" @60
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1273,9 +1780,9 @@
 			    strike     	FALSE
 			    color      	0
 			    default_color 	TRUE)
-			stereotype 	(object SegLabel @60
-			    Parent_View 	@59
-			    location   	(776, 1370)
+			stereotype 	(object SegLabel @61
+			    Parent_View 	@60
+			    location   	(726, 1322)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1296,10 +1803,10 @@
 			    orientation 	0)
 			line_color 	3342489
 			quidu      	"50103305029F"
-			client     	@58
+			client     	@59
 			supplier   	@55
 			line_style 	0)
-		    (object DependencyView "" @61
+		    (object DependencyView "" @62
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1309,8 +1816,8 @@
 			    strike     	FALSE
 			    color      	0
 			    default_color 	TRUE)
-			stereotype 	(object SegLabel @62
-			    Parent_View 	@61
+			stereotype 	(object SegLabel @63
+			    Parent_View 	@62
 			    location   	(920, 1517)
 			    font       	(object Font
 				size       	10
@@ -1332,10 +1839,10 @@
 			    orientation 	1)
 			line_color 	3342489
 			quidu      	"5010330903E1"
-			client     	@58
+			client     	@59
 			supplier   	@56
 			line_style 	0)
-		    (object DependencyView "" @63
+		    (object DependencyView "" @64
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1345,8 +1852,8 @@
 			    strike     	FALSE
 			    color      	0
 			    default_color 	TRUE)
-			stereotype 	(object SegLabel @64
-			    Parent_View 	@63
+			stereotype 	(object SegLabel @65
+			    Parent_View 	@64
 			    location   	(1276, 1549)
 			    font       	(object Font
 				size       	10
@@ -1368,35 +1875,11 @@
 			    orientation 	0)
 			line_color 	3342489
 			quidu      	"5010330D0090"
-			client     	@58
+			client     	@59
 			supplier   	@57
 			line_style 	0)
-		    (object UseCaseView "Use Case View::订餐提醒" @65
-			location   	(2096, 1075)
-			font       	(object Font
-			    size       	12
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@65
-			    location   	(2096, 1213)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"订餐提醒")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"50103298013D"
-			height     	118)
-		    (object UseCaseView "Use Case View::上架菜单信息" @66
-			location   	(2031, 690)
+		    (object UseCaseView "Use Case View::订餐提醒" @66
+			location   	(2096, 1074)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1408,19 +1891,19 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@66
-			    location   	(2031, 828)
+			    location   	(2096, 1212)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
 			    justify    	0
-			    label      	"上架菜单信息")
+			    label      	"订餐提醒")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
-			quidu      	"50103288028B"
+			quidu      	"50103298013D"
 			height     	118)
-		    (object UseCaseView "Use Case View::店铺装饰" @67
-			location   	(784, 937)
+		    (object UseCaseView "Use Case View::上架菜单信息" @67
+			location   	(2031, 690)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1432,19 +1915,18 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@67
-			    location   	(784, 1075)
+			    location   	(2031, 828)
 			    anchor_loc 	1
 			    nlines     	2
 			    max_width  	630
 			    justify    	0
-			    label      	"店铺装饰")
+			    label      	"上架菜单信息")
 			icon_style 	"Icon"
 			line_color 	3342489
 			fill_color 	13434879
-			quidu      	"501033330148"
+			quidu      	"50103288028B"
 			height     	118)
-		    (object UseCaseView "Use Case View::食物分类" @68
-			location   	(2449, 687)
+		    (object DependencyView "" @68
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1454,32 +1936,9 @@
 			    strike     	FALSE
 			    color      	0
 			    default_color 	TRUE)
-			label      	(object ItemLabel
+			stereotype 	(object SegLabel @69
 			    Parent_View 	@68
-			    location   	(2449, 825)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"食物分类")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5010335D0261"
-			height     	118)
-		    (object DependencyView "" @69
-			font       	(object Font
-			    size       	12
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			stereotype 	(object SegLabel @70
-			    Parent_View 	@69
-			    location   	(2239, 632)
+			    location   	(2293, 578)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1500,9 +1959,33 @@
 			    orientation 	0)
 			line_color 	3342489
 			quidu      	"5010336902DA"
-			client     	@66
-			supplier   	@68
+			client     	@67
+			supplier   	@58
 			line_style 	0)
+		    (object UseCaseView "Use Case View::店铺装饰" @70
+			location   	(784, 937)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@70
+			    location   	(784, 1075)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"店铺装饰")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"501033330148"
+			height     	118)
 		    (object UseCaseView "Use Case View::餐厅基本信息" @71
 			location   	(1388, 266)
 			font       	(object Font
@@ -1527,7 +2010,31 @@
 			fill_color 	13434879
 			quidu      	"5010327C03AD"
 			height     	118)
-		    (object ClassView "Class" "Use Case View::餐厅人员" @72
+		    (object UseCaseView "Use Case View::聊天" @72
+			location   	(1882, 1524)
+			font       	(object Font
+			    size       	12
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@72
+			    location   	(1882, 1662)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"聊天")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"501034460329"
+			height     	118)
+		    (object ClassView "Class" "Use Case View::餐厅人员" @73
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -1542,11 +2049,11 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@72
+			    Parent_View 	@73
 			    location   	(1473, 953)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	328
+			    max_width  	325
 			    justify    	0
 			    label      	"餐厅人员")
 			icon       	"Actor"
@@ -1555,8 +2062,8 @@
 			quidu      	"5010326F0228"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$21" @73
-			location   	(1272, 1048)
+		    (object AssociationViewNew "$UNNAMED$21" @74
+			location   	(1281, 1036)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1570,26 +2077,26 @@
 			line_color 	3342489
 			quidu      	"50103340002D"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$22" @74
-				Parent_View 	@73
-				location   	(-201, 255)
+			    (object RoleView "$UNNAMED$22" @75
+				Parent_View 	@74
+				location   	(-192, 243)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033400243"
-				client     	@73
-				supplier   	@58
+				client     	@74
+				supplier   	@59
 				line_style 	0)
-			    (object RoleView "$UNNAMED$23" @75
-				Parent_View 	@73
-				location   	(-201, 255)
+			    (object RoleView "$UNNAMED$23" @76
+				Parent_View 	@74
+				location   	(-192, 243)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033400246"
-				client     	@73
-				supplier   	@72
+				client     	@74
+				supplier   	@73
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$24" @76
-			location   	(1758, 922)
+		    (object AssociationViewNew "$UNNAMED$24" @77
+			location   	(1758, 921)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1603,25 +2110,25 @@
 			line_color 	3342489
 			quidu      	"5010334202C8"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$25" @77
-				Parent_View 	@76
-				location   	(285, 129)
+			    (object RoleView "$UNNAMED$25" @78
+				Parent_View 	@77
+				location   	(285, 128)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033430353"
-				client     	@76
-				supplier   	@65
+				client     	@77
+				supplier   	@66
 				line_style 	0)
-			    (object RoleView "$UNNAMED$26" @78
-				Parent_View 	@76
-				location   	(285, 129)
+			    (object RoleView "$UNNAMED$26" @79
+				Parent_View 	@77
+				location   	(285, 128)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033430355"
-				client     	@76
-				supplier   	@72
+				client     	@77
+				supplier   	@73
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$27" @79
+		    (object AssociationViewNew "$UNNAMED$27" @80
 			location   	(1724, 742)
 			font       	(object Font
 			    size       	12
@@ -1636,25 +2143,25 @@
 			line_color 	3342489
 			quidu      	"5010334703A4"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$28" @80
-				Parent_View 	@79
+			    (object RoleView "$UNNAMED$28" @81
+				Parent_View 	@80
 				location   	(251, -51)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033480311"
-				client     	@79
-				supplier   	@66
+				client     	@80
+				supplier   	@67
 				line_style 	0)
-			    (object RoleView "$UNNAMED$29" @81
-				Parent_View 	@79
+			    (object RoleView "$UNNAMED$29" @82
+				Parent_View 	@80
 				location   	(251, -51)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"501033480314"
-				client     	@79
-				supplier   	@72
+				client     	@80
+				supplier   	@73
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$30" @82
+		    (object AssociationViewNew "$UNNAMED$30" @83
 			location   	(1153, 856)
 			font       	(object Font
 			    size       	12
@@ -1669,25 +2176,25 @@
 			line_color 	3342489
 			quidu      	"5010334B0175"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$31" @83
-				Parent_View 	@82
+			    (object RoleView "$UNNAMED$31" @84
+				Parent_View 	@83
 				location   	(-320, 63)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5010334C00DF"
-				client     	@82
-				supplier   	@67
+				client     	@83
+				supplier   	@70
 				line_style 	0)
-			    (object RoleView "$UNNAMED$32" @84
-				Parent_View 	@82
+			    (object RoleView "$UNNAMED$32" @85
+				Parent_View 	@83
 				location   	(-320, 63)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5010334C00E1"
-				client     	@82
-				supplier   	@72
+				client     	@83
+				supplier   	@73
 				line_style 	0)))
-		    (object AssociationViewNew "$UNNAMED$48" @85
+		    (object AssociationViewNew "$UNNAMED$48" @86
 			location   	(1434, 571)
 			font       	(object Font
 			    size       	12
@@ -1702,50 +2209,26 @@
 			line_color 	3342489
 			quidu      	"5010342702F6"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$49" @86
-				Parent_View 	@85
+			    (object RoleView "$UNNAMED$49" @87
+				Parent_View 	@86
 				location   	(-39, -222)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"50103428019F"
-				client     	@85
+				client     	@86
 				supplier   	@71
 				line_style 	0)
-			    (object RoleView "$UNNAMED$50" @87
-				Parent_View 	@85
+			    (object RoleView "$UNNAMED$50" @88
+				Parent_View 	@86
 				location   	(-39, -222)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5010342801A1"
-				client     	@85
-				supplier   	@72
+				client     	@86
+				supplier   	@73
 				line_style 	0)))
-		    (object UseCaseView "Use Case View::聊天" @88
-			location   	(1819, 1416)
-			font       	(object Font
-			    size       	12
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@88
-			    location   	(1819, 1554)
-			    anchor_loc 	1
-			    nlines     	2
-			    max_width  	630
-			    justify    	0
-			    label      	"聊天")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"501034460329"
-			height     	118)
 		    (object AssociationViewNew "$UNNAMED$51" @89
-			location   	(1681, 1169)
+			location   	(1712, 1223)
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"
@@ -1761,21 +2244,21 @@
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$52" @90
 				Parent_View 	@89
-				location   	(208, 376)
+				location   	(239, 430)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5010345A030A"
 				client     	@89
-				supplier   	@88
+				supplier   	@72
 				line_style 	0)
 			    (object RoleView "$UNNAMED$53" @91
 				Parent_View 	@89
-				location   	(208, 376)
+				location   	(239, 430)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5010345A030C"
 				client     	@89
-				supplier   	@72
+				supplier   	@73
 				line_style 	0)))))))
     root_category 	(object Class_Category "Logical View"
 	quid       	"50102D450316"
