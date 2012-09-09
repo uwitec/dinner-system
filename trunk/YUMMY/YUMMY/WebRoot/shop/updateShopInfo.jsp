@@ -12,7 +12,7 @@
 <table>
 <tr>
 <td>²ÍÌüÃû³Æ£º</td>
-<td></td> <s:property value="#attr.myShop.shopname"/>
+<td> <input type="text" name="shopname"  value="<s:property value="#attr.myShop.shopname"/>"/></td>
 </tr>
 <tr>
 <td>²ÍÌülogo:</td><td><input type="text" name="logo"  value="<s:property value='#attr.myShop.logo'/>"/></td></tr>
