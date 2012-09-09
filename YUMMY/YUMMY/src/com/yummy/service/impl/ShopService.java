@@ -32,6 +32,7 @@ public class ShopService implements IShopService{
 
 	public void updateShop(Shop shop) {
 		// TODO Auto-generated method stub
+		shopDAO.update(shop);
 		
 	}
 	

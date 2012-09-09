@@ -68,6 +68,11 @@
 			<ref bean="ShopService" />
 		</property>
 	</bean>
+	<bean id="SaveShopAction" class="com.yummy.action.SaveShopAction" scope="prototype">
+		<property name="shopService">
+			<ref bean="ShopService" />
+		</property>
+	</bean>
 <!-- 
 	<bean id="HotFoodDAO" class="com.yummy.dao.impl.HotFoodDAO">
 		<property name="sessionFactory">

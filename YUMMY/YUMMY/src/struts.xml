@@ -13,6 +13,9 @@
            <action name="addShop" class="AddShopAction">
            		<result name="success" type="chain">showShop</result>
            </action>
+           <action name="saveShop" class="SaveShopAction">
+           			<result name="success" type="chain">showShop</result>
+           </action>
         </package>  
 
 </struts>    

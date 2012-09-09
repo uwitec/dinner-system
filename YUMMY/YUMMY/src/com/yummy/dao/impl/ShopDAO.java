@@ -192,8 +192,15 @@ public class ShopDAO extends HibernateDaoSupport implements IShopDAO{
 		}
 	}
 
-	public void update(Shop shop) {
+	public void update(Shop transientInstance) {
 		// TODO Auto-generated method stub
-		
+		log.debug("updating Shop instance");
+		try {
+			getHibernateTemplate().update(transientInstance);
+			log.debug("update successful");
+		} catch (RuntimeException re) {
+			log.error("update failed", re);
+			throw re;
+		}
 	}
 }
