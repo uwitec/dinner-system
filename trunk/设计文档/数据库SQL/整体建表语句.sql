@@ -1,6 +1,6 @@
 
 -- ----------------------------
--- Table structure for `customer` ç”¨æˆ·è¡¨
+-- Table structure for `customer` ÓÃ»§±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `customer`;
@@ -23,7 +23,7 @@ CREATE TABLE `customer` (
 
 
 -- ----------------------------
--- Table structure for `collect_dish` æ”¶è—é£Ÿç‰©è¡¨
+-- Table structure for `collect_dish` ÊÕ²ØÊ³Îï±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `collect_dish`;
@@ -47,7 +47,7 @@ CREATE TABLE `collect_dish` (
 
 
 -- ----------------------------
--- Table structure for `collect_shop`æ”¶è—åº—é“ºè¡¨
+-- Table structure for `collect_shop`ÊÕ²ØµêÆÌ±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `collect_shop`;
@@ -71,7 +71,7 @@ CREATE TABLE `collect_shop` (
 
 
 -- ----------------------------
--- Table structure for `customer_info` ç”¨æˆ·ä¿¡æ¯è¡¨ï¼ŒåŒ…æ‹¬åœ°å€ç”µè¯ç­‰
+-- Table structure for `customer_info` ÓÃ»§ĞÅÏ¢±í£¬°üÀ¨µØÖ·µç»°µÈ
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `customer_info`;
@@ -92,7 +92,7 @@ CREATE TABLE `customer_info` (
 
 
 -- ----------------------------
--- Table structure for `estimate` è¯„ä»·è¡¨
+-- Table structure for `estimate` ÆÀ¼Û±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `estimate`;
@@ -100,7 +100,7 @@ CREATE TABLE `estimate` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(15) NOT NULL,
   `dish_id` int(10) NOT NULL,
-  `point` smallint(6) NOT NULL DEFAULT '5' COMMENT 'ç»™æ¯ç§é£Ÿç‰©è¯„ä»·åˆ†æ•°',
+  `point` smallint(6) NOT NULL DEFAULT '5' COMMENT '¸øÃ¿ÖÖÊ³ÎïÆÀ¼Û·ÖÊı',
   `comment` longblob,
   `date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -117,7 +117,7 @@ CREATE TABLE `estimate` (
 
 
 -- ----------------------------
--- Table structure for `gift_exchange` å…‘æ¢ç¤¼å“è¡¨
+-- Table structure for `gift_exchange` ¶Ò»»ÀñÆ·±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `gift_exchange`;
@@ -125,7 +125,7 @@ CREATE TABLE `gift_exchange` (
   `id` int(10) NOT NULL,
   `username` varchar(15) NOT NULL,
   `gift_id` int(10) NOT NULL,
-  `date` date DEFAULT NULL COMMENT 'ç¤¼å“æ¢è´­æ—¶é—´',
+  `date` date DEFAULT NULL COMMENT 'ÀñÆ·»»¹ºÊ±¼ä',
   PRIMARY KEY (`id`),
   KEY `fk_gift` (`gift_id`),
   KEY `fk_gift_customer` (`username`),
@@ -140,20 +140,23 @@ CREATE TABLE `gift_exchange` (
 
 
 -- ----------------------------
--- Table structure for `dish` é£Ÿç‰©è¡¨
+-- Table structure for `dish` Ê³Îï±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `dish`;
 CREATE TABLE `dish` (
   `dishID` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(15) NOT NULL,
-  `point` int(11) DEFAULT NULL COMMENT 'æ¯ç§é£Ÿç‰©è¯„ä»·åéƒ½å¯ä»¥å¾—åˆ°ä¸€å®šåˆ†æ•°',
+  `point` int(11) DEFAULT NULL COMMENT 'Ã¿ÖÖÊ³ÎïÆÀ¼Ûºó¶¼¿ÉÒÔµÃµ½Ò»¶¨·ÖÊı',
   `price` float NOT NULL,
   `shopname` varchar(15) NOT NULL,
   `introduction` varchar(50) DEFAULT NULL,
-  `category` varchar(10) DEFAULT NULL COMMENT 'é£Ÿç‰©çš„åˆ†ç±»',
-  `tag` varchar(10) DEFAULT NULL COMMENT 'è‡ªå®šä¹‰çš„æ ‡ç­¾',
-  `upload_time` date DEFAULT NULL COMMENT 'ä¸Šä¼ æ—¶é—´',
+  `category` varchar(10) DEFAULT NULL COMMENT 'Ê³ÎïµÄ·ÖÀà',
+  `tag` varchar(10) DEFAULT NULL COMMENT '×Ô¶¨ÒåµÄ±êÇ©',
+  `upload_time` date DEFAULT NULL COMMENT 'ÉÏ´«Ê±¼ä',
+  `picOne` longblob,
+  `picTwo` longblob,
+  `picThree` longblob,
   PRIMARY KEY (`dishID`),
   KEY `fk_dish_shop` (`shopname`),
   CONSTRAINT `fk_dish_shop` FOREIGN KEY (`shopname`) REFERENCES `shop` (`shopname`)
@@ -166,15 +169,15 @@ CREATE TABLE `dish` (
 
 
 -- ----------------------------
--- Table structure for `gift` ç¤¼å“è¡¨
+-- Table structure for `gift` ÀñÆ·±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `gift`;
 CREATE TABLE `gift` (
   `id` int(10) NOT NULL DEFAULT '0',
   `gift_name` varchar(20) NOT NULL,
-  `grade` int(5) NOT NULL COMMENT 'æ¢è´­è¯¥ç¤¼å“æ‰€éœ€åˆ†æ•°',
-  `account` int(5) NOT NULL COMMENT 'è¯¥ç¤¼å“çš„æ•°é‡',
+  `grade` int(5) NOT NULL COMMENT '»»¹º¸ÃÀñÆ·ËùĞè·ÖÊı',
+  `account` int(5) NOT NULL COMMENT '¸ÃÀñÆ·µÄÊıÁ¿',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -186,7 +189,7 @@ CREATE TABLE `gift` (
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `order_info` è®¢å•ä¿¡æ¯è¡¨
+-- Table structure for `order_info` ¶©µ¥ĞÅÏ¢±í
 -- ----------------------------
 DROP TABLE IF EXISTS `order_info`;
 CREATE TABLE `order_info` (
@@ -208,7 +211,7 @@ CREATE TABLE `order_info` (
 
 
 -- ----------------------------
--- Table structure for `hot_food` ä¿ƒé”€é£Ÿç‰©è¡¨
+-- Table structure for `hot_food` ´ÙÏúÊ³Îï±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `hot_food`;
@@ -218,7 +221,7 @@ CREATE TABLE `hot_food` (
   `shop_id` varchar(15) NOT NULL,
   `current_price` float NOT NULL,
   `account` int(5) NOT NULL,
-  `valid_date` date DEFAULT NULL COMMENT 'ä¿ƒé”€æ—¶é—´',
+  `valid_date` date DEFAULT NULL COMMENT '´ÙÏúÊ±¼ä',
   PRIMARY KEY (`id`),
   KEY `fk_hotfood_dish` (`dish_id`),
   KEY `fk_hotfood_shop` (`shop_id`),
@@ -233,7 +236,7 @@ CREATE TABLE `hot_food` (
 
 
 -- ----------------------------
--- Table structure for `shop_worker` åº—é“ºå·¥ä½œäººå‘˜è¡¨
+-- Table structure for `shop_worker` µêÆÌ¹¤×÷ÈËÔ±±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `shop_worker`;
@@ -255,7 +258,7 @@ CREATE TABLE `shop_worker` (
 
 
 -- ----------------------------
--- Table structure for `shop` åº—é“ºè¡¨
+-- Table structure for `shop` µêÆÌ±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `shop`;
@@ -266,7 +269,7 @@ CREATE TABLE `shop` (
   `qq` varchar(12) DEFAULT NULL,
   `introduction` varchar(50) DEFAULT NULL,
   `logo` longblob NOT NULL,
-  `point` int(10) NOT NULL DEFAULT '0' COMMENT 'å•†å®¶çš„ä¿¡èª‰ï¼Œä»¥åˆ†æ•°å½¢å¼å‡ºç°',
+  `point` int(10) NOT NULL DEFAULT '0' COMMENT 'ÉÌ¼ÒµÄĞÅÓş£¬ÒÔ·ÖÊıĞÎÊ½³öÏÖ',
   `delivery_range` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`shopname`),
   UNIQUE KEY `index_shopname` (`shopname`) USING BTREE
@@ -279,15 +282,15 @@ CREATE TABLE `shop` (
 
 
 -- ----------------------------
--- Table structure for `order` è®¢å•è¡¨
+-- Table structure for `order` ¶©µ¥±í
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `order_id` int(10) NOT NULL AUTO_INCREMENT,
   `order_time` datetime NOT NULL,
-  `status` int(1) NOT NULL COMMENT 'è®¢å•çš„çŠ¶æ€',
-  `user_info` int(10) NOT NULL COMMENT 'é€šè¿‡è¿™é‡Œæ‰¾åˆ°åå­—ï¼Œåœ°å€ï¼Œç”µè¯.',
+  `status` int(1) NOT NULL COMMENT '¶©µ¥µÄ×´Ì¬',
+  `user_info` int(10) NOT NULL COMMENT 'Í¨¹ıÕâÀïÕÒµ½Ãû×Ö£¬µØÖ·£¬µç»°.',
   `total_price` float DEFAULT NULL,
   `message` varchar(50) DEFAULT NULL,
   `grade` int(11) NOT NULL,
