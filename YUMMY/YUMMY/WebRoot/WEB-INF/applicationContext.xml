@@ -31,7 +31,11 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>com/sshmeger/test/Test.hbm.xml</value></list>
+				<value>com/sshmeger/test/Test.hbm.xml</value>
+				<value>com/yummy/dao/impl/Shop.hbm.xml</value>
+<!-- 			<value>com/yummy/dao/impl/HotFood.hbm.xml</value>
+				<value>com/yummy/dao/impl/Dish.hbm.xml</value> -->
+				</list>
 		</property></bean>
 	<bean id="TestDAO" class="com.sshmeger.test.TestDAO">
 		<property name="sessionFactory">
@@ -44,4 +48,36 @@
 			<ref bean="TestDAO" />
 		</property>
 	</bean> 
-</beans>
+	<bean id="ShopDAO" class="com.yummy.dao.impl.ShopDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ShopService" class="com.yummy.service.impl.ShopService">
+		<property name="shopDAO">
+			<ref bean="ShopDAO"/>
+		</property>
+	</bean>
+	<bean id="ShowShopAction" class="com.yummy.action.ShowShopAction" scope="prototype">
+		<property name="shopService">
+			<ref bean="ShopService" />
+		</property>
+	</bean>
+	<bean id="AddShopAction" class="com.yummy.action.AddShopAction" scope="prototype">
+		<property name="shopService">
+			<ref bean="ShopService" />
+		</property>
+	</bean>
+<!-- 
+	<bean id="HotFoodDAO" class="com.yummy.dao.impl.HotFoodDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DishDAO" class="com.yummy.dao.impl.DishDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	 -->	
+	</beans>

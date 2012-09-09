@@ -6,5 +6,13 @@
            		<result name="success" type="dispatcher">/sshmegar_test/test_success.jsp</result>
            </action>
         </package>  
+        <package name="shop_pkg" extends="struts-default" namespace="/shop">  
+           <action name="showShop" class="ShowShopAction"> 
+           		<result name="success" type="dispatcher">/shop/shopInfo.jsp</result>
+           </action>
+           <action name="addShop" class="AddShopAction">
+           		<result name="success" type="chain">showShop</result>
+           </action>
+        </package>  
 
 </struts>    
