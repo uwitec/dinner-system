@@ -1,6 +1,6 @@
 package com.yummy.dao;
 
-import com.yummy.dao.impl.Shop;
+import com.yummy.pojo.Shop;
 
 public interface IShopDAO {
 	public Shop findByShopName(String shopName);

@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.yummy.dao.IShopDAO;
+import com.yummy.pojo.Shop;
 
 /**
  * A data access object (DAO) providing persistence and search support for Shop
@@ -18,7 +19,7 @@ import com.yummy.dao.IShopDAO;
  * provides additional information for how to configure it for the desired type
  * of transaction control.
  * 
- * @see com.yummy.dao.impl.Shop
+ * @see com.yummy.pojo.Shop
  * @author MyEclipse Persistence Tools
  */
 

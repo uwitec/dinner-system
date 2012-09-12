@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.yummy.pojo.HotFood;
+
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -17,7 +19,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * methods provides additional information for how to configure it for the
  * desired type of transaction control.
  * 
- * @see com.yummy.dao.impl.HotFood
+ * @see com.yummy.pojo.HotFood
  * @author MyEclipse Persistence Tools
  */
 

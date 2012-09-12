@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.yummy.dao.impl.Shop;
+import com.yummy.pojo.Shop;
 import com.yummy.service.IShopService;
 
 public class ShowShopAction extends ActionSupport{
