@@ -1,6 +1,6 @@
 package com.yummy.service;
 
-import com.yummy.dao.impl.Shop;
+import com.yummy.pojo.Shop;
 
 public interface IShopService {
 	

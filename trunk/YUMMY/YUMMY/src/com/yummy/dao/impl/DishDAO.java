@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.yummy.pojo.Dish;
+
 
 /**
  * A data access object (DAO) providing persistence and search support for Dish
@@ -18,7 +20,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * provides additional information for how to configure it for the desired type
  * of transaction control.
  * 
- * @see com.yummy.dao.impl.Dish
+ * @see com.yummy.pojo.Dish
  * @author MyEclipse Persistence Tools
  */
 

@@ -1,7 +1,7 @@
 package com.yummy.service.impl;
 
 import com.yummy.dao.IShopDAO;
-import com.yummy.dao.impl.Shop;
+import com.yummy.pojo.Shop;
 import com.yummy.service.IShopService;
 
 public class ShopService implements IShopService{
