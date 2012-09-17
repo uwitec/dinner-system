@@ -25,7 +25,7 @@ public class ShopService implements IShopService{
 	public Boolean isExistShop(String shopName) {
 		// TODO Auto-generated method stub
 		Shop shop = shopDAO.findByShopName(shopName);
-		if(shop==null)return false;
+		if(shop==null) return false;
 		
 		return true;
 	}
