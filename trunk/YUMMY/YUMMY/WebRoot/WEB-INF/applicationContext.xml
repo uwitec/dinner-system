@@ -84,5 +84,9 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	 -->	
+	 -->
+	 <bean id="ShowHotDish" class="com.yummy.action.ShowHotDish">
+	 
+	 </bean>
+	 	
 	</beans>
