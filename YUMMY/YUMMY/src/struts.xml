@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>  
-        <package name="test" extends="struts-default">  
+        <package name="test" extends="struts-default" >  
            <action name="totest" class="TestAction"> 
            		<result name="success" type="dispatcher">/sshmegar_test/test_success.jsp</result>
            </action>
+           
+         <!--   访问主页面时显示热门食物 -->
+           <action name="showDish" class="ShowHotDish">
+           		<result name="success" type="dispatcher">
+           			/index.jsp
+           		</result>
+           </action>
+           
         </package>  
         <package name="shop_pkg" extends="struts-default" namespace="/shop">  
            <action name="showShop" class="ShowShopAction"> 
