@@ -2,9 +2,12 @@ package com.yummy.service.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
+import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.stereotype.Component;
 
 import com.yummy.dao.IHighQualifiedFoodDAO;
@@ -21,7 +24,8 @@ import com.yummy.service.IHighQualifiedFoodsService;
 @Component
 public class HighQualifiedFoodsService implements IHighQualifiedFoodsService {
 
-	private List highQualifiedFoods;
+	private List highQualifiedFoods = null;
+	
 	
 	@Resource(name="highQualifiedFoodDAO")
 	private IHighQualifiedFoodDAO highQualifiedFoodDAO;
@@ -34,7 +38,14 @@ public class HighQualifiedFoodsService implements IHighQualifiedFoodsService {
 	
 	public List getHighQualifiedFoods() {
 		// TODO Auto-generated method stub
-		highQualifiedFoods = highQualifiedFoodDAO.getHighQualifiedFoods();
+		if (highQualifiedFoods == null) {
+			highQualifiedFoods = highQualifiedFoodDAO.getHighQualifiedFoods();
+		} else {
+			long time = new Date().getTime();
+			if (time % 100000000 <= 100000) {
+				highQualifiedFoods = highQualifiedFoodDAO.getHighQualifiedFoods();
+			}
+		} 
 		return highQualifiedFoods;
 	}
 

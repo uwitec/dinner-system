@@ -154,6 +154,9 @@ CREATE TABLE `dish` (
   `category` varchar(10) DEFAULT NULL COMMENT '食物的分类',
   `tag` varchar(10) DEFAULT NULL COMMENT '自定义的标签',
   `upload_time` date DEFAULT NULL COMMENT '上传时间',
+  `prcOne` blob
+  `prcTwo` blob
+  `prcThree` blob
   PRIMARY KEY (`dishID`),
   KEY `fk_dish_shop` (`shopname`),
   CONSTRAINT `fk_dish_shop` FOREIGN KEY (`shopname`) REFERENCES `shop` (`shopname`)
