@@ -5,7 +5,9 @@
            <action name="totest" class="TestAction"> 
            		<result name="success" type="dispatcher">/sshmegar_test/test_success.jsp</result>
            </action>
-           
+           <action name="index" class="mainAction">
+           		<result name="success">index.jsp</result>
+           </action>
         </package>  
         <package name="shop_pkg" extends="struts-default" namespace="/shop">  
            <action name="showShop" class="ShowShopAction"> 

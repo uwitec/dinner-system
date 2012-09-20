@@ -1,20 +1,24 @@
 package com.yummy.pojo;
 
+import java.sql.Blob;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
- * Dish entity. @author MyEclipse Persistence Tools
+ * 
+ * Function: 添加了图片属性，可以有三张图片 . <br/> 
+ * date: 2012-9-20 下午3:40:25 <br/> 
+ * 
+ * @author jiahui 
+ * @version 1.0
  */
-
 public class Dish implements java.io.Serializable {
 
 	// Fields
 
 	private Integer dishId;
-	private Shop shop;
+	private String shopname;
 	private String name;
 	private Integer point;
 	private Float price;
@@ -22,6 +26,9 @@ public class Dish implements java.io.Serializable {
 	private String category;
 	private String tag;
 	private Date uploadTime;
+	private Blob picOne;
+	private Blob picTwo;
+	private Blob picThree;
 	private Set collectDishs = new HashSet(0);
 	private Set hotFoods = new HashSet(0);
 	private Set orderInfos = new HashSet(0);
@@ -34,17 +41,17 @@ public class Dish implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Dish(Shop shop, String name, Float price) {
-		this.shop = shop;
+	public Dish(String shopname, String name, Float price) {
+		this.shopname = shopname;
 		this.name = name;
 		this.price = price;
 	}
 
 	/** full constructor */
-	public Dish(Shop shop, String name, Integer point, Float price,
+	public Dish(String shopname, String name, Integer point, Float price,
 			String introduction, String category, String tag, Date uploadTime,
 			Set collectDishs, Set hotFoods, Set orderInfos, Set estimates) {
-		this.shop = shop;
+		this.shopname = shopname;
 		this.name = name;
 		this.point = point;
 		this.price = price;
@@ -68,12 +75,12 @@ public class Dish implements java.io.Serializable {
 		this.dishId = dishId;
 	}
 
-	public Shop getShop() {
-		return this.shop;
+	public String getShopname() {
+		return this.shopname;
 	}
 
-	public void setShop(Shop shop) {
-		this.shop = shop;
+	public void setShopname(String shopname) {
+		this.shopname = shopname;
 	}
 
 	public String getName() {
@@ -130,6 +137,31 @@ public class Dish implements java.io.Serializable {
 
 	public void setUploadTime(Date uploadTime) {
 		this.uploadTime = uploadTime;
+	}
+
+	
+	public Blob getPicOne() {
+		return picOne;
+	}
+
+	public void setPicOne(Blob picOne) {
+		this.picOne = picOne;
+	}
+
+	public Blob getPicTwo() {
+		return picTwo;
+	}
+
+	public void setPicTwo(Blob picTwo) {
+		this.picTwo = picTwo;
+	}
+
+	public Blob getPicThree() {
+		return picThree;
+	}
+
+	public void setPicThree(Blob picThree) {
+		this.picThree = picThree;
 	}
 
 	public Set getCollectDishs() {

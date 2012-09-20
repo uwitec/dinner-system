@@ -1,8 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -28,6 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="accountCenter.jsp">我的账户</a><br>
     <a href="giftCenter.jsp">礼品中心</a>
     <hr>
+   	<s:property value="highQualifiedFoodsList.size()"/>
     
   </body>
 </html>
