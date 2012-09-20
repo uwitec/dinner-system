@@ -1,12 +1,15 @@
 package com.yummy.action;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Component;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 import com.yummy.service.impl.HighQualifiedFoodsService;
 /**
  * 
@@ -20,6 +23,8 @@ import com.yummy.service.impl.HighQualifiedFoodsService;
 public class MainAction extends ActionSupport {
 
 	private List highQualifiedFoodsList = null;
+	private Map session = null;
+	
 	@Resource
 	private HighQualifiedFoodsService highQualifiedFoodsService;
 	
@@ -27,7 +32,8 @@ public class MainAction extends ActionSupport {
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		highQualifiedFoodsList = highQualifiedFoodsService.getHighQualifiedFoods();
-		System.out.println("食物链的数量是：" + highQualifiedFoodsList.size());
+		session = ActionContext.getContext().getSession();
+		session.put("highQualifiedFoodsList", highQualifiedFoodsList);
 		return SUCCESS;
 	}
 

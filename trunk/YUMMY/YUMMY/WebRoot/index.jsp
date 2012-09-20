@@ -1,5 +1,8 @@
+<%@page import="com.sun.org.apache.commons.digester.rss.Item"%>
+<%@page import="java.sql.Blob"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -31,6 +34,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="giftCenter.jsp">礼品中心</a>
     <hr>
    	<s:property value="highQualifiedFoodsList.size()"/>
-    
+   	<hr>
+   	
+   	
+   	<table border=1>
+   <tr>
+      <td>物品名称</td>
+      <td>物品价格</td>
+      <td>评分</td>
+      <td>所属店</td>
+   </tr>
+<c:forEach var="item" items="${highQualifiedFoodsList}">
+   	<tr>
+      <td><a href="dishDetails.jsp?id=${item.dishId}">${item.name}</a></td>
+      <td>${item.price}</td>
+      <td>${item.point}</td>
+      <td>${item.shopname}</td>
+      <td><img src=${item.picOne}/></td>
+	</c:forEach>
+</table>
+   	
+   	
+   	
   </body>
 </html>
