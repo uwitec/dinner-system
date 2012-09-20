@@ -21,6 +21,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-     main page
+    <a href="login.jsp">登陆</a> <br>
+    <a href="register.jsp">注册</a> <br>
+    <input name="search"><a href="search.jsp">搜索</a><br>
+    <a href="shoppingCart.jsp">我的篮子</a><br>
+    <a href="accountCenter.jsp">我的账户</a><br>
+    <a href="giftCenter.jsp">礼品中心</a>
+    <hr>
+    
   </body>
 </html>

@@ -32,9 +32,9 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/sshmeger/test/Test.hbm.xml</value>
-				<value>com/yummy/dao/impl/Shop.hbm.xml</value>
-<!-- 			<value>com/yummy/dao/impl/HotFood.hbm.xml</value>
-				<value>com/yummy/dao/impl/Dish.hbm.xml</value> -->
+				<!-- <value>com/yummy/pojo/Shop.hbm.xml</value> -->
+				<!-- <value>com/yummy/pojo/HotFood.hbm.xml</value>
+				<value>com/yummy/pojo/Dish.hbm.xml</value> -->
 				</list>
 		</property></bean>
 	<bean id="TestDAO" class="com.sshmeger.test.TestDAO">
@@ -85,8 +85,5 @@
 		</property>
 	</bean>
 	 -->
-	 <bean id="ShowHotDish" class="com.yummy.action.ShowHotDish">
-	 
-	 </bean>
 	 	
 	</beans>

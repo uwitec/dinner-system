@@ -6,13 +6,6 @@
            		<result name="success" type="dispatcher">/sshmegar_test/test_success.jsp</result>
            </action>
            
-         <!--   访问主页面时显示热门食物 -->
-           <action name="showDish" class="ShowHotDish">
-           		<result name="success" type="dispatcher">
-           			/index.jsp
-           		</result>
-           </action>
-           
         </package>  
         <package name="shop_pkg" extends="struts-default" namespace="/shop">  
            <action name="showShop" class="ShowShopAction"> 
