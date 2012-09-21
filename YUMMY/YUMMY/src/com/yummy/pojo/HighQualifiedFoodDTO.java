@@ -2,7 +2,6 @@ package com.yummy.pojo;
 
 import java.sql.Blob;
 
-import javax.swing.ImageIcon;
 
 /**
  * 
