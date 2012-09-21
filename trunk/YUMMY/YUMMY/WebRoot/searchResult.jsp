@@ -16,12 +16,13 @@
 		<tr>
 			<td>食物名称</td>
 			<td>食物价格</td>
+			<td>店铺</td>
 		</tr>
 		<c:forEach var="item" items="${searchFoods}">
 			<tr>
-				<td><a href="dishDetails.jsp?id=${item.dishId}">${item.name}</a>
-				</td>
+				<td><a href="dishDetails.jsp?id=${item.dishId}">${item.name}</a></td>
 				<td>${item.price}</td>
+				<td>${item.shopname}</td>
 		</c:forEach>
 	</table>
 	
@@ -29,12 +30,17 @@
 	<h2>搜索到店铺</h2>
 		<table border=1>
 		<tr>
-			<td>物品名称</td>
+			<td>店铺</td>
+			<td>联系电话</td>
+			<td>配送范围</td>
+			<td>简介</td>
 		</tr>
 		<c:forEach var="item" items="${searchShops}">
 			<tr>
-				<td><a href="dishDetails.jsp?id=${item.shopname}">${item.shopname}</a>
-				</td>
+				<td><a href="dishDetails.jsp?id=${item.shopname}">${item.shopname}</a></td>
+				<td>${item.telephone}</td>
+				<td>${item.delivery_range}</td>
+				<td>${item.introduction}</td>
 		</c:forEach>
 	</table>
 	
