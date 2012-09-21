@@ -10,6 +10,7 @@
             <column name="shopname" length="15" />
             <generator class="assigned" />
         </id>
+        
         <property name="address" type="java.lang.String">
             <column name="address" length="30" not-null="true" />
         </property>
