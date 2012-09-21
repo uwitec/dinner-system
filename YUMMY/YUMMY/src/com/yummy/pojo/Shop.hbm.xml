@@ -31,18 +31,19 @@
         <property name="deliveryRange" type="java.lang.String">
             <column name="delivery_range" length="50" />
         </property>
-        <set name="dishs" inverse="true">
+        <set name="dishs" inverse="true" >
             <key>
                 <column name="shopname" length="15" not-null="true" />
             </key>
             <one-to-many class="com.yummy.pojo.Dish" />
         </set>
-        <set name="collectShops" inverse="true">
+     <!--    店铺不需要知道collectShops的存在 -->
+<!--         <set name="collectShops" inverse="true">
             <key>
                 <column name="shopname" length="15" not-null="true" />
             </key>
             <one-to-many class="com.yummy.pojo.CollectShop" />
-        </set>
+        </set> -->
         <set name="shopWorkers" inverse="true">
             <key>
                 <column name="shopname" length="15" not-null="true" />

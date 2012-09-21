@@ -19,11 +19,11 @@
         <property name="account" type="java.lang.Integer">
             <column name="account" not-null="true" />
         </property>
-        <set name="giftExchanges" inverse="true">
+        <!-- <set name="giftExchanges" inverse="true">
             <key>
                 <column name="gift_id" not-null="true" />
             </key>
             <one-to-many class="com.yummy.pojo.GiftExchange" />
-        </set>
+        </set> -->
     </class>
 </hibernate-mapping>

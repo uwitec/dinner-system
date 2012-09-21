@@ -10,7 +10,7 @@
             <column name="dishID" />
             <generator class="identity" />
         </id>
-        <many-to-one name="shop" class="com.yummy.pojo.Shop" fetch="select">
+        <many-to-one name="shop" class="com.yummy.pojo.Shop" cascade="save-update" fetch="select">
             <column name="shopname" length="15" not-null="true" />
         </many-to-one>
         <property name="name" type="java.lang.String">
@@ -43,12 +43,13 @@
         <property name="picThree" type="java.lang.String">
             <column name="picThree" />
         </property>
-        <set name="collectDishs" inverse="true">
+      <!--   dish不需知道collection的存在 -->
+       <!--  <set name="collectDishs" inverse="true">
             <key>
                 <column name="dishid" not-null="true" />
             </key>
             <one-to-many class="com.yummy.pojo.CollectDish" />
-        </set>
+        </set> -->
         <set name="orderInfos" inverse="true">
             <key>
                 <column name="dish_id" not-null="true" />
