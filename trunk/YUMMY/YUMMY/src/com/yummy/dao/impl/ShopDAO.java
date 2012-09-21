@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-import com.yummy.dao.IShopDAO;
 import com.yummy.pojo.Shop;
 
 /**
@@ -23,7 +22,7 @@ import com.yummy.pojo.Shop;
  * @author MyEclipse Persistence Tools
  */
 
-public class ShopDAO extends HibernateDaoSupport implements IShopDAO{
+public class ShopDAO extends HibernateDaoSupport {
 	private static final Logger log = LoggerFactory.getLogger(ShopDAO.class);
 	// property constants
 	public static final String ADDRESS = "address";
@@ -64,7 +63,7 @@ public class ShopDAO extends HibernateDaoSupport implements IShopDAO{
 		log.debug("getting Shop instance with id: " + id);
 		try {
 			Shop instance = (Shop) getHibernateTemplate().get(
-					"com.yummy.dao.impl.Shop", id);
+					"com.yummy.pojo.Shop", id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -173,35 +172,5 @@ public class ShopDAO extends HibernateDaoSupport implements IShopDAO{
 
 	public static ShopDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (ShopDAO) ctx.getBean("ShopDAO");
-	}
-
-	public void delete(String shopName) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public Shop findByShopName(String shopName) {
-		// TODO Auto-generated method stub
-		log.debug("getting Shop instance with shopName: " + shopName);
-		try {
-			Shop instance = (Shop) getHibernateTemplate().get(
-					"com.yummy.dao.impl.Shop", shopName);
-			return instance;
-		} catch (RuntimeException re) {
-			log.error("get failed", re);
-			throw re;
-		}
-	}
-
-	public void update(Shop transientInstance) {
-		// TODO Auto-generated method stub
-		log.debug("updating Shop instance");
-		try {
-			getHibernateTemplate().update(transientInstance);
-			log.debug("update successful");
-		} catch (RuntimeException re) {
-			log.error("update failed", re);
-			throw re;
-		}
 	}
 }
