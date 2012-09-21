@@ -1,6 +1,6 @@
 package com.yummy.pojo;
 
-import java.sql.Blob;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -16,13 +16,12 @@ public class Shop implements java.io.Serializable {
 	private String telephone;
 	private String qq;
 	private String introduction;
-	private Blob logo;
+	private String logo;
 	private Integer point;
 	private String deliveryRange;
-//	private Set hotFoods = new HashSet(0);
-//	private Set dishs = new HashSet(0);
-//	private Set collectShops = new HashSet(0);
-//	private Set shopWorkers = new HashSet(0);
+	private Set dishs = new HashSet(0);
+	private Set collectShops = new HashSet(0);
+	private Set shopWorkers = new HashSet(0);
 
 	// Constructors
 
@@ -37,9 +36,12 @@ public class Shop implements java.io.Serializable {
 		this.deliveryRange = deliveryRange;
 	}
 	
-	/** minimal constructor */
-	public Shop(String shopname, String address, String telephone,String qq,
-			String introduction,Blob logo,Integer point,String deliveryRange) {
+	
+	
+	public Shop(String shopname, String address, String telephone, String qq,
+			String introduction, String logo, Integer point,
+			String deliveryRange) {
+		super();
 		this.shopname = shopname;
 		this.address = address;
 		this.telephone = telephone;
@@ -50,11 +52,20 @@ public class Shop implements java.io.Serializable {
 		this.deliveryRange = deliveryRange;
 	}
 
+	/** minimal constructor */
+	public Shop(String shopname, String address, String telephone, String logo,
+			Integer point) {
+		this.shopname = shopname;
+		this.address = address;
+		this.telephone = telephone;
+		this.logo = logo;
+		this.point = point;
+	}
+
 	/** full constructor */
 	public Shop(String shopname, String address, String telephone, String qq,
-			String introduction, Blob logo, Integer point,
-			String deliveryRange, Set hotFoods, Set dishs, Set collectShops,
-			Set shopWorkers) {
+			String introduction, String logo, Integer point,
+			String deliveryRange, Set dishs, Set collectShops, Set shopWorkers) {
 		this.shopname = shopname;
 		this.address = address;
 		this.telephone = telephone;
@@ -63,10 +74,9 @@ public class Shop implements java.io.Serializable {
 		this.logo = logo;
 		this.point = point;
 		this.deliveryRange = deliveryRange;
-//		this.hotFoods = hotFoods;
-	//	this.dishs = dishs;
-//		this.collectShops = collectShops;
-//		this.shopWorkers = shopWorkers;
+		this.dishs = dishs;
+		this.collectShops = collectShops;
+		this.shopWorkers = shopWorkers;
 	}
 
 	// Property accessors
@@ -111,11 +121,11 @@ public class Shop implements java.io.Serializable {
 		this.introduction = introduction;
 	}
 
-	public Blob getLogo() {
+	public String getLogo() {
 		return this.logo;
 	}
 
-	public void setLogo(Blob logo) {
+	public void setLogo(String logo) {
 		this.logo = logo;
 	}
 
@@ -133,14 +143,6 @@ public class Shop implements java.io.Serializable {
 
 	public void setDeliveryRange(String deliveryRange) {
 		this.deliveryRange = deliveryRange;
-	}
-	/*
-	public Set getHotFoods() {
-		return this.hotFoods;
-	}
-
-	public void setHotFoods(Set hotFoods) {
-		this.hotFoods = hotFoods;
 	}
 
 	public Set getDishs() {
@@ -166,5 +168,5 @@ public class Shop implements java.io.Serializable {
 	public void setShopWorkers(Set shopWorkers) {
 		this.shopWorkers = shopWorkers;
 	}
-*/
+
 }

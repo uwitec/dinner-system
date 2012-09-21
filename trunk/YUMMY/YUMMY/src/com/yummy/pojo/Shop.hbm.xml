@@ -10,9 +10,8 @@
             <column name="shopname" length="15" />
             <generator class="assigned" />
         </id>
-        
         <property name="address" type="java.lang.String">
-            <column name="address" length="30" not-null="true" />
+            <column name="address" length="50" not-null="true" />
         </property>
         <property name="telephone" type="java.lang.String">
             <column name="telephone" length="15" not-null="true" />
@@ -21,43 +20,34 @@
             <column name="qq" length="12" />
         </property>
         <property name="introduction" type="java.lang.String">
-            <column name="introduction" length="50" />
+            <column name="introduction" length="100" />
         </property>
         <property name="logo" type="java.lang.String">
             <column name="logo" not-null="true" />
         </property>
         <property name="point" type="java.lang.Integer">
-            <column name="point" not-null="true">
-                <comment>商家的信誉，以分数形式出现</comment>
-            </column>
+            <column name="point" not-null="true" />
         </property>
         <property name="deliveryRange" type="java.lang.String">
             <column name="delivery_range" length="50" />
         </property>
-        <set name="hotFoods" inverse="true">
-            <key>
-                <column name="shop_id" length="15" not-null="true" />
-            </key>
-            <one-to-many class="com.yummy.dao.HotFood" />
-        </set>
         <set name="dishs" inverse="true">
             <key>
                 <column name="shopname" length="15" not-null="true" />
             </key>
-            <one-to-many class="com.yummy.dao.Dish" />
+            <one-to-many class="com.yummy.pojo.Dish" />
         </set>
-     <set name="collectShops" inverse="true">
+        <set name="collectShops" inverse="true">
             <key>
                 <column name="shopname" length="15" not-null="true" />
             </key>
-            <one-to-many class="com.yummy.dao.CollectShop" />
+            <one-to-many class="com.yummy.pojo.CollectShop" />
         </set>
         <set name="shopWorkers" inverse="true">
             <key>
                 <column name="shopname" length="15" not-null="true" />
             </key>
-            <one-to-many class="com.yummy.dao.ShopWorker" />
+            <one-to-many class="com.yummy.pojo.ShopWorker" />
         </set>
-           
     </class>
 </hibernate-mapping>

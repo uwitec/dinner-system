@@ -1,6 +1,5 @@
 package com.yummy.action;
 
-import java.sql.Blob;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,7 +16,7 @@ public class SaveShopAction extends ActionSupport{
 	private String telephone;
 	private String qq;
 	private String introduction;
-	private Blob logo;
+	private String logo;
 	private Integer point;
 	private String deliveryRange;
 	
@@ -83,13 +82,13 @@ public class SaveShopAction extends ActionSupport{
 
 
 
-	public Blob getLogo() {
+	public String getLogo() {
 		return logo;
 	}
 
 
 
-	public void setLogo(Blob logo) {
+	public void setLogo(String logo) {
 		this.logo = logo;
 	}
 
