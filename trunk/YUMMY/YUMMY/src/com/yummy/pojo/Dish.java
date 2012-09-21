@@ -44,14 +44,14 @@ public class Dish implements java.io.Serializable {
 	}
 	
 	public Dish(Integer dishId, String shopname, String name, Integer point,
-			Float price, Blob picOne) {
+			Float price, String picOne) {
 		super();
 		this.dishId = dishId;
 //		this.shopname = shopname;
 		this.name = name;
 		this.point = point;
 		this.price = price;
-//		this.picOne = picOne;
+		this.picOne = picOne;
 	}
 	
 	/** minimal constructor */

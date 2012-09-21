@@ -10,7 +10,7 @@
             <column name="username" length="15" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="shop" class="com.yummy.pojo.Shop" fetch="select">
+        <many-to-one name="shop" class="com.yummy.pojo.Shop" cascade="save-update" fetch="select">
             <column name="shopname" length="15" not-null="true" />
         </many-to-one>
         <property name="password" type="java.lang.String">
