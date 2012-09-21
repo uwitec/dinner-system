@@ -1,6 +1,8 @@
 package com.yummy.action;
 
 
+import java.sql.Blob;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
@@ -16,7 +18,7 @@ public class AddShopAction extends ActionSupport{
 	private String telephone;
 	private String qq;
 	private String introduction;
-	private String logo;
+	private Blob logo;
 	private Integer point;
 	private String deliveryRange;
 	
@@ -82,13 +84,13 @@ public class AddShopAction extends ActionSupport{
 
 
 
-	public String getLogo() {
+	public Blob getLogo() {
 		return logo;
 	}
 
 
 
-	public void setLogo(String logo) {
+	public void setLogo(Blob logo) {
 		this.logo = logo;
 	}
 

@@ -39,10 +39,18 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/sshmeger/test/Test.hbm.xml</value>
-				<!-- <value>com/yummy/pojo/HotFood.hbm.xml</value>-->
 				<value>com/yummy/pojo/Shop.hbm.xml</value>
-				<value>com/yummy/pojo/Dish.hbm.xml</value> 
-				</list>
+				<value>com/yummy/pojo/Dish.hbm.xml</value>
+				<value>com/yummy/pojo/Customer.hbm.xml</value>
+				<value>com/yummy/pojo/CollectDish.hbm.xml</value>
+				<value>com/yummy/pojo/CollectShop.hbm.xml</value>
+				<value>com/yummy/pojo/CustomerInfo.hbm.xml</value>
+				<value>com/yummy/pojo/Estimate.hbm.xml</value>
+				<value>com/yummy/pojo/Gift.hbm.xml</value>
+				<value>com/yummy/pojo/GiftExchange.hbm.xml</value>
+				<value>com/yummy/pojo/Order.hbm.xml</value>
+				<value>com/yummy/pojo/OrderInfo.hbm.xml</value>
+				<value>com/yummy/pojo/ShopWorker.hbm.xml</value></list>
 		</property></bean>
 	<bean id="TestDAO" class="com.sshmeger.test.TestDAO">
 		<property name="sessionFactory">
@@ -80,18 +88,13 @@
 			<ref bean="ShopService" />
 		</property>
 	</bean>
-<!-- 
-	<bean id="HotFoodDAO" class="com.yummy.dao.impl.HotFoodDAO">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
+
 	<bean id="DishDAO" class="com.yummy.dao.impl.DishDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	 -->
+
 	 <bean id="highQualifiedFoodDAO" class="com.yummy.dao.impl.HighQualifiedFoodDAO">
 	 	<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -106,5 +109,57 @@
 			<ref bean="sessionFactory" />
 		</property>
 	 </bean>
-	 	
-	</beans>
+
+	 <bean id="OrderDAO" class="com.yummy.dao.impl.OrderDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	 <bean id="CustomerDAO" class="com.yummy.dao.impl.CustomerDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	 <bean id="CollectDishDAO" class="com.yummy.dao.impl.CollectDishDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	 <bean id="CollectShopDAO" class="com.yummy.dao.impl.CollectShopDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	 <bean id="CustomerInfoDAO"
+	 	class="com.yummy.dao.impl.CustomerInfoDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	 <bean id="EstimateDAO" class="com.yummy.dao.impl.EstimateDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	 <bean id="GiftDAO" class="com.yummy.dao.impl.GiftDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	 <bean id="GiftExchangeDAO"
+	 	class="com.yummy.dao.impl.GiftExchangeDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	 <bean id="OrderInfoDAO" class="com.yummy.dao.impl.OrderInfoDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	 <bean id="ShopWorkerDAO" class="com.yummy.pojo.ShopWorkerDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+</beans>

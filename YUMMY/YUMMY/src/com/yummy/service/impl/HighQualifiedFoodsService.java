@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.yummy.dao.IHighQualifiedFoodDAO;
@@ -21,7 +22,7 @@ import com.yummy.service.IHighQualifiedFoodsService;
  * @version 1.0
  */
 
-@Component
+@Component("highQualifiedFoodsService")
 public class HighQualifiedFoodsService implements IHighQualifiedFoodsService {
 
 	private List highQualifiedFoods = null;

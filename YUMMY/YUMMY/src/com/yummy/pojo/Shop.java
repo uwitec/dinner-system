@@ -1,6 +1,6 @@
 package com.yummy.pojo;
 
-import java.util.HashSet;
+import java.sql.Blob;
 import java.util.Set;
 
 /**
@@ -16,7 +16,7 @@ public class Shop implements java.io.Serializable {
 	private String telephone;
 	private String qq;
 	private String introduction;
-	private String logo;
+	private Blob logo;
 	private Integer point;
 	private String deliveryRange;
 //	private Set hotFoods = new HashSet(0);
@@ -39,7 +39,7 @@ public class Shop implements java.io.Serializable {
 	
 	/** minimal constructor */
 	public Shop(String shopname, String address, String telephone,String qq,
-			String introduction,String logo,Integer point,String deliveryRange) {
+			String introduction,Blob logo,Integer point,String deliveryRange) {
 		this.shopname = shopname;
 		this.address = address;
 		this.telephone = telephone;
@@ -52,7 +52,7 @@ public class Shop implements java.io.Serializable {
 
 	/** full constructor */
 	public Shop(String shopname, String address, String telephone, String qq,
-			String introduction, String logo, Integer point,
+			String introduction, Blob logo, Integer point,
 			String deliveryRange, Set hotFoods, Set dishs, Set collectShops,
 			Set shopWorkers) {
 		this.shopname = shopname;
@@ -111,11 +111,11 @@ public class Shop implements java.io.Serializable {
 		this.introduction = introduction;
 	}
 
-	public String getLogo() {
+	public Blob getLogo() {
 		return this.logo;
 	}
 
-	public void setLogo(String logo) {
+	public void setLogo(Blob logo) {
 		this.logo = logo;
 	}
 

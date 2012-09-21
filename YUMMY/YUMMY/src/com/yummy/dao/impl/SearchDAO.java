@@ -39,7 +39,8 @@ public class SearchDAO extends HibernateDaoSupport implements ISearchDAO {
 
 	public List getShops(String searchItem) {
 		// TODO Auto-generated method stub
-		String sql = "select shopname, telephone, introduction, deliveryRange from com.yummy.pojo.Shop where shopname like " 
+		String sql = "select new Shop(shop.shopname, shop.telephone, shop.introduction, shop.deliveryRange) from " +
+				"com.yummy.pojo.Shop shop where shop.shopname like " 
 				+ "'%" + searchItem + "%'";
 		System.out.println("≤È—ØµÍ∆Ã£∫" + sql);
 		List searchShops = getHibernateTemplate().find(sql);
