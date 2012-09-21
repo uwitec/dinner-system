@@ -16,6 +16,12 @@
            		<result name="success" type="dispatcher">searchResult.jsp</result>
            		<result name="error" type="redirect">index.jsp</result>
            </action>
+           
+        <!--    显示食物细节的action -->
+        	<action name="foodDetails" class="foodDetailsAction">
+        		<result name="success" type="redirect">dishDetails.jsp</result>
+        	</action>
+           
         </package>  
         <package name="shop_pkg" extends="struts-default" namespace="/shop">  
            <action name="showShop" class="ShowShopAction"> 

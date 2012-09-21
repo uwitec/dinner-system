@@ -47,6 +47,25 @@ public class Dish implements java.io.Serializable {
 		this.price = price;
 	}
 
+	public Dish(Integer dishId,String name,Float price, String shopname) {
+		super();
+		this.dishId = dishId;
+		this.shopname = shopname;
+		this.name = name;
+		this.price = price;
+	}
+	
+	public Dish(Integer dishId, String shopname, String name, Integer point,
+			Float price, Blob picOne) {
+		super();
+		this.dishId = dishId;
+		this.shopname = shopname;
+		this.name = name;
+		this.point = point;
+		this.price = price;
+		this.picOne = picOne;
+	}
+
 	/** full constructor */
 	public Dish(String shopname, String name, Integer point, Float price,
 			String introduction, String category, String tag, Date uploadTime,

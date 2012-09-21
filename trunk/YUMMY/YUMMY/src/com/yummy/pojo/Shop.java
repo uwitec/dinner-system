@@ -30,6 +30,13 @@ public class Shop implements java.io.Serializable {
 	public Shop() {
 	}
 
+	public Shop(String shopname, String telephone, String introduction,String deliveryRange) {
+		this.shopname = shopname;
+		this.telephone = telephone;
+		this.introduction = introduction;
+		this.deliveryRange = deliveryRange;
+	}
+	
 	/** minimal constructor */
 	public Shop(String shopname, String address, String telephone,String qq,
 			String introduction,String logo,Integer point,String deliveryRange) {

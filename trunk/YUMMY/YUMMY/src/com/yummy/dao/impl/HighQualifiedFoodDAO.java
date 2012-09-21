@@ -12,7 +12,7 @@ import com.yummy.pojo.HighQualifiedFoodDTO;
 
 public class HighQualifiedFoodDAO extends HibernateDaoSupport implements IHighQualifiedFoodDAO{
 
-	List<HighQualifiedFoodDTO> highQualifiedFoods = new ArrayList<HighQualifiedFoodDTO>();
+	List<Dish> highQualifiedFoods = new ArrayList<Dish>();
 	/**
 	 * 用户订餐后评价比较高的食物，用以在主页面显示.
 	 */
@@ -20,27 +20,27 @@ public class HighQualifiedFoodDAO extends HibernateDaoSupport implements IHighQu
 		// TODO Auto-generated method stub
 		
 	 // 获取评价较高的食物名字，价格，评分，店名，简介图等信息
-	 String sql = "select dish.dishId, dish.name, dish.price, dish.point, dish.shopname, dish.picOne "
+	 String sql = "select new Dish(dish.dishId, dish.shopname, dish.name, dish.point, dish.price , dish.picOne) "
 			 + "from com.yummy.pojo.Dish dish order by dish.point asc, dish.name desc ";
-		
-	 String testSQL = "from com.yummy.pojo.Dish";
+
 	 
-	 List tempList = getHibernateTemplate().find(testSQL);
 	 // 确保list是空
 	 if (highQualifiedFoods != null) {
-		highQualifiedFoods.clear();
-	}
+		 highQualifiedFoods.clear();
+	 }
+	 List highQualifiedFoods = getHibernateTemplate().find(sql);
+	 
 	 // 将从数据库中查询的dish对象转换成 highQualifiedFoodDTO对象
-	 for (int i = 0; i < tempList.size(); i++) {
+	/* for (int i = 0; i < tempList.size(); i++) {
 		 HighQualifiedFoodDTO temp = new HighQualifiedFoodDTO();
 		 temp.setDishId(((Dish)tempList.get(i)).getDishId());
 		 temp.setName(((Dish)tempList.get(i)).getName());
 		 temp.setPrice(((Dish)tempList.get(i)).getPrice());
 		 temp.setPoint(((Dish)tempList.get(i)).getPoint());
 		 temp.setShopname(((Dish)tempList.get(i)).getShopname());
-//		 temp.setPicOne(((Dish)tempList.get(i)).getPicOne());
+		 temp.setPicOne(((Dish)tempList.get(i)).getPicOne());
 		 highQualifiedFoods.add(temp);
-	}
+	}*/
 	 return highQualifiedFoods;
 	}
 
