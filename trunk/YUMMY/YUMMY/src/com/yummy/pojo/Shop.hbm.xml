@@ -32,9 +32,9 @@
             </column>
         </property>
         <property name="deliveryRange" type="java.lang.String">
-            <column name="delivery_range" length="30" />
+            <column name="delivery_range" length="50" />
         </property>
-   <!--      <set name="hotFoods" inverse="true">
+        <set name="hotFoods" inverse="true">
             <key>
                 <column name="shop_id" length="15" not-null="true" />
             </key>
@@ -58,6 +58,6 @@
             </key>
             <one-to-many class="com.yummy.dao.ShopWorker" />
         </set>
-          -->  
+           
     </class>
 </hibernate-mapping>
