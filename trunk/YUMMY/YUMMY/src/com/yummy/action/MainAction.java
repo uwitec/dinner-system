@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -20,6 +21,7 @@ import com.yummy.service.impl.HighQualifiedFoodsService;
  * @version 1.0
  */
 @Component
+@Scope("prototype")
 public class MainAction extends ActionSupport {
 
 	private List highQualifiedFoodsList = null;
@@ -36,23 +38,5 @@ public class MainAction extends ActionSupport {
 		session.put("highQualifiedFoodsList", highQualifiedFoodsList);
 		return SUCCESS;
 	}
-
-	public List getHighQualifiedFoodsList() {
-		return highQualifiedFoodsList;
-	}
-
-	public void setHighQualifiedFoodsList(List highQualifiedFoodsList) {
-		this.highQualifiedFoodsList = highQualifiedFoodsList;
-	}
-
-	public HighQualifiedFoodsService getHighQualifiedFoodsService() {
-		return highQualifiedFoodsService;
-	}
-
-	public void setHighQualifiedFoodsService(
-			HighQualifiedFoodsService highQualifiedFoodsService) {
-		this.highQualifiedFoodsService = highQualifiedFoodsService;
-	}
-
 	
 }

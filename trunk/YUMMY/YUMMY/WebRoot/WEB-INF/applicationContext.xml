@@ -97,5 +97,14 @@
 			<ref bean="sessionFactory" />
 		</property>
 	 </bean>
+	<!--  拦截用户搜索的action -->
+	 <bean id="searchAction" class="com.yummy.action.SearchAction" scope="prototype"/>
+	 
+	<!--  查询Dao -->
+	 <bean id="searchDAO" class="com.yummy.dao.impl.SearchDAO" scope="prototype">
+	 	<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	 </bean>
 	 	
 	</beans>

@@ -20,8 +20,8 @@ public class HighQualifiedFoodDAO extends HibernateDaoSupport implements IHighQu
 		// TODO Auto-generated method stub
 		
 	 // 获取评价较高的食物名字，价格，评分，店名，简介图等信息
-	 String sql = "select dishID, name, price, point, shopname, picOne "
-			 + "from com.yummy.pojo.Dish order by point asc, name desc ";
+	 String sql = "select dish.dishId, dish.name, dish.price, dish.point, dish.shopname, dish.picOne "
+			 + "from com.yummy.pojo.Dish dish order by dish.point asc, dish.name desc ";
 		
 	 String testSQL = "from com.yummy.pojo.Dish";
 	 
@@ -38,7 +38,7 @@ public class HighQualifiedFoodDAO extends HibernateDaoSupport implements IHighQu
 		 temp.setPrice(((Dish)tempList.get(i)).getPrice());
 		 temp.setPoint(((Dish)tempList.get(i)).getPoint());
 		 temp.setShopname(((Dish)tempList.get(i)).getShopname());
-		 temp.setPicOne(((Dish)tempList.get(i)).getPicOne());
+//		 temp.setPicOne(((Dish)tempList.get(i)).getPicOne());
 		 highQualifiedFoods.add(temp);
 	}
 	 return highQualifiedFoods;
