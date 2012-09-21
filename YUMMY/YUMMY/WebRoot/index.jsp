@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</tr>
 		<c:forEach var="item" items="${highQualifiedFoodsList}">
 			<tr>
-				<td><a href="dishDetails.jsp?id=${item.dishId}">${item.name}</a>
+				<td><a href="foodDetails?id=${item.dishId}">${item.name}</a>
 				</td>
 				<td>${item.price}</td>
 				<td>${item.point}</td>
