@@ -38,7 +38,7 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>com/sshmeger/test/Test.hbm.xml</value>
+				<!-- <value>com/sshmeger/test/Test.hbm.xml</value> -->
 				<value>com/yummy/pojo/Shop.hbm.xml</value>
 				<value>com/yummy/pojo/Dish.hbm.xml</value>
 				<value>com/yummy/pojo/Customer.hbm.xml</value>
@@ -50,7 +50,8 @@
 				<value>com/yummy/pojo/GiftExchange.hbm.xml</value>
 				<value>com/yummy/pojo/Order.hbm.xml</value>
 				<value>com/yummy/pojo/OrderInfo.hbm.xml</value>
-				<value>com/yummy/pojo/ShopWorker.hbm.xml</value></list>
+				<value>com/yummy/pojo/ShopWorker.hbm.xml</value>
+			</list>
 		</property></bean>
 	<bean id="TestDAO" class="com.sshmeger.test.TestDAO">
 		<property name="sessionFactory">

@@ -6,19 +6,15 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 
- * Function: 添加了图片属性，可以有三张图片 . <br/> 
- * date: 2012-9-20 下午3:40:25 <br/> 
- * 
- * @author jiahui 
- * @version 1.0
+ * Dish entity. @author MyEclipse Persistence Tools
  */
+
 public class Dish implements java.io.Serializable {
 
 	// Fields
 
 	private Integer dishId;
-	private String shopname;
+	private Shop shop;
 	private String name;
 	private Integer point;
 	private Float price;
@@ -26,11 +22,10 @@ public class Dish implements java.io.Serializable {
 	private String category;
 	private String tag;
 	private Date uploadTime;
-	private Blob picOne;
-	private Blob picTwo;
-	private Blob picThree;
+	private String picOne;
+	private String picTwo;
+	private String picThree;
 	private Set collectDishs = new HashSet(0);
-	private Set hotFoods = new HashSet(0);
 	private Set orderInfos = new HashSet(0);
 	private Set estimates = new HashSet(0);
 
@@ -40,17 +35,10 @@ public class Dish implements java.io.Serializable {
 	public Dish() {
 	}
 
-	/** minimal constructor */
-	public Dish(String shopname, String name, Float price) {
-		this.shopname = shopname;
-		this.name = name;
-		this.price = price;
-	}
-
 	public Dish(Integer dishId,String name,Float price, String shopname) {
 		super();
 		this.dishId = dishId;
-		this.shopname = shopname;
+//		this.shopname = shopname;
 		this.name = name;
 		this.price = price;
 	}
@@ -59,18 +47,27 @@ public class Dish implements java.io.Serializable {
 			Float price, Blob picOne) {
 		super();
 		this.dishId = dishId;
-		this.shopname = shopname;
+//		this.shopname = shopname;
 		this.name = name;
 		this.point = point;
+		this.price = price;
+//		this.picOne = picOne;
+	}
+	
+	/** minimal constructor */
+	public Dish(Shop shop, String name, Float price, String picOne) {
+		this.shop = shop;
+		this.name = name;
 		this.price = price;
 		this.picOne = picOne;
 	}
 
 	/** full constructor */
-	public Dish(String shopname, String name, Integer point, Float price,
+	public Dish(Shop shop, String name, Integer point, Float price,
 			String introduction, String category, String tag, Date uploadTime,
-			Set collectDishs, Set hotFoods, Set orderInfos, Set estimates) {
-		this.shopname = shopname;
+			String picOne, String picTwo, String picThree, Set collectDishs,
+			Set orderInfos, Set estimates) {
+		this.shop = shop;
 		this.name = name;
 		this.point = point;
 		this.price = price;
@@ -78,8 +75,10 @@ public class Dish implements java.io.Serializable {
 		this.category = category;
 		this.tag = tag;
 		this.uploadTime = uploadTime;
+		this.picOne = picOne;
+		this.picTwo = picTwo;
+		this.picThree = picThree;
 		this.collectDishs = collectDishs;
-		this.hotFoods = hotFoods;
 		this.orderInfos = orderInfos;
 		this.estimates = estimates;
 	}
@@ -94,12 +93,12 @@ public class Dish implements java.io.Serializable {
 		this.dishId = dishId;
 	}
 
-	public String getShopname() {
-		return this.shopname;
+	public Shop getShop() {
+		return this.shop;
 	}
 
-	public void setShopname(String shopname) {
-		this.shopname = shopname;
+	public void setShop(Shop shop) {
+		this.shop = shop;
 	}
 
 	public String getName() {
@@ -158,28 +157,27 @@ public class Dish implements java.io.Serializable {
 		this.uploadTime = uploadTime;
 	}
 
-	
-	public Blob getPicOne() {
-		return picOne;
+	public String getPicOne() {
+		return this.picOne;
 	}
 
-	public void setPicOne(Blob picOne) {
+	public void setPicOne(String picOne) {
 		this.picOne = picOne;
 	}
 
-	public Blob getPicTwo() {
-		return picTwo;
+	public String getPicTwo() {
+		return this.picTwo;
 	}
 
-	public void setPicTwo(Blob picTwo) {
+	public void setPicTwo(String picTwo) {
 		this.picTwo = picTwo;
 	}
 
-	public Blob getPicThree() {
-		return picThree;
+	public String getPicThree() {
+		return this.picThree;
 	}
 
-	public void setPicThree(Blob picThree) {
+	public void setPicThree(String picThree) {
 		this.picThree = picThree;
 	}
 
@@ -189,14 +187,6 @@ public class Dish implements java.io.Serializable {
 
 	public void setCollectDishs(Set collectDishs) {
 		this.collectDishs = collectDishs;
-	}
-
-	public Set getHotFoods() {
-		return this.hotFoods;
-	}
-
-	public void setHotFoods(Set hotFoods) {
-		this.hotFoods = hotFoods;
 	}
 
 	public Set getOrderInfos() {

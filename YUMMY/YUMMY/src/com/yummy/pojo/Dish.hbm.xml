@@ -10,74 +10,56 @@
             <column name="dishID" />
             <generator class="identity" />
         </id>
-       <!--  这里我不会配 -->
-<!--         <many-to-one name="shop" class="com.yummy.pojo.Shop" fetch="select">
+        <many-to-one name="shop" class="com.yummy.pojo.Shop" fetch="select">
             <column name="shopname" length="15" not-null="true" />
-        </many-to-one> -->
-         <property name="shopname" type="java.lang.String">
-            <column name="shopname" length="15" not-null="true" />
-        </property>
+        </many-to-one>
         <property name="name" type="java.lang.String">
             <column name="name" length="15" not-null="true" />
         </property>
         <property name="point" type="java.lang.Integer">
-            <column name="point">
-                <comment>每种食物评价后都可以得到一定分数</comment>
-            </column>
+            <column name="point" />
         </property>
         <property name="price" type="java.lang.Float">
             <column name="price" precision="12" scale="0" not-null="true" />
         </property>
         <property name="introduction" type="java.lang.String">
-            <column name="introduction" length="50" />
+            <column name="introduction" length="100" />
         </property>
         <property name="category" type="java.lang.String">
-            <column name="category" length="10">
-                <comment>食物的分类</comment>
-            </column>
+            <column name="category" length="10" />
         </property>
         <property name="tag" type="java.lang.String">
-            <column name="tag" length="10">
-                <comment>自定义的标签</comment>
-            </column>
+            <column name="tag" length="10" />
         </property>
         <property name="uploadTime" type="java.util.Date">
-            <column name="upload_time" length="10">
-                <comment>上传时间</comment>
-            </column>
+            <column name="upload_time" length="10" />
         </property>
-        <property name="picOne" type="java.sql.Blob">
-        	<column name="picOne" />
+        <property name="picOne" type="java.lang.String">
+            <column name="picOne" not-null="true" />
         </property>
-        <property name="picTwo" type="java.sql.Blob">
-        	<column name="picTwo" />
+        <property name="picTwo" type="java.lang.String">
+            <column name="picTwo" />
         </property>
-        <property name="picThree" type="java.sql.Blob">
-        	<column name="picThree" />
+        <property name="picThree" type="java.lang.String">
+            <column name="picThree" />
         </property>
-        <!-- <set name="collectDishs" inverse="true">
+        <set name="collectDishs" inverse="true">
             <key>
                 <column name="dishid" not-null="true" />
             </key>
-            <one-to-many class="com.yummy.dao.CollectDish" />
-        </set>
-        <set name="hotFoods" inverse="true">
-            <key>
-                <column name="dish_id" not-null="true" />
-            </key>
-            <one-to-many class="com.yummy.dao.HotFood" />
+            <one-to-many class="com.yummy.pojo.CollectDish" />
         </set>
         <set name="orderInfos" inverse="true">
             <key>
                 <column name="dish_id" not-null="true" />
             </key>
-            <one-to-many class="com.yummy.dao.OrderInfo" />
+            <one-to-many class="com.yummy.pojo.OrderInfo" />
         </set>
         <set name="estimates" inverse="true">
             <key>
                 <column name="dish_id" not-null="true" />
             </key>
-            <one-to-many class="com.yummy.dao.Estimate" />
-        </set> -->
+            <one-to-many class="com.yummy.pojo.Estimate" />
+        </set>
     </class>
 </hibernate-mapping>
