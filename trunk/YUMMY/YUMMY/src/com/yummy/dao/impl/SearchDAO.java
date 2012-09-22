@@ -18,7 +18,7 @@ public class SearchDAO extends HibernateDaoSupport implements ISearchDAO {
 	
 	public List getFoods(String searchItem) {
 		// TODO Auto-generated method stub
-		String sql = "select new Dish(dish.dishId, dish.name, dish.price, dish.shopname) from Dish dish where dish.name like " 
+		String sql = "select new Dish(dish.dishId, dish.name, dish.price, dish.shop) from Dish dish where dish.name like " 
 				+ "'%" + searchItem + "%'";
 		System.out.println("≤È—Ø ≥ŒÔ£∫" + sql);
 		List searchFoods = getHibernateTemplate().find(sql);

@@ -23,8 +23,6 @@ public class Dish implements java.io.Serializable {
 	private String tag;
 	private Date uploadTime;
 	private String picOne;
-	private String picTwo;
-	private String picThree;
 	private Set collectDishs = new HashSet(0);
 	private Set orderInfos = new HashSet(0);
 	private Set estimates = new HashSet(0);
@@ -35,19 +33,19 @@ public class Dish implements java.io.Serializable {
 	public Dish() {
 	}
 
-	public Dish(Integer dishId,String name,Float price, String shopname) {
+	public Dish(Integer dishId,String name,Float price, Shop shop) {
 		super();
 		this.dishId = dishId;
-//		this.shopname = shopname;
+		this.shop = shop;
 		this.name = name;
 		this.price = price;
 	}
 	
-	public Dish(Integer dishId, String shopname, String name, Integer point,
+	public Dish(Integer dishId, Shop shop, String name, Integer point,
 			Float price, String picOne) {
 		super();
 		this.dishId = dishId;
-//		this.shopname = shopname;
+		this.shop = shop;
 		this.name = name;
 		this.point = point;
 		this.price = price;
@@ -65,7 +63,7 @@ public class Dish implements java.io.Serializable {
 	/** full constructor */
 	public Dish(Shop shop, String name, Integer point, Float price,
 			String introduction, String category, String tag, Date uploadTime,
-			String picOne, String picTwo, String picThree, Set collectDishs,
+			String picOne,  Set collectDishs,
 			Set orderInfos, Set estimates) {
 		this.shop = shop;
 		this.name = name;
@@ -76,8 +74,7 @@ public class Dish implements java.io.Serializable {
 		this.tag = tag;
 		this.uploadTime = uploadTime;
 		this.picOne = picOne;
-		this.picTwo = picTwo;
-		this.picThree = picThree;
+		
 		this.collectDishs = collectDishs;
 		this.orderInfos = orderInfos;
 		this.estimates = estimates;
@@ -165,22 +162,7 @@ public class Dish implements java.io.Serializable {
 		this.picOne = picOne;
 	}
 
-	public String getPicTwo() {
-		return this.picTwo;
-	}
-
-	public void setPicTwo(String picTwo) {
-		this.picTwo = picTwo;
-	}
-
-	public String getPicThree() {
-		return this.picThree;
-	}
-
-	public void setPicThree(String picThree) {
-		this.picThree = picThree;
-	}
-
+	
 	public Set getCollectDishs() {
 		return this.collectDishs;
 	}
