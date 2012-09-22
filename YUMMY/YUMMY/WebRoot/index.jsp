@@ -46,18 +46,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<table border=1>
 		<tr>
 			<td>物品名称</td>
+			<td>图片</td>
 			<td>物品价格</td>
 			<td>评分</td>
 			<td>所属店</td>
 		</tr>
-		<c:forEach var="item" items="${highQualifiedFoodsList}">
+		<c:forEach var="dish" items="${highQualifiedFoodsList}">
 			<tr>
-				<td><a href="foodDetails?id=${item.dishId}">${item.name}</a>
+				<td><a href="foodDetails?id=${dish.dishId}">${dish.name}</a>
 				</td>
-				<td>${item.price}</td>
-				<td>${item.point}</td>
-				<td>${item.shop.shopname}</td>
-		</c:forEach>
+				<td><a href="foodDetails?id=${dish.dishId}"><img src="${dish.picOne}"/></a></td>
+				<td>${dish.price}</td>
+				<td>${dish.point}</td>
+				<td><a href="shopDetails?shopname=${dish.shop.shopname}">${dish.shop.shopname}</a></td>
+				<form action="takeOrder" method="get">
+						<input type="hidden" name="id" value="${dish.dishId}"/>
+						<input type="hidden" name="itemname" value="${dish.name}"/>
+						<input type="hidden" name="picPath" value="${dish.picOne}"/>
+						<input type="hidden" name="price" value="${dish.price}"/>
+					<td><input name="orderCount"/></td>
+					<td><input type="submit" value="加入"/></td>
+				</form>
+				</c:forEach>
 	</table>
 
 

@@ -39,7 +39,7 @@
 			<tr>
 				<td><a href="dishDetails.jsp?id=${item.shopname}">${item.shopname}</a></td>
 				<td>${item.telephone}</td>
-				<td>${item.delivery_range}</td>
+				<td>${item.deliveryRange}</td>
 				<td>${item.introduction}</td>
 		</c:forEach>
 	</table>

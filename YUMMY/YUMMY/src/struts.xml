@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
-<struts>  
-        <package name="test" extends="struts-default" namespace="/">  
-           <action name="totest" class="TestAction"> 
-           		<result name="success" type="dispatcher">/sshmegar_test/test_success.jsp</result>
-           </action>
-           
-          	<!--   显示主页面的action -->
-           <action name="index" class="mainAction">
-           		<result name="success">index.jsp</result>
-           </action>
-           
-          <!-- 	 拦截用户搜索action -->
-           <action name="search" class="searchAction">
-           		<result name="success" type="dispatcher">searchResult.jsp</result>
-           		<result name="error" type="redirect">index.jsp</result>
-           </action>
-           
-        <!--    显示食物细节的action -->
-        	<action name="foodDetails" class="foodDetailsAction">
-        		<result name="success" type="redirect">dishDetails.jsp</result>
-        	</action>
-           
-        </package>  
-        <package name="shop_pkg" extends="struts-default" namespace="/shop">  
-           <action name="showShop" class="ShowShopAction"> 
-           		<result name="success" type="dispatcher">/shop/shopInfo.jsp</result>
-           </action>
-           <action name="addShop" class="AddShopAction">
-           		<result name="success" type="chain">showShop</result>
-           </action>
-           <action name="saveShop" class="SaveShopAction">
-           			<result name="success" type="chain">showShop</result>
-           </action>
-        </package>  
+<struts>
+	<package name="test" extends="struts-default" namespace="/">
+		<action name="totest" class="TestAction">
+			<result name="success" type="dispatcher">/sshmegar_test/test_success.jsp
+			</result>
+		</action>
+
+		<!-- 显示主页面的action -->
+		<action name="index" class="mainAction">
+			<result name="success">index.jsp</result>
+		</action>
+
+		<!-- 拦截用户搜索action -->
+		<action name="search" class="searchAction">
+			<result name="success" type="dispatcher">searchResult.jsp</result>
+			<result name="error" type="redirect">index.jsp</result>
+		</action>
+
+		<!-- 显示食物细节的action -->
+		<action name="foodDetails" class="foodDetailsAction">
+			<result name="success" type="dispatcher">dishDetails.jsp</result>
+			<result name="error" type="redirect">index.jsp</result>
+		</action>
+		
+		<!-- 显示食物细节的action -->
+		<action name="shopDetails" class="shopDetailsAction">
+			<result name="success" type="dispatcher">shopDetails.jsp</result>
+			<result name="error" type="redirect">index.jsp</result>
+		</action>
+		
+		<!-- 购物车的action -->
+		<action name="takeOrder" class="cartAction">
+			<result name="success" type="dispatcher">cart.jsp</result>
+			<result name="error" type="redirect">index.jsp</result>
+		</action>
+
+	</package>
+	<package name="shop_pkg" extends="struts-default" namespace="/shop">
+		<action name="showShop" class="ShowShopAction">
+			<result name="success" type="dispatcher">/shop/shopInfo.jsp</result>
+		</action>
+		<action name="addShop" class="AddShopAction">
+			<result name="success" type="chain">showShop</result>
+		</action>
+		<action name="saveShop" class="SaveShopAction">
+			<result name="success" type="chain">showShop</result>
+		</action>
+	</package>
 
 </struts>    
