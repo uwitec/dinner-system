@@ -8,5 +8,23 @@
 </head>
 <body>
 	<h1>食物详细信息页面</h1>
+	<hr>
+	<table border=1>
+		<tr>
+			<td>物品名称</td>
+			<td>图片</td>
+			<td>物品价格</td>
+			<td>评分</td>
+			<td>所属店</td>
+		</tr>
+			<tr>
+				<td><${dish.name}</td>
+				<td><a href="foodDetails?id=${dish.dishId}"><img src="${dish.picOne}"/></a></td>
+				<td>${dish.price}</td>
+				<td>${dish.point}</td>
+				<td>${dish.shop.shopname}</td>
+				<td><input name="orderCount"/></td>
+				<td><button>放入篮子</button></td>
+	</table>
 </body>
 </html>
