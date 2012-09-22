@@ -23,7 +23,7 @@
             <column name="introduction" length="100" />
         </property>
         <property name="logo" type="java.lang.String">
-            <column name="logo" not-null="true" />
+            <column name="logo" length="100" />
         </property>
         <property name="point" type="java.lang.Integer">
             <column name="point" not-null="true" />
