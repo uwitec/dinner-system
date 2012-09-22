@@ -4,15 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.yummy.pojo.ItemDTO;
+import com.yummy.service.ICartManager;
 import com.yummy.service.impl.CartManager;
 /**
  * Function: 将用户点击的食物放到购物车 . <br/> 
@@ -30,21 +28,50 @@ public class CartAction extends ActionSupport {
 	private String picPath;
 	private float price;
 	
-	private Map session;
+	private String type;
+	
+	private Map session = ActionContext.getContext().getSession();
 	
 	@Override
 	public String execute() throws Exception {
-		session = ActionContext.getContext().getSession();
-		System.out.println("===" + id + orderCount + itemname + picPath + price);
+
+		//获取购物车食物链
 		List<ItemDTO> itemList = (List<ItemDTO>) session.get("items");
 		if (itemList == null) {
 			itemList = new ArrayList<ItemDTO>();
 		}
-		
 		//创建一个购物车管理类。
 		CartManager manager = new CartManager();
 		manager.setItems(itemList);
+
+		String returnType = "";
 		
+		if ("add".equalsIgnoreCase(type)) {
+			returnType = add(manager);
+		} else if ("update".equalsIgnoreCase(type)) {
+			returnType = update(manager);
+		} else if ("delete".equalsIgnoreCase(type)) {
+			remove(manager);
+			returnType = SUCCESS;
+		} else if ("removeALl".equalsIgnoreCase(type)) {
+			removeAll(manager);
+			returnType = SUCCESS;
+		} else {
+			returnType = SUCCESS;
+		}
+		
+		return returnType;
+	}
+	
+	/**
+	 * 
+	 * add:添加食物到购物车. <br/> 
+	 * 
+	 * @author jiahui 
+	 * @param manager
+	 * @return
+	 */
+	public String add(CartManager manager) {
 		if (id != 0 && orderCount != 0) {
 			if (manager.isItemExist(id)) {  //购物车已经存在该种食物
 				manager.increase(id, orderCount);
@@ -52,11 +79,65 @@ public class CartAction extends ActionSupport {
 				ItemDTO item = new ItemDTO(id, orderCount, itemname, picPath, price);
 				manager.add(item);
 			}
-			session.put("items", manager.getItems());
+			updateMap(manager);
 			return SUCCESS;
 		} else {
 			return ERROR;
 		}
+	}
+	
+	/**
+	 * 
+	 * update:更新购物车食物数量. <br/> 
+	 * 
+	 * @author jiahui 
+	 * @param manager
+	 * @return
+	 */
+	public String update(CartManager manager) {
+		if (orderCount == 0) {
+			manager.remove(id);
+		} else {
+			manager.update(id, orderCount);
+		}
+		updateMap(manager);
+		return SUCCESS;
+	}
+	
+	/**
+	 * 
+	 * remove:删除购物车某些食物. <br/> 
+	 * 
+	 * @author jiahui 
+	 * @param manager
+	 */
+	public void remove(CartManager manager) {
+		manager.remove(id);
+		updateMap(manager);
+	}
+	
+	/**
+	 * 
+	 * removeAll:清空购物车. <br/> 
+	 * 
+	 * @author jiahui 
+	 * @param manager
+	 */
+	public void removeAll(CartManager manager) {
+		manager.removeAll();
+		updateMap(manager);
+	}
+	
+	/**
+	 * 
+	 * updateMap:更新session中的数据. <br/> 
+	 * 
+	 * @author jiahui 
+	 * @param manager
+	 */
+	public void updateMap(CartManager manager) {
+		session.put("items", manager.getItems());
+		session.put("totalPrice", manager.getTotalPrice());
 	}
 	
 	public int getId() {
@@ -97,5 +178,13 @@ public class CartAction extends ActionSupport {
 
 	public void setPrice(float price) {
 		this.price = price;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 }

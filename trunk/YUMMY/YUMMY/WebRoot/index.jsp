@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<input name="searchItem">能否在输入框给点提示呀！！！
 	</form>
 	<br>
-	<a href="shoppingCart.jsp">我的篮子</a>
+	<a href="shoppingCart.jsp">我的篮子${items.size()}</a>
 	<br>
 	<a href="accountCenter.jsp">我的账户</a>
 	<br>
@@ -60,6 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td>${dish.point}</td>
 				<td><a href="shopDetails?shopname=${dish.shop.shopname}">${dish.shop.shopname}</a></td>
 				<form action="takeOrder" method="get">
+						<input type="hidden" name="type" value="add"/>
 						<input type="hidden" name="id" value="${dish.dishId}"/>
 						<input type="hidden" name="itemname" value="${dish.name}"/>
 						<input type="hidden" name="picPath" value="${dish.picOne}"/>

@@ -118,4 +118,26 @@ public class CartManager implements ICartManager {
 		items.clear();
 	}
 
+	public float getTotalPrice() {
+		// TODO Auto-generated method stub
+		float totalPrice = 0;
+		if (items.size() > 0) {
+			for (int i = 0; i < items.size(); i++) {
+				ItemDTO item = items.get(i);
+				totalPrice += item.getPrice() * item.getOrderCount();
+			}
+		}
+		return totalPrice;
+	}
+
+	public void remove(int id) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < items.size(); i++) {
+			if (items.get(i).getId() == id) {
+				items.remove(i);
+				break;
+			} 
+		}
+	}
+
 }
