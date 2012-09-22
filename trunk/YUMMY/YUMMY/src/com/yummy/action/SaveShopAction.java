@@ -1,6 +1,8 @@
 package com.yummy.action;
 
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
@@ -16,7 +18,7 @@ public class SaveShopAction extends ActionSupport{
 	private String telephone;
 	private String qq;
 	private String introduction;
-	private String logo;
+	private File logo_file;
 	private Integer point;
 	private String deliveryRange;
 	
@@ -81,19 +83,18 @@ public class SaveShopAction extends ActionSupport{
 	}
 
 
-
-	public String getLogo() {
-		return logo;
+	public File getLogo_file() {
+		return logo_file;
 	}
 
 
 
-	public void setLogo(String logo) {
-		this.logo = logo;
+	public void setLogo_file(File logo_file) {
+		this.logo_file = logo_file;
 	}
 
 
-	
+
 	public Integer getPoint() {
 		return point;
 	}
@@ -129,6 +130,9 @@ public class SaveShopAction extends ActionSupport{
 	
 	public String execute(){
 		HttpServletRequest request = ServletActionContext.getRequest();
+		
+		String logo = "/images/shop/"+logo_file.getName();
+		System.out.print(logo);
 		Shop shop = new Shop(shopname,address,telephone,qq,introduction,logo,0,deliveryRange);
 		request.setAttribute("shopName", shopname);
 		shopService.updateShop(shop);
