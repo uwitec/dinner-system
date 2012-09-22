@@ -28,8 +28,8 @@ CREATE TABLE `shop` (
   `telephone` varchar(15) NOT NULL,
   `qq` varchar(12) DEFAULT NULL,
   `introduction` varchar(100) DEFAULT NULL,
-  `logo` longblob NOT NULL,
-  `point` int(10) NOT NULL DEFAULT '0' ,
+  `logo` varchar(100) DEFAULT NULL,
+  `point` int(10) DEFAULT '0',
   `delivery_range` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`shopname`),
   UNIQUE KEY `index_shopname` (`shopname`) USING BTREE
@@ -42,21 +42,18 @@ DROP TABLE IF EXISTS `dish`;
 CREATE TABLE `dish` (
   `dishID` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(15) NOT NULL,
-  `point` int(11) unsigned zerofill DEFAULT '00000000000' ,
+  `point` int(11) unsigned zerofill DEFAULT '00000000000',
   `price` float NOT NULL,
   `shopname` varchar(15) NOT NULL,
   `introduction` varchar(100) DEFAULT NULL,
-  `category` varchar(10) DEFAULT NULL ,
-  `tag` varchar(10) DEFAULT NULL ,
-  `upload_time` date DEFAULT NULL ,
-  `picOne` longblob NOT NULL,
-  `picTwo` longblob,
-  `picThree` longblob,
+  `category` varchar(10) DEFAULT NULL,
+  `tag` varchar(10) DEFAULT NULL,
+  `upload_time` date DEFAULT NULL,
+  `picOne` varchar(100) NOT NULL,
   PRIMARY KEY (`dishID`),
   KEY `fk_dish_shop` (`shopname`),
   CONSTRAINT `fk_dish_shop` FOREIGN KEY (`shopname`) REFERENCES `shop` (`shopname`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
-
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for `collect_dish`
