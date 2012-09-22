@@ -32,7 +32,7 @@
 		
 		<!-- 购物车的action -->
 		<action name="takeOrder" class="cartAction">
-			<result name="success" type="dispatcher">cart.jsp</result>
+			<result name="success" type="redirect">cart.jsp</result>
 			<result name="error" type="redirect">index.jsp</result>
 		</action>
 

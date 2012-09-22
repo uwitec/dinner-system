@@ -8,5 +8,7 @@ public interface ICartManager {
 	public void delete(int id);
 	public void update(int id, int quantities);
 	public boolean isItemExist(int id);
+	public void remove(int id);
 	public void removeAll();
+	public float getTotalPrice();
 }
