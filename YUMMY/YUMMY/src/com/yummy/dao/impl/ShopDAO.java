@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.yummy.dao.IShopDAO;
 import com.yummy.pojo.Shop;
 
 /**
@@ -22,7 +23,7 @@ import com.yummy.pojo.Shop;
  * @author MyEclipse Persistence Tools
  */
 
-public class ShopDAO extends HibernateDaoSupport {
+public class ShopDAO extends HibernateDaoSupport implements IShopDAO {
 	private static final Logger log = LoggerFactory.getLogger(ShopDAO.class);
 	// property constants
 	public static final String ADDRESS = "address";
@@ -37,6 +38,10 @@ public class ShopDAO extends HibernateDaoSupport {
 		// do nothing
 	}
 
+	/** 
+	 * TODO 简单描述该方法的实现功能（可选）. 
+	 * @see com.yummy.dao.IShopDAO#save(com.yummy.pojo.Shop) 
+	 */ 
 	public void save(Shop transientInstance) {
 		log.debug("saving Shop instance");
 		try {
@@ -48,6 +53,10 @@ public class ShopDAO extends HibernateDaoSupport {
 		}
 	}
 
+	/** 
+	 * TODO 简单描述该方法的实现功能（可选）. 
+	 * @see com.yummy.dao.IShopDAO#delete(com.yummy.pojo.Shop) 
+	 */ 
 	public void delete(Shop persistentInstance) {
 		log.debug("deleting Shop instance");
 		try {
@@ -59,6 +68,10 @@ public class ShopDAO extends HibernateDaoSupport {
 		}
 	}
 
+	/** 
+	 * TODO 简单描述该方法的实现功能（可选）. 
+	 * @see com.yummy.dao.IShopDAO#findById(java.lang.String) 
+	 */ 
 	public Shop findById(java.lang.String id) {
 		log.debug("getting Shop instance with id: " + id);
 		try {
@@ -125,6 +138,10 @@ public class ShopDAO extends HibernateDaoSupport {
 		return findByProperty(DELIVERY_RANGE, deliveryRange);
 	}
 
+	/** 
+	 * TODO 简单描述该方法的实现功能（可选）. 
+	 * @see com.yummy.dao.IShopDAO#findAll() 
+	 */ 
 	public List findAll() {
 		log.debug("finding all Shop instances");
 		try {
@@ -170,7 +187,7 @@ public class ShopDAO extends HibernateDaoSupport {
 		}
 	}
 
-	public static ShopDAO getFromApplicationContext(ApplicationContext ctx) {
-		return (ShopDAO) ctx.getBean("ShopDAO");
+	public static IShopDAO getFromApplicationContext(ApplicationContext ctx) {
+		return (IShopDAO) ctx.getBean("ShopDAO");
 	}
 }

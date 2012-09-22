@@ -64,14 +64,14 @@
 			<ref bean="TestDAO" />
 		</property>
 	</bean> 
-	<bean id="shopDAO" class="com.yummy.dao.impl.ShopDAO">
+	<bean id="ShopDAO" class="com.yummy.dao.impl.ShopDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<bean id="ShopService" class="com.yummy.service.impl.ShopService">
 		<property name="shopDAO">
-			<ref bean="shopDAO"/>
+			<ref bean="ShopDAO"/>
 		</property>
 	</bean>
 	<bean id="ShowShopAction" class="com.yummy.action.ShowShopAction" scope="prototype">
