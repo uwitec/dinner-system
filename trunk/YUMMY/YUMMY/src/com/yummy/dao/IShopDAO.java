@@ -1,11 +1,17 @@
 package com.yummy.dao;
 
+import java.util.List;
+
 import com.yummy.pojo.Shop;
 
 public interface IShopDAO {
-	public Shop findByShopName(String shopName);
-	public void delete(String shopName);
-	public void save(Shop shop);
-	public void update(Shop shop);
+
+	public abstract void save(Shop transientInstance);
+
+	public abstract void delete(Shop persistentInstance);
+
+	public abstract Shop findById(java.lang.String id);
+
+	public abstract List findAll();
 
 }
