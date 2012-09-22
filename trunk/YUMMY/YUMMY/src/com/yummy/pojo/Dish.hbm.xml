@@ -35,13 +35,13 @@
             <column name="upload_time" length="10" />
         </property>
         <property name="picOne" type="java.lang.String">
-            <column name="picOne" not-null="true" />
+            <column name="picOne" length="100" />
         </property>
         <property name="picTwo" type="java.lang.String">
-            <column name="picTwo" />
+            <column name="picTwo" length="100"/>
         </property>
         <property name="picThree" type="java.lang.String">
-            <column name="picThree" />
+            <column name="picThree" length="100"/>
         </property>
       <!--   dish不需知道collection的存在 -->
        <!--  <set name="collectDishs" inverse="true">
