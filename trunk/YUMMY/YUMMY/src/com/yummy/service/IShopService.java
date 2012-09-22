@@ -11,4 +11,6 @@ public interface IShopService {
 	public Boolean isExistShop(String shopName);
 	
 	public void updateShop(Shop shop);
+	
+
 }

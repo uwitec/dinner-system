@@ -13,5 +13,9 @@ public interface IShopDAO {
 	public abstract Shop findById(java.lang.String id);
 
 	public abstract List findAll();
+	
+	public Shop findByShopName(java.lang.String shopname);
+	
+	public void  update(Shop shop);
 
 }

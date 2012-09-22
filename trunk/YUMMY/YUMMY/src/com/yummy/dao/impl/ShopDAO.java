@@ -84,6 +84,18 @@ public class ShopDAO extends HibernateDaoSupport implements IShopDAO {
 		}
 	}
 
+	public Shop findByShopName(java.lang.String shopname) {
+		log.debug("getting Shop instance with id: " + shopname);
+		try {
+			Shop instance = (Shop) getHibernateTemplate().get(
+					"com.yummy.pojo.Shop", shopname);
+			return instance;
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
+		}
+	}
+	
 	public List findByExample(Shop instance) {
 		log.debug("finding Shop instance by example");
 		try {
@@ -109,6 +121,7 @@ public class ShopDAO extends HibernateDaoSupport implements IShopDAO {
 			throw re;
 		}
 	}
+	
 
 	public List findByAddress(Object address) {
 		return findByProperty(ADDRESS, address);
@@ -189,5 +202,10 @@ public class ShopDAO extends HibernateDaoSupport implements IShopDAO {
 
 	public static IShopDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (IShopDAO) ctx.getBean("ShopDAO");
+	}
+
+	public void update(Shop shop) {
+		// TODO Auto-generated method stub
+		
 	}
 }
