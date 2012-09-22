@@ -22,7 +22,7 @@
 			<tr>
 				<td><a href="dishDetails.jsp?id=${item.dishId}">${item.name}</a></td>
 				<td>${item.price}</td>
-				<td>${item.shopname}</td>
+				<td>${item.shop.shopname}</td>
 		</c:forEach>
 	</table>
 	
