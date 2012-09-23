@@ -37,7 +37,7 @@
  <td>  ²ÍÌülogo£º
  </td>
  <td>
- <s:property value="#attr.myShop.logo"/>
+ <img alt="logo" src="<s:property value="#attr.myShop.logo"/>" >
  </td>
  </tr>
   <tr>

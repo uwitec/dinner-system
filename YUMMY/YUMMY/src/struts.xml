@@ -62,4 +62,7 @@
 		</action>
 	</package>
 
-</struts>    
+	<package name="dish_pkg" namespace="dish">
+		<action name="addMyDish" class="AddMyDishAction">
+		</action>
+	</package></struts>    
