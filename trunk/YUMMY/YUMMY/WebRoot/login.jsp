@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,6 +10,13 @@
 </head>
 <body>
 	  <h1>登陆页面</h1>
+	 <hr>
+	 <s:fielderror/>
+	 <s:form action="login" method="post" >
+	 		<s:textfield label="用户名" name="username"/>
+	 		<s:password label="密码" name="password"/>
+	 		<s:submit value="确定"/>
+	 </s:form>
 </body>
 </html>
  

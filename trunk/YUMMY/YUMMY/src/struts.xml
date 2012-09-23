@@ -42,6 +42,12 @@
 			<result name="error" type="redirect">login.jsp</result>
 			<result name="none" type="redirect">cart.jsp</result>
 		</action>
+		
+		<!-- 登陆action -->
+		<action name="login" class="loginAction">
+			<result name="success" type="redirect">index.jsp</result>
+			<result name="input" type="redirect">login.jsp</result>
+		</action>
 
 	</package>
 	<package name="shop_pkg" extends="struts-default" namespace="/shop">

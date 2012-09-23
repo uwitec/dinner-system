@@ -3,6 +3,7 @@ package com.yummy.dao.impl;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.LockMode;
+import org.hibernate.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -80,6 +81,17 @@ public class CustomerDAO extends HibernateDaoSupport {
 			log.error("get failed", re);
 			throw re;
 		}
+	}
+	
+	public boolean verified(String username, String password) {
+		Customer customer = findById(username);
+		boolean flag = false;
+		if (customer == null) {
+			flag = false;
+		} else if (password.equals(password)) {
+			flag = true;
+		}
+		return flag;
 	}
 
 	/** 
