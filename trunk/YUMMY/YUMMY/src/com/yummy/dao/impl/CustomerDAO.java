@@ -83,16 +83,18 @@ public class CustomerDAO extends HibernateDaoSupport {
 		}
 	}
 	
-	public boolean verified(String username, String password) {
-		Customer customer = findById(username);
-		boolean flag = false;
-		if (customer == null) {
-			flag = false;
-		} else if (password.equals(password)) {
-			flag = true;
+	public Customer findByUsername(java.lang.String username) {
+		log.debug("getting Customer instance with username: " + username);
+		try {
+			Customer instance = (Customer) getHibernateTemplate().get(
+					"com.yummy.pojo.Customer", username);
+			return instance;
+		} catch (RuntimeException re) {
+			log.error("get failed", re);
+			throw re;
 		}
-		return flag;
 	}
+	
 
 	/** 
 	 * TODO 简单描述该方法的实现功能（可选）. 
@@ -220,6 +222,10 @@ public class CustomerDAO extends HibernateDaoSupport {
 			log.error("attach failed", re);
 			throw re;
 		}
+	}
+	
+	public List query(String sql) {
+		return getHibernateTemplate().find(sql);
 	}
 
 }
