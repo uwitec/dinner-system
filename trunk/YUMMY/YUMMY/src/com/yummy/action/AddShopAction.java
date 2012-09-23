@@ -3,9 +3,11 @@ package com.yummy.action;
 
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -19,7 +21,8 @@ public class AddShopAction extends ActionSupport{
 	private String telephone;
 	private String qq;
 	private String introduction;
-	private File logo_file;
+	//private File logo_file;
+	private String logo;
 	private Integer point;
 	private String deliveryRange;
 	
@@ -83,14 +86,14 @@ public class AddShopAction extends ActionSupport{
 		this.introduction = introduction;
 	}
 
-	public File getLogo_file() {
-		return logo_file;
+	public String getLogo() {
+		return logo;
 	}
 
 
 
-	public void setLogo_file(File logo_file) {
-		this.logo_file = logo_file;
+	public void setLogo(String logo) {
+		this.logo = logo;
 	}
 
 
@@ -128,14 +131,36 @@ public class AddShopAction extends ActionSupport{
 		if(shopname=="")
 				addFieldError("SN_noNull","餐厅名不能为空");
 	}
+	
+	
+	public void uploadPicture(){
+		
+	}
 
 	public String execute(){
-		//HttpServletRequest request = ServletActionContext.getRequest();
-		//String logo = "/images/shop/"+logo_file.getName();
-		//System.out.print(logo);
-		//Shop shop = new Shop(shopname,address,telephone,qq,introduction,logo,0,deliveryRange);
-		//request.setAttribute("shopName", shopname);
-		//shopService.addShop(shop);
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String logo_type = logo.substring(logo.lastIndexOf('.'));
+		//System.out.print(logo_path);
+		String fileName = shopname+logo_type;
+		File localfile = new File(logo);
+		String RealPath = ServletActionContext.getServletContext().getRealPath("/images/shop");
+		//System.out.print(RealPath+fileName);
+		File file = new File(RealPath);
+
+		if(!file.exists()){
+			file.mkdirs();
+		}
+		try {
+			FileUtils.copyFile(localfile, new File(file,fileName));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+		Shop shop = new Shop(shopname,address,telephone,qq,introduction,RealPath+"\\"+fileName,0,deliveryRange);
+		request.setAttribute("shopName", shopname);
+		shopService.addShop(shop);
 		return SUCCESS;
 	}
 
