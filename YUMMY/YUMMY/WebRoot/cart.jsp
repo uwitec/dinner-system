@@ -27,13 +27,13 @@
 				<td><a href="foodDetails?id=${item.id}"><img src="${item.picPath}" /></a></td>
 				<td>${item.price}</td>
 				<td>${item.orderCount}</td>
-				<form action="takeOrder" method="post">
+				<form action="addToCart" method="post">
 						<input type="hidden" name="id" value="${item.id}"/>
 						<input type="hidden" name="type" value="update"/>
 					<td><input name="orderCount" /></td>
 					<td><input type="submit" value="确定"/></td>
 				</form>
-				<form action="takeOrder" method="post">
+				<form action="addToCart" method="post">
 						<input type="hidden" name="id" value="${item.id}"/>
 						<input type="hidden" name="type" value="delete"/>
 					<td><input type="submit" value="删除"/></td>
@@ -48,12 +48,12 @@
 				out.println("总金额是： " + totalPrice);
 			}
 		 %>
-		 	<form action="takeOrder" method="post">
+		 	<form action="addToCart" method="post">
 		 			<input type="hidden" name="type" value="removeAll"/>
 					<td><input type="submit" value="清空购物车"/></td>
 		 	</form>
 	<hr>
-	<form>
+	<form action=" takeOrder" method="post">
 		<input type="submit" value="去结算"/>
 		<!-- <input type="reset" value="继续看看"/> --> <a href="#" onclick="history.back()">继续看看</a>
 	</form>

@@ -39,9 +39,7 @@ public class SearchAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		if (searchItem != null) {
-			System.out.println("ÊäÈë¿òÄÚÈİÊÇ£º=====¡· " + searchItem);
-		}
+
 		if (searchItem == null || "".equals(searchItem.trim()) ){
 			return "error";
 		}

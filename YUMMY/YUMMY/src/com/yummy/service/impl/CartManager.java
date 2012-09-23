@@ -1,7 +1,11 @@
 package com.yummy.service.impl;
 
+import java.text.DecimalFormat;
 import java.util.Iterator;
 import java.util.List;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import com.yummy.pojo.ItemDTO;
 import com.yummy.service.ICartManager;
@@ -13,6 +17,8 @@ import com.yummy.service.ICartManager;
  * date: 2012-9-22 ÏÂÎç9:57:57 <br/> 
  * @author Jiahui.wen
  */
+@Component("cartManager")
+@Scope("prototype")
 public class CartManager implements ICartManager {
 	
 	/**
@@ -126,6 +132,8 @@ public class CartManager implements ICartManager {
 				ItemDTO item = items.get(i);
 				totalPrice += item.getPrice() * item.getOrderCount();
 			}
+			int temp = (int)(totalPrice * 100 + 0.5);
+			totalPrice = (float) (temp / 100.0);
 		}
 		return totalPrice;
 	}
