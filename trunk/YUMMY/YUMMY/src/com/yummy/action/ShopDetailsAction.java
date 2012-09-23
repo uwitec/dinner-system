@@ -1,6 +1,7 @@
 package com.yummy.action;
 
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.yummy.pojo.Dish;
 import com.yummy.pojo.Shop;
 import com.yummy.service.impl.ShopService;
 
@@ -42,14 +44,12 @@ public class ShopDetailsAction extends ActionSupport {
 		if (shopname == null || "".equals(shopname)) {
 			return ERROR;
 		}
-		System.out.println("=====shopname: " + shopname);
 		session = ActionContext.getContext().getSession();
 		Shop shop = shopService.getShop(shopname);
-		if (shop != null) {
-			System.out.println("查询到有shop存在，准备显示");
-		}
-		System.out.println("");
+		Set<Dish> dishs = shop.getDishs();
+		System.out.println("set size:" + dishs.size());
 		session.put("shop", shop);
+		session.put("dishs", dishs);
 		return SUCCESS;
 	}
 	

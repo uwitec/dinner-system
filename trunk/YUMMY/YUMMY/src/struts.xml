@@ -31,9 +31,16 @@
 		</action>
 		
 		<!-- 购物车的action -->
-		<action name="takeOrder" class="cartAction">
+		<action name="addToCart" class="cartAction">
 			<result name="success" type="redirect">cart.jsp</result>
 			<result name="error" type="redirect">index.jsp</result>
+		</action>
+		
+		<!-- 结算action -->
+		<action name="takeOrder" class="takeOrderAction">
+			<result name="success" type="redirect">cart.jsp</result>
+			<result name="error" type="redirect">login.jsp</result>
+			<result name="none" type="redirect">cart.jsp</result>
 		</action>
 
 	</package>

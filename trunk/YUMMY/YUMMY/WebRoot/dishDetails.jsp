@@ -23,8 +23,18 @@
 				<td>${dish.price}</td>
 				<td>${dish.point}</td>
 				<td>${dish.shop.shopname}</td>
-				<td><input name="orderCount"/></td>
-				<td><button>放入篮子</button></td>
+				<<form action="addToCart" method="post">
+						<input type="hidden" name="type" value="add"/>
+						<input type="hidden" name="id" value="${dish.dishId}"/>
+						<input type="hidden" name="itemname" value="${dish.name}"/>
+						<input type="hidden" name="picPath" value="${dish.picOne}"/>
+						<input type="hidden" name="price" value="${dish.price}"/>
+					<td><input name="orderCount"/></td>
+					<td><input type="submit" value="加入"/></td>
+				</form>
 	</table>
+	
+					
+	
 </body>
 </html>

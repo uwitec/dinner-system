@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +31,8 @@ public class CartAction extends ActionSupport {
 	private float price;
 	
 	private String type;
-	
+	@Resource(name="cartManager")
+	private ICartManager manager;
 	private Map session = ActionContext.getContext().getSession();
 	
 	@Override
@@ -40,8 +43,6 @@ public class CartAction extends ActionSupport {
 		if (itemList == null) {
 			itemList = new ArrayList<ItemDTO>();
 		}
-		//创建一个购物车管理类。
-		CartManager manager = new CartManager();
 		manager.setItems(itemList);
 
 		String returnType = "";
@@ -71,7 +72,7 @@ public class CartAction extends ActionSupport {
 	 * @param manager
 	 * @return
 	 */
-	public String add(CartManager manager) {
+	public String add(ICartManager manager) {
 		if (id != 0 && orderCount != 0) {
 			if (manager.isItemExist(id)) {  //购物车已经存在该种食物
 				manager.increase(id, orderCount);
@@ -94,13 +95,16 @@ public class CartAction extends ActionSupport {
 	 * @param manager
 	 * @return
 	 */
-	public String update(CartManager manager) {
-		if (orderCount == 0) {
+	public String update(ICartManager manager) {
+/*		if (orderCount == 0) {
 			manager.remove(id);
 		} else {
 			manager.update(id, orderCount);
+		}*/
+		if (orderCount != 0) {
+			manager.update(id, orderCount);
+			updateMap(manager);
 		}
-		updateMap(manager);
 		return SUCCESS;
 	}
 	
@@ -111,7 +115,7 @@ public class CartAction extends ActionSupport {
 	 * @author jiahui 
 	 * @param manager
 	 */
-	public void remove(CartManager manager) {
+	public void remove(ICartManager manager) {
 		manager.remove(id);
 		updateMap(manager);
 	}
@@ -123,7 +127,7 @@ public class CartAction extends ActionSupport {
 	 * @author jiahui 
 	 * @param manager
 	 */
-	public void removeAll(CartManager manager) {
+	public void removeAll(ICartManager manager) {
 		manager.removeAll();
 		updateMap(manager);
 	}
@@ -135,7 +139,7 @@ public class CartAction extends ActionSupport {
 	 * @author jiahui 
 	 * @param manager
 	 */
-	public void updateMap(CartManager manager) {
+	public void updateMap(ICartManager manager) {
 		session.put("items", manager.getItems());
 		session.put("totalPrice", manager.getTotalPrice());
 	}

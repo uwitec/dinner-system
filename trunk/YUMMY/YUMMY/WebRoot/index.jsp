@@ -59,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<td>${dish.price}</td>
 				<td>${dish.point}</td>
 				<td><a href="shopDetails?shopname=${dish.shop.shopname}">${dish.shop.shopname}</a></td>
-				<form action="takeOrder" method="get">
+				<form action="addToCart" method="get">
 						<input type="hidden" name="type" value="add"/>
 						<input type="hidden" name="id" value="${dish.dishId}"/>
 						<input type="hidden" name="itemname" value="${dish.name}"/>
