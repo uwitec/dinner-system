@@ -1,5 +1,17 @@
 SET FOREIGN_KEY_CHECKS=0;
 
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE `customer` (
+  `username` varchar(15) NOT NULL DEFAULT '',
+  `password` varchar(15) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `gender` varchar(2) NOT NULL,
+  `credits` int(10) unsigned zerofill NOT NULL DEFAULT '0000000000',
+  `register_date` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`username`),
+  KEY `index_customer` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- ----------------------------
 -- Table structure for `customer_info`
 -- ----------------------------
@@ -92,16 +104,10 @@ CREATE TABLE `collect_shop` (
 -- ----------------------------
 -- Table structure for `customer_info`
 -- ----------------------------
-DROP TABLE IF EXISTS `customer_info`;
-CREATE TABLE `customer_info` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `username` varchar(15) NOT NULL,
-  `telephone` varchar(15) NOT NULL,
-  `address` varchar(30) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_01` (`username`),
-  CONSTRAINT `FK_01` FOREIGN KEY (`username`) REFERENCES `customer` (`username`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- ----------------------------
+-- Table structure for `customer`
+-- ----------------------------
+
 
 -- ----------------------------
 -- Records of customer_info
