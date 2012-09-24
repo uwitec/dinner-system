@@ -14,7 +14,7 @@ public class Dish implements java.io.Serializable {
 	// Fields
 
 	private Integer dishId;
-	private String shopname;
+	private Shop shop;
 	private String name;
 	private Integer point;
 	private Float price;
@@ -33,19 +33,19 @@ public class Dish implements java.io.Serializable {
 	public Dish() {
 	}
 
-	public Dish(Integer dishId,String name,Float price, String shopname) {
+	public Dish(Integer dishId,String name,Float price, Shop shop) {
 		super();
 		this.dishId = dishId;
-		this.shopname = shopname;
+		this.shop = shop;
 		this.name = name;
 		this.price = price;
 	}
 	
-	public Dish(Integer dishId, String shopname, String name, Integer point,
+	public Dish(Integer dishId, Shop shop, String name, Integer point,
 			Float price, String picOne) {
 		super();
 		this.dishId = dishId;
-		this.shopname = shopname;
+		this.shop = shop;
 		this.name = name;
 		this.point = point;
 		this.price = price;
@@ -54,11 +54,11 @@ public class Dish implements java.io.Serializable {
 	
 	
 	
-	public Dish(String shopname, String name, Integer point, Float price,
+	public Dish(Shop shop, String name, Integer point, Float price,
 			String introduction, String category, String tag, Date uploadTime,
 			String picOne) {
 		super();
-		this.shopname = shopname;
+		this.shop = shop;
 		this.name = name;
 		this.point = point;
 		this.price = price;
@@ -70,19 +70,19 @@ public class Dish implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Dish(String shopname, String name, Float price, String picOne) {
-		this.shopname = shopname;
+	public Dish(Shop shop, String name, Float price, String picOne) {
+		this.shop = shop;
 		this.name = name;
 		this.price = price;
 		this.picOne = picOne;
 	}
 
 	/** full constructor */
-	public Dish(String shopname, String name, Integer point, Float price,
+	public Dish(Shop shop, String name, Integer point, Float price,
 			String introduction, String category, String tag, Date uploadTime,
 			String picOne,  Set collectDishs,
 			Set orderInfos, Set estimates) {
-		this.shopname = shopname;
+		this.shop = shop;
 		this.name = name;
 		this.point = point;
 		this.price = price;
@@ -108,12 +108,12 @@ public class Dish implements java.io.Serializable {
 	}
 
 
-	public String getShopname() {
-		return shopname;
+	public Shop getshop() {
+		return shop;
 	}
 
-	public void setShopname(String shopname) {
-		this.shopname = shopname;
+	public void setshop(Shop shop) {
+		this.shop = shop;
 	}
 
 	public String getName() {
