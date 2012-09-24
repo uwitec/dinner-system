@@ -19,10 +19,10 @@
 		
 		<property name="driverClassName" value="com.mysql.jdbc.Driver">
 		</property><property name="url"
-			value="jdbc:mysql://localhost:3306/yummy">
+			value="jdbc:mysql://localhost:3306/mysql">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="root"></property>
+		<property name="password" value="634587"></property>
 	</bean>
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
@@ -93,6 +93,27 @@
 	<bean id="DishDAO" class="com.yummy.dao.impl.DishDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DishService" class="com.yummy.service.impl.DishService">
+		<property name="dishDAO">
+			<ref bean="DishDAO"/>
+		</property>
+	</bean>
+	<bean id="AddMyDishAction" class="com.yummy.action.AddMyDishAction" scope="prototype">
+		<property name="dishService">
+			<ref bean="DishService" />
+		</property>
+	</bean>
+	
+	<bean id="ShowAllMyDishAction" class="com.yummy.action.ShowAllMyDishAction" scope="prototype">
+		<property name="dishService">
+			<ref bean="DishService" />
+		</property>
+	</bean>
+	<bean id="UpdateMyDishAction" class="com.yummy.action.UpdateMyDishAction" scope="prototype">
+		<property name="dishService">
+			<ref bean="DishService" />
 		</property>
 	</bean>
 

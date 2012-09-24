@@ -10,9 +10,14 @@
             <column name="dishID" />
             <generator class="identity" />
         </id>
-        <many-to-one name="shop" class="com.yummy.pojo.Shop" cascade="save-update" fetch="select">
+<!--        <many-to-one name="shop" class="com.yummy.pojo.Shop" cascade="save-update" fetch="select">
             <column name="shopname" length="15" not-null="true" />
-        </many-to-one>
+        </many-to-one> --> 
+        
+        <property name="shopname" type="java.lang.String">
+            <column name="shopname" length="15" not-null="true" />
+        </property>
+        
         <property name="name" type="java.lang.String">
             <column name="name" length="15" not-null="true" />
         </property>

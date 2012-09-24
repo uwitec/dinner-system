@@ -139,8 +139,11 @@ public class AddShopAction extends ActionSupport{
 
 	public String execute(){
 		HttpServletRequest request = ServletActionContext.getRequest();
+		
+		if("".equals(logo)||logo==null)logo=ServletActionContext.getServletContext().getRealPath("/images/shop/default_logo.jpg");
+		//System.out.print(ServletActionContext.getServletContext().getRealPath("/images/shop/default_logo.jpg"));
 		String logo_type = logo.substring(logo.lastIndexOf('.'));
-		//System.out.print(logo_path);
+		
 		String fileName = shopname+logo_type;
 		File localfile = new File(logo);
 		String RealPath = ServletActionContext.getServletContext().getRealPath("/images/shop");
