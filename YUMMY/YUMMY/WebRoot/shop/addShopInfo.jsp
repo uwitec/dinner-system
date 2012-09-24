@@ -15,18 +15,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="./jquery-1.7.js"></script>
 <script type="text/javascript" src="./shopInfo.js"></script>
 </head>
-<body>
-
+<body topmargin="80" leftmargin="100">
+ <a href="#"><img src="/YUMMY/picture/logo.jpg" width="250" height="88"></a>
  <form action="addShop" method="post">
  <table>
- <tr><td>餐厅名称<input type="text" name="shopname"></td></tr>
- <tr><td>餐厅logo<input type="file" id="logo_file" name="logo"><input type="button" id="upload" value="预览" /></td></tr>
- <tr><td colspan="5"><img id="logo_img" src="../images/shop/default_logo.jpg"></td></tr>
- <tr><td>餐厅介绍<textarea rows="5" cols="100" name="introduction"></textarea></td></tr>
- <tr><td>地址<input type="text" name="address"></td></tr>
- <tr><td>电话<input type="text" name="telephone"></td></tr>
- <tr><td>QQ<input type="text" name="qq"></td></tr>
- <tr><td>经营范围<input type="text" name="deliveryRange"></td></tr>
+ <tr><td>餐厅名称</td><td><input type="text" name="shopname"></td></tr>
+ <tr><td>餐厅logo</td><td><input type="file" id="logo_file" name="logo"><input type="button" id="upload" value="预览" /></td></tr>
+<tr><td colspan="3"><img id="logo_img" src="../images/shop/default_logo.jpg"  width="200" height="100"></td></tr>
+ <tr><td>餐厅介绍</td><td><textarea rows="5" cols="80" name="introduction"></textarea></td></tr>
+ <tr><td>餐厅地址</td><td><input type="text" name="address"></td></tr>
+ <tr><td>餐厅电话</td><td><input type="text" name="telephone"></td></tr>
+ <tr><td>餐厅QQ</td><td><input type="text" name="qq"></td></tr>
+ <tr><td>经营范围</td><td><input type="text" name="deliveryRange"></td></tr>
  <tr><td><input type="submit" value="发布" ></td></tr>
  </table>
  </form>
