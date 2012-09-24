@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>
 	<h1>礼品中心</h1>
 </body>
 </html>
