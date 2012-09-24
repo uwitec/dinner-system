@@ -3,6 +3,8 @@ package com.yummy.pojo;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.struts2.components.Date;
+
 /**
  * Customer entity. @author MyEclipse Persistence Tools
  */
@@ -43,6 +45,9 @@ public class Customer implements java.io.Serializable {
 		this.email = email;
 		this.gender = gender;
 		this.credits = credits;
+		java.util.Calendar c = java.util.Calendar.getInstance();    
+        java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        this.registerDate = f.format(c.getTime());  
 	}
 
 	/** full constructor */
