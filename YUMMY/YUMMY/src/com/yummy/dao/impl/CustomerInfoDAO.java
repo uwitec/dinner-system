@@ -3,6 +3,8 @@ package com.yummy.dao.impl;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.LockMode;
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -65,6 +67,35 @@ public class CustomerInfoDAO extends HibernateDaoSupport  {
         }
     }
     
+    /**
+     * 
+     * findByExample:根据用户名返回其填写过的地址. <br/> 
+     * 
+     * @author jiahui 
+     * @param instance
+     * @return
+     */
+    public List findByUsername(String username) {
+        log.debug("finding CustomerInfo instance by example");
+        try {
+//        	String hql = "from CustomerInfo as info where info.customer.username = ?";
+        	String hql = "from CustomerInfo";
+        	System.out.println(hql);
+//            List results = getHibernateTemplate().find(hql);
+//            System.out.println("====== tiaojian: " + results.size() + " ===");
+//            List result2 = getHibernateTemplate().find("from com.yummy.pojo.CustomerInfo");
+            Query query = getSession().createQuery(hql);
+//            query.setParameter(0, username);
+            List result2 = query.list();
+            System.out.println("====== all: " + result2.size() + " ===");
+//            log.debug("find by example successful, result size: " + results.size());
+            return result2;
+        } catch (RuntimeException re) {
+            log.error("find by example failed", re);
+            throw re;
+        }
+    }  
+    
     
     public List findByExample(CustomerInfo instance) {
         log.debug("finding CustomerInfo instance by example");
@@ -77,6 +108,23 @@ public class CustomerInfoDAO extends HibernateDaoSupport  {
             throw re;
         }
     }    
+    
+    public int saveCustomerInfo(String username, String telephone, String address) {
+    	String sql = "insert into customer_info values(null,'" + username +
+    			"','" + telephone + "','" + address +"')";
+    	System.out.println(sql);
+    	SQLQuery query = getSession().createSQLQuery(sql);
+    	
+    	query.executeUpdate();
+  
+    	
+    	String searchSQL = "select id from customer_info where username ='" + username +
+    			"' and telephone ='" + telephone + "' and address ='" + address +"'";
+    	query = getSession().createSQLQuery(searchSQL);
+    	System.out.println("1. " + searchSQL);
+    	System.out.println("2. === " + query.list());
+    	return (Integer) query.list().get(0);
+    }
     
     public List findByProperty(String propertyName, Object value) {
       log.debug("finding CustomerInfo instance with property: " + propertyName

@@ -30,6 +30,12 @@
 			<result name="error" type="redirect">index.jsp</result>
 		</action>
 		
+		<!-- 检查购物车食物是否属于同一家店的action -->
+		<action name="checkCart" class="checkCartAction">
+			<result name="success" type="chain">addToCart</result>
+			<result name="error" type="redirect">index.jsp</result>
+		</action>
+		
 		<!-- 购物车的action -->
 		<action name="addToCart" class="cartAction">
 			<result name="success" type="redirect">cart.jsp</result>
@@ -38,9 +44,16 @@
 		
 		<!-- 结算action -->
 		<action name="takeOrder" class="takeOrderAction">
-			<result name="success" type="redirect">cart.jsp</result>
+			<result name="success" type="redirect">pay.jsp</result>
 			<result name="error" type="redirect">login.jsp</result>
 			<result name="none" type="redirect">cart.jsp</result>
+		</action>
+		
+		<!-- 保存订单信息action -->
+		<action name="pay" class="payAction">
+			<result name="success" type="redirect">accountCenter.jsp</result>
+			<result name="input" type="redirect">pay.jsp</result>
+			<result name="error" type="redirect">erreopage/orderError.jsp</result>
 		</action>
 		
 		<!-- 登陆action -->

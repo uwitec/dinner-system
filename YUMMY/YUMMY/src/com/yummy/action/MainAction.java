@@ -20,7 +20,7 @@ import com.yummy.service.impl.HighQualifiedFoodsService;
  * @author jiahui 
  * @version 1.0
  */
-@Component
+@Component("mainAction")
 @Scope("prototype")
 public class MainAction extends ActionSupport {
 
@@ -36,6 +36,9 @@ public class MainAction extends ActionSupport {
 		highQualifiedFoodsList = highQualifiedFoodsService.getHighQualifiedFoods();
 		session = ActionContext.getContext().getSession();
 		session.put("highQualifiedFoodsList", highQualifiedFoodsList);
+		
+		session.put("username", "jiahuiwen");
+		
 		return SUCCESS;
 	}
 	

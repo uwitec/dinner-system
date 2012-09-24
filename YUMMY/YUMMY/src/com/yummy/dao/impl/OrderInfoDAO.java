@@ -2,11 +2,14 @@ package com.yummy.dao.impl;
 
 import java.util.List;
 import org.hibernate.LockMode;
+import org.hibernate.SQLQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.yummy.pojo.ItemDTO;
+import com.yummy.pojo.OrderDTO;
 import com.yummy.pojo.OrderInfo;
 
 /**
@@ -143,5 +146,23 @@ public class OrderInfoDAO extends HibernateDaoSupport {
 
 	public static OrderInfoDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (OrderInfoDAO) ctx.getBean("OrderInfoDAO");
+	}
+	
+	public void saveOrderInfo(OrderDTO orderDTO, int orderID) {
+		List items = orderDTO.getItems();
+		if (items.size() > 0) {
+			String sql = "insert into `order_info` values(null, ?, ?, ?)";
+			SQLQuery query = getSession().createSQLQuery(sql);
+			System.out.println("8.订单详细信息到数据库：" + sql);
+			for (int i = 0; i < items.size(); i++) {
+				ItemDTO item = (ItemDTO) items.get(i);
+				int dishID = item.getId();
+				int quantities = item.getOrderCount();
+				query.setParameter(0, orderID);
+				query.setParameter(1, dishID);
+				query.setParameter(2, quantities);
+		    	query.executeUpdate();
+			}
+		}
 	}
 }

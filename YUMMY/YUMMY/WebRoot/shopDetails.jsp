@@ -43,6 +43,7 @@
 				<form action="addToCart" method="get">
 						<input type="hidden" name="type" value="add"/>
 						<input type="hidden" name="id" value="${dish.dishId}"/>
+						<input type="hidden" name="shopname" value="${shop.shopname}"/>
 						<input type="hidden" name="itemname" value="${dish.name}"/>
 						<input type="hidden" name="picPath" value="${dish.picOne}"/>
 						<input type="hidden" name="price" value="${dish.price}"/>

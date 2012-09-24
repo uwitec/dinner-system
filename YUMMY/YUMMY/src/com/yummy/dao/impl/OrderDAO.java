@@ -1,15 +1,18 @@
 package com.yummy.dao.impl;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
-import java.util.Set;
+
 import org.hibernate.LockMode;
+import org.hibernate.SQLQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.yummy.pojo.Order;
+
 
 /**
  * A data access object (DAO) providing persistence and search support for Order
@@ -60,8 +63,8 @@ public class OrderDAO extends HibernateDaoSupport {
 	public Order findById(java.lang.Integer id) {
 		log.debug("getting Order instance with id: " + id);
 		try {
-			Order instance = (Order) getHibernateTemplate().get(
-					"com.yummy.pojo.Order", id);
+			Order instance = (Order) getHibernateTemplate().get("test.Order",
+					id);
 			return instance;
 		} catch (RuntimeException re) {
 			log.error("get failed", re);
@@ -159,5 +162,22 @@ public class OrderDAO extends HibernateDaoSupport {
 
 	public static OrderDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (OrderDAO) ctx.getBean("OrderDAO");
+	}
+	
+	public int saveOrder(int customerInfoID, float f, String message, String shopname) {
+		Timestamp time = new Timestamp(new Date().getTime());
+		String insertSQL = "insert into `order` values(null, '" + time +"', '"+ 1 +
+		"', '"+ customerInfoID +"', '"+ f +"', '" + message + "', '" + (int)f + "', '" + shopname +"')";
+		System.out.println("3. " + insertSQL);
+		SQLQuery query = getSession().createSQLQuery(insertSQL);
+		query.executeUpdate();
+		System.out.println("4. 已将订单基本信息插入数据库");
+		
+		String searchSQL = "select order_id from `order` where order_time = '" + time + "' and user_info = '" +
+					customerInfoID + "'";
+		System.out.println("5. " +searchSQL);
+		query = getSession().createSQLQuery(searchSQL);
+		System.out.println("6. 已将订单详细信息插入数据库");
+		return (Integer) query.list().get(0);
 	}
 }

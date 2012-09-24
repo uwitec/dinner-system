@@ -19,13 +19,13 @@
         <property name="address" type="java.lang.String">
             <column name="address" length="30" not-null="true" />
         </property>
-        <set name="orders" inverse="true">
+   <!--      <set name="orders" inverse="true">
             <key>
                 <column name="user_info" not-null="true">
                     <comment>ͨ</comment>
                 </column>
             </key>
             <one-to-many class="com.yummy.pojo.Order" />
-        </set>
+        </set> -->
     </class>
 </hibernate-mapping>

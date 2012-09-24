@@ -13,6 +13,7 @@ public class Order implements java.io.Serializable {
 	// Fields
 
 	private Integer orderId;
+	private Shop shop;
 	private CustomerInfo customerInfo;
 	private Timestamp orderTime;
 	private Integer status;
@@ -28,8 +29,9 @@ public class Order implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Order(CustomerInfo customerInfo, Timestamp orderTime,
+	public Order(Shop shop, CustomerInfo customerInfo, Timestamp orderTime,
 			Integer status, Integer grade) {
+		this.shop = shop;
 		this.customerInfo = customerInfo;
 		this.orderTime = orderTime;
 		this.status = status;
@@ -37,9 +39,10 @@ public class Order implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Order(CustomerInfo customerInfo, Timestamp orderTime,
+	public Order(Shop shop, CustomerInfo customerInfo, Timestamp orderTime,
 			Integer status, Float totalPrice, String message, Integer grade,
 			Set orderInfos) {
+		this.shop = shop;
 		this.customerInfo = customerInfo;
 		this.orderTime = orderTime;
 		this.status = status;
@@ -57,6 +60,14 @@ public class Order implements java.io.Serializable {
 
 	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
+	}
+
+	public Shop getShop() {
+		return this.shop;
+	}
+
+	public void setShop(Shop shop) {
+		this.shop = shop;
 	}
 
 	public CustomerInfo getCustomerInfo() {

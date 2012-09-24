@@ -29,6 +29,12 @@ public class Customer implements java.io.Serializable {
 	public Customer() {
 	}
 
+	public Customer(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
 	/** minimal constructor */
 	public Customer(String username, String password, String email,
 			String gender, Integer credits) {
