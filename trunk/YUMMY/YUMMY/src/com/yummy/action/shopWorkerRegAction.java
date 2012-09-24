@@ -84,7 +84,7 @@ public class shopWorkerRegAction extends ActionSupport {
 						        registerDate = f.format(c.getTime());
 						        
 						        shopWorkerService.addUser(username,password,shopName,email,registerDate);
-
+						        session.setAttribute("username", username);
 								return SUCCESS;
 							}
 						}
