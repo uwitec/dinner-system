@@ -30,6 +30,16 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<!-- 验证用户是否已经登陆 -->
+	<filter>
+		<filter-name>checkLoginFilter</filter-name>
+		<filter-class>com.yummy.filter.CheckLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>checkLoginFilter</filter-name>
+		<url-pattern>/pay.jsp</url-pattern>
+	</filter-mapping>
+
 	<filter>
 		<filter-name>struts2</filter-name>
 		<filter-class>

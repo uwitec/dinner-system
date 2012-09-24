@@ -3,6 +3,8 @@ package com.yummy.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
@@ -22,6 +24,8 @@ public class HighQualifiedFoodDAO extends HibernateDaoSupport implements IHighQu
 	 // 获取评价较高的食物名字，价格，评分，店名，简介图等信息
 	 String sql = "select new Dish(dish.dishId, dish.shop, dish.name, dish.point, dish.price , dish.picOne) "
 			 + "from com.yummy.pojo.Dish dish order by dish.point asc, dish.name desc ";
+		
+//	 String sql = "from com.yummy.pojo.Dish dish order by dish.point asc, dish.name desc ";
 
 	 
 	 // 确保list是空
@@ -29,6 +33,9 @@ public class HighQualifiedFoodDAO extends HibernateDaoSupport implements IHighQu
 		 highQualifiedFoods.clear();
 	 }
 	 List highQualifiedFoods = getHibernateTemplate().find(sql);
+	 
+	 /*Query query = getSession().createQuery(sql);
+	 highQualifiedFoods = query.list();*/
 	 
 	 // 将从数据库中查询的dish对象转换成 highQualifiedFoodDTO对象
 	/* for (int i = 0; i < tempList.size(); i++) {

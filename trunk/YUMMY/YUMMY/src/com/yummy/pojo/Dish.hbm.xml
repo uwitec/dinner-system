@@ -10,13 +10,13 @@
             <column name="dishID" />
             <generator class="identity" />
         </id>
-<!--        <many-to-one name="shop" class="com.yummy.pojo.Shop" cascade="save-update" fetch="select">
+       <many-to-one name="shop" class="com.yummy.pojo.Shop" cascade="save-update" fetch="select">
             <column name="shopname" length="15" not-null="true" />
-        </many-to-one> --> 
+        </many-to-one> 
         
-        <property name="shopname" type="java.lang.String">
+<!--         <property name="shopname" type="java.lang.String">
             <column name="shopname" length="15" not-null="true" />
-        </property>
+        </property> -->
         
         <property name="name" type="java.lang.String">
             <column name="name" length="15" not-null="true" />
@@ -50,17 +50,17 @@
             </key>
             <one-to-many class="com.yummy.pojo.CollectDish" />
         </set> -->
-        <set name="orderInfos" inverse="true">
+        <!-- <set name="orderInfos" inverse="true">
             <key>
                 <column name="dish_id" not-null="true" />
             </key>
             <one-to-many class="com.yummy.pojo.OrderInfo" />
-        </set>
-        <set name="estimates" inverse="true">
+        </set> -->
+        <!-- <set name="estimates" inverse="true">
             <key>
                 <column name="dish_id" not-null="true" />
             </key>
             <one-to-many class="com.yummy.pojo.Estimate" />
-        </set>
+        </set> -->
     </class>
 </hibernate-mapping>
