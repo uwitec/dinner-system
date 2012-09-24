@@ -36,13 +36,11 @@ public class TakeOrderAction extends ActionSupport {
 		
 		String username =  (String) session.get("username");
 		if (username == null || "".equals(username)) {
-//			return ERROR;
-			;
+			return ERROR;
 		}
-		username = "jiahuiwen";
 		List<CustomerInfo> customerInfos = customerInfoDAO.findByUsername(username);
 		System.out.println("用户填写过的地址： " + customerInfos.size());
-		session.put("infos", customerInfos);
+		session.put("customerInfos", customerInfos);
 		return SUCCESS;
 	}
 	

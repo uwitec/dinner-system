@@ -1,5 +1,6 @@
 package com.yummy.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.LockMode;
@@ -78,18 +79,21 @@ public class CustomerInfoDAO extends HibernateDaoSupport  {
     public List findByUsername(String username) {
         log.debug("finding CustomerInfo instance by example");
         try {
-//        	String hql = "from CustomerInfo as info where info.customer.username = ?";
-        	String hql = "from CustomerInfo";
-        	System.out.println(hql);
-//            List results = getHibernateTemplate().find(hql);
-//            System.out.println("====== tiaojian: " + results.size() + " ===");
-//            List result2 = getHibernateTemplate().find("from com.yummy.pojo.CustomerInfo");
-            Query query = getSession().createQuery(hql);
-//            query.setParameter(0, username);
-            List result2 = query.list();
-            System.out.println("====== all: " + result2.size() + " ===");
-//            log.debug("find by example successful, result size: " + results.size());
-            return result2;
+        	String sql = "select * from `customer_info` where username = ?";
+        	Query query = getSession().createSQLQuery(sql);
+        	query.setParameter(0, username);
+        	List temp = query.list();
+        	if (temp != null) {
+        		List<CustomerInfo> infos = new ArrayList<CustomerInfo>();
+        		for (int i = 0; i < temp.size(); i++) {
+        			Object[] tempInfo = (Object[]) temp.get(i);
+					CustomerInfo info = new CustomerInfo((String)tempInfo[2], (String)tempInfo[3]);
+					infos.add(info);
+				}
+        		return infos;
+			}
+        	
+        	return null;
         } catch (RuntimeException re) {
             log.error("find by example failed", re);
             throw re;

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 import org.hibernate.LockMode;
 import org.hibernate.Query;
+import org.hibernate.SQLQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -226,6 +227,21 @@ public class CustomerDAO extends HibernateDaoSupport {
 	
 	public List query(String sql) {
 		return getHibernateTemplate().find(sql);
+	}
+
+	public List findByName(String username, String password2) {
+		// TODO Auto-generated method stub
+		String sql = "select username, password from `customer` where username = ? and password = ?";
+		System.out.println(sql);
+		try {
+			SQLQuery query = getSession().createSQLQuery(sql);
+			query.setParameter(0, username);
+			query.setParameter(1, password2);
+			return query.list();
+		} catch (RuntimeException re) {
+			log.error("attach failed", re);
+			throw re;
+		}
 	}
 
 }
