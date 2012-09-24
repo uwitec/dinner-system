@@ -35,22 +35,23 @@ a:hover { color: #F00; }
 	-->
 </head>
 
-<body topmargin="80" leftmargin="100">
+<body  background="text/background.jpg">
 <div id="menu">
 	<ul>
         <li class="home"><a href="http://？/">Yummy首页</a></li>
         <li class="shoucang"><a href="http://?/">我的收藏</a></li>     
         <li class="shoppingCart"><a href="">我的购物车</a></li>
-        <li class="MyYummy"><a href="http://?/">我的Yummy账户</a></li>
+        <li class="MyYummy"><a href="accountCenter.jsp/">我的Yummy账户</a></li>
+        <li class="login"><a href="login.jsp">登录</a></li>
+        <li class="register"><a href="register.jsp">注册</a></li>
     </ul>
         </div>
-
-	<a href="login.jsp">登陆</a>
-	<br>
-	<a href="register.jsp">注册</a>
+	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>						                                                                                         
 	<br>
 	<form action="search">
-		<input name="searchItem">能否在输入框给点提示呀！！！
+	    <label for="searchItem">输入您想要的宝贝</label>
+		<input name="searchItem" id="searchItem" autocomplete="off" accesskey="s" />
+		<input type="button" id="search" value="搜索" />
 	</form>
 	<br>
 
