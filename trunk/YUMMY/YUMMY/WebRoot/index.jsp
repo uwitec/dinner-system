@@ -14,6 +14,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <base href="<%=basePath%>">
 
 <title>在线点餐系统</title>
+<meta name="description" content="全宇宙最大、最安全的网上订餐系统，无污染，无残留，方便，有趣！" />
+	<meta name="keywords" content="订餐，外卖，美食，粥粉面饭，菜单，店铺" />
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<style type="text/css">
+body { font-family: Verdana; font-size: 12px; line-height: 1.5; }
+a { color: #000; text-decoration: none; }
+a:hover { color: #F00; }
+#menu { border: 1px solid #CCC; height:26px; background: #eee;}
+#menu ul { list-style: none; margin: 0px; padding: 0px; }
+#menu ul li { float:left; padding: 0px 8px; height: 26px; line-height: 26px; }
+</style>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -24,7 +35,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 </head>
 
-<body>
+<body topmargin="80" leftmargin="100">
+<div id="menu">
+	<ul>
+        <li class="home"><a href="http://？/">Yummy首页</a></li>
+        <li class="shoucang"><a href="http://?/">我的收藏</a></li>     
+        <li class="shoppingCart"><a href="">我的购物车</a></li>
+        <li class="MyYummy"><a href="http://?/">我的Yummy账户</a></li>
+    </ul>
+        </div>
+
 	<a href="login.jsp">登陆</a>
 	<br>
 	<a href="register.jsp">注册</a>
