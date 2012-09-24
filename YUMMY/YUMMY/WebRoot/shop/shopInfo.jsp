@@ -9,6 +9,7 @@
 </head>
 <body>
 <h1>нр╣д╡млЭ</h1>
+	 	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>	
 <%
  Boolean readOnly = (Boolean)request.getAttribute("ReadOnly");
  if(readOnly==null)
