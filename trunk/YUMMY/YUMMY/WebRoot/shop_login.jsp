@@ -10,6 +10,7 @@
 <form action="shopLogin" >
 餐厅名称：<input type="text" name="shopname">
 密码：<input type="password" name="password">
-</form>
+<input type="submit" name="submit" value="登录">
+</form> 
 </body>
 </html>

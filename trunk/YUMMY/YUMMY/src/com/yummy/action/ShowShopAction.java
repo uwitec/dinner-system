@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.yummy.pojo.Shop;
 import com.yummy.service.IShopService;
@@ -24,11 +25,11 @@ public class ShowShopAction extends ActionSupport{
 	
 	public String execute(){
 		HttpServletRequest request = ServletActionContext.getRequest();
-		HttpSession session = request.getSession();
-		String shopName = (String)request.getAttribute("shopName");
-		Shop myshop = shopService.getShop(shopName);
-		if(myshop!=null){
-			session.setAttribute("myShop", myshop);
+		//HttpSession session = request.getSession();
+		//String shopName = (String)request.getAttribute("shopName");
+		//Shop myshop = shopService.getShop(shopName);
+		if(ActionContext.getContext().getSession().get("shop_on")!=null){
+			//session.setAttribute("myShop", myshop);
 			request.setAttribute("ReadOnly", true);
 		}else{
 			request.setAttribute("ReadOnly", false);

@@ -30,49 +30,56 @@
  <td> 餐厅名称：
  </td>
  <td>
- <s:property value="#attr.myShop.shopname"/>
+<!--   <s:property value="#attr.myShop.shopname"/>-->
+${shop_on.shopname }
  </td>
  </tr>
   <tr>
  <td>  餐厅logo：
  </td>
  <td>
- <img alt="logo" src="<s:property value="#attr.myShop.logo"/>" >
+ <!--   <img alt="logo" src="<s:property value="#attr.myShop.logo"/>" >-->
+ <img alt="logo" src="${shop_on.logo}" >
  </td>
  </tr>
   <tr>
  <td>  餐厅介绍：
  </td>
  <td>
-  <s:property value="#attr.myShop.introduction"/>
+ <!--    <s:property value="#attr.myShop.introduction"/>-->
+ ${shop_on.introduction }
  </td>
  </tr>
   <tr>
  <td>  餐厅地址：
  </td>
  <td>
- <s:property value="#attr.myShop.address"/>
+<!--    <s:property value="#attr.myShop.address"/>-->
+${shop_on.address}
  </td>
  </tr>
   <tr>
  <td>电话：
  </td>
  <td>
- <s:property value="#attr.myShop.telephone"/>
+ <!--   <s:property value="#attr.myShop.telephone"/>-->
+ ${shop_on.telephone}
  </td>
  </tr>
   <tr>
  <td>QQ:
  </td>
  <td>
- <s:property value="#attr.myShop.qq"/>
+<!--    <s:property value="#attr.myShop.qq"/>-->
+${shop_on.qq }
  </td>
  </tr>
  <tr>
  <td>服务范围：
  </td>
  <td>
- <s:property value="#attr.myShop.deliveryRange"/>
+<!--    <s:property value="#attr.myShop.deliveryRange"/>-->
+${shop_on.deliveryRange }
  </td>
  </tr>
   <tr>

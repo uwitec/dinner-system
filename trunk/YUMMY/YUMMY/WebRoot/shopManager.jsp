@@ -8,10 +8,10 @@
 </head>
 <body>
 <ul>
-<li><a href="/shop/shopInfo.jsp">我的餐厅</a></li>
-<li><a href="/dish/showAllMyDish">我的菜单</a></li>
+<li><a href="shop/showShop">我的餐厅</a></li>
+<li><a href="dish/showAllMyDish">我的菜单</a></li>
 
 </ul>
-$(shop.shopname)
+${shop_on.shopname}
 </body>
 </html>
