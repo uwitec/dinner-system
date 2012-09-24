@@ -62,6 +62,18 @@
 			<result name="input" type="redirect">login.jsp</result>
 		</action>
 		
+		<!-- 注册action -->
+		<action name="register" class="RegisterAction">
+			<result name="success" type="redirect">index.jsp</result>
+			<result name="error" type="dispatcher">register.jsp</result>
+		</action>
+		
+		<!-- 店铺员工注册action -->
+		<action name="shopWorkerReg" class="shopWorkerRegAction">
+			<result name="success" type="redirect">index.jsp</result>
+			<result name="error" type="dispatcher">shopWorkerReg.jsp</result>
+		</action>
+		
 		<action name="shopLogin"  class="ShopLoginAction">
 			<result name="success" type="redirect">shopManager.jsp</result>
 		</action>
