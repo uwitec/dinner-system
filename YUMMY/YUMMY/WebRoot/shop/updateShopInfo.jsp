@@ -14,19 +14,19 @@
 <table>
 <tr>
 <td>餐厅名称：</td>
-<td> <input type="text" name="shopname"  value="<s:property value="#attr.myShop.shopname"/>"/></td>
+<td> <input type="text" name="shopname"  value="${shop_on.shopname }"/></td>
 </tr>
 <tr>
 <td rowspan="2">餐厅logo:</td><td><input type="file" id="logo_file" name="logo"><input type="button" id="upload" value="预览" /></td></tr>
-<tr><td><img alt="logo" id="logo_img"  src="<s:property value='#attr.myShop.logo'/>"/></td></tr>
+<tr><td><img alt="logo" id="logo_img"  src="${shop_on.logo }"/></td></tr>
 <tr>
-<td>餐厅介绍：</td><td><textarea  name="introduction" ><s:property value='#attr.myShop.introduction'/></textarea></td></tr>
+<td>餐厅介绍：</td><td><textarea  name="introduction" >${shop_on.introduction }</textarea></td></tr>
 <tr>
-<td>地址：</td><td><input type="text"  name="address" value="<s:property value='#attr.myShop.address'/>"/></td></tr>
+<td>地址：</td><td><input type="text"  name="address" value="${shop_on.address }"/></td></tr>
 <tr>
-<td>电话：</td><td><input type="text"  name="telephone" value="<s:property value='#attr.myShop.telephone'/>"/></td></tr>
-<tr><td>QQ:</td><td><input type="text"  name="qq" value="<s:property value='#attr.myShop.qq'/>"/></td></tr>
-<tr><td>服务范围：</td><td><input type="text"  name="deliveryRange" value="<s:property value='#attr.myShop.deliveryRange'/>"/></td></tr>
+<td>电话：</td><td><input type="text"  name="telephone" value="${shop_on.telephone }"/></td></tr>
+<tr><td>QQ:</td><td><input type="text"  name="qq" value="${shop_on.qq }"/></td></tr>
+<tr><td>服务范围：</td><td><input type="text"  name="deliveryRange" value="${shop_on.deliveryRange} "/></td></tr>
 <tr><td><s:submit value="保存"></s:submit></td></tr>
 </table>
 </s:form>

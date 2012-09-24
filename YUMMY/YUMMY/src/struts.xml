@@ -62,9 +62,8 @@
 			<result name="input" type="redirect">login.jsp</result>
 		</action>
 		
-		<action name="shopLogin"
-			class="com.yummy.action.ShopLoginAction">
-			<result name="success" type="redirect">AddSuccess.jsp</result>
+		<action name="shopLogin"  class="ShopLoginAction">
+			<result name="success" type="redirect">shopManager.jsp</result>
 		</action>
 	</package>
 	<package name="shop_pkg" extends="struts-default" namespace="/shop">
