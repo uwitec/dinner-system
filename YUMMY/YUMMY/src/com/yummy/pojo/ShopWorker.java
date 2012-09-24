@@ -26,6 +26,9 @@ public class ShopWorker implements java.io.Serializable {
 		this.shop = shop;
 		this.password = password;
 		this.email = email;
+		java.util.Calendar c = java.util.Calendar.getInstance();    
+        java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        this.registerDate = f.format(c.getTime());  
 	}
 
 	/** full constructor */
