@@ -61,7 +61,11 @@
 			<result name="success" type="redirect">index.jsp</result>
 			<result name="input" type="redirect">login.jsp</result>
 		</action>
-
+		
+		<action name="shopLogin"
+			class="com.yummy.action.ShopLoginAction">
+			<result name="success" type="redirect">AddSuccess.jsp</result>
+		</action>
 	</package>
 	<package name="shop_pkg" extends="struts-default" namespace="/shop">
 		<action name="showShop" class="ShowShopAction">
@@ -88,4 +92,4 @@
 		<action name="saveMyDish" class="SaveMyDishAction">
 			<result name="success" type="redirect">AddSuccess.jsp</result>
 		</action>
-	</package></struts>    
+</package></struts>    
