@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.yummy.dao.ICustomerDAO;
 import com.yummy.pojo.Customer;
 
 /**
@@ -24,7 +25,7 @@ import com.yummy.pojo.Customer;
  * @author MyEclipse Persistence Tools
  */
 
-public class CustomerDAO extends HibernateDaoSupport {
+public class CustomerDAO extends HibernateDaoSupport implements ICustomerDAO{
 	private static final Logger log = LoggerFactory
 			.getLogger(CustomerDAO.class);
 	// property constants
@@ -229,19 +230,14 @@ public class CustomerDAO extends HibernateDaoSupport {
 		return getHibernateTemplate().find(sql);
 	}
 
-	public List findByName(String username, String password2) {
+	public Customer findByUserName(String username) {
 		// TODO Auto-generated method stub
-		String sql = "select username, password from `customer` where username = ? and password = ?";
-		System.out.println(sql);
-		try {
-			SQLQuery query = getSession().createSQLQuery(sql);
-			query.setParameter(0, username);
-			query.setParameter(1, password2);
-			return query.list();
-		} catch (RuntimeException re) {
-			log.error("attach failed", re);
-			throw re;
-		}
+		return null;
+	}
+
+	public void update(Customer customer) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
