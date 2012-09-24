@@ -11,7 +11,7 @@
 	<meta name="keywords" content="订餐，外卖，美食，粥粉面饭，菜单，店铺" />
 </head>
 <body>
-     <a href="#"><img src="/picture/logo.jpg" width="250" height="88"></a>
+    <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>
 	 <hr>
 	 <s:fielderror/>
 	 <s:form action="login" method="post" >
