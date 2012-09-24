@@ -9,6 +9,8 @@
 <body>
 	<h2><a href="index.jsp">回到主页面</h2><br>
 	<h1>我的账户</h1>
+	<hr>
+	<h1>已经成功订餐</h1>
 	<h2>正在进行的订单：</h2><br>
 	
 	<table border=1>

@@ -21,7 +21,7 @@
 		</tr>
 		<c:forEach var="item" items="${searchFoods}">
 			<tr>
-				<td><a href="dishDetails.jsp?id=${item.dishId}">${item.name}</a></td>
+				<td><a href="foodDetails?id=${item.dishId}">${item.name}</a></td>
 				<td>${item.price}</td>
 				<td>${item.shop.shopname}</td>
 		</c:forEach>
@@ -38,7 +38,7 @@
 		</tr>
 		<c:forEach var="item" items="${searchShops}">
 			<tr>
-				<td><a href="dishDetails.jsp?id=${item.shopname}">${item.shopname}</a></td>
+				<td><a href="shopDetails?shopname=${item.shopname}">${item.shopname}</a></td>
 				<td>${item.telephone}</td>
 				<td>${item.deliveryRange}</td>
 				<td>${item.introduction}</td>

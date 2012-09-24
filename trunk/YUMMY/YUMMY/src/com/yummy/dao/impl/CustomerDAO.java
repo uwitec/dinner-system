@@ -240,4 +240,18 @@ public class CustomerDAO extends HibernateDaoSupport implements ICustomerDAO{
 		
 	}
 
+	public List findByName(String username, String password2) {
+		// TODO Auto-generated method stub
+		String sql = "select username, password from `customer` where username = ? and password = ?";
+		System.out.println(sql);
+		try {
+			SQLQuery query = getSession().createSQLQuery(sql);
+			query.setParameter(0, username);
+			query.setParameter(1, password2);
+			return query.list();
+		} catch (RuntimeException re) {
+			log.error("attach failed", re);
+			throw re;
+		}
+	}
 }

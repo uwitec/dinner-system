@@ -19,7 +19,7 @@ public class LoginAction extends ActionSupport {
 	private String username;
 	private String password;
 	
-	@Resource(name="customerService")
+	@Resource(name="CustomerService")
 	private CustomerService customerService;
 	
 	@Override

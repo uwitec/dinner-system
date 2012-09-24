@@ -35,8 +35,6 @@
 					<td><input type="submit" value="加入"/></td>
 				</form>
 	</table>
-	
-					
-	
+
 </body>
 </html>

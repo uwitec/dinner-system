@@ -18,4 +18,6 @@ public interface ICustomerDAO {
 	public Customer findByUserName(java.lang.String username);
 	
 	public void  update(Customer customer);
+	
+	public List findByName(String username, String password2);
 }

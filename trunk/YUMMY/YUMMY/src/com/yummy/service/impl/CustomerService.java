@@ -1,5 +1,7 @@
 package com.yummy.service.impl;
 
+import java.util.List;
+
 import com.yummy.dao.ICustomerDAO;
 import com.yummy.pojo.Customer;
 import com.yummy.service.ICustomerService;
@@ -34,6 +36,16 @@ public class CustomerService implements ICustomerService {
 	public void updateUser(Customer customer) {
 		// TODO Auto-generated method stub
 		customerDAO.update(customer);
+	}
+	
+	public boolean verified(String username, String password) {
+		
+		List list = customerDAO.findByName(username, password);
+		if (list != null && list.size() > 0) {
+			System.out.println("customer ´æÔÚ");
+			return true;
+		}
+		return false;
 	}
 
 }
