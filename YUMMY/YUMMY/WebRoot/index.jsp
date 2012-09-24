@@ -38,7 +38,7 @@ a:hover { color: #F00; }
 <body  background="text/background.jpg">
 <div id="menu">
 	<ul>
-        <li class="home"><a href="http://？/">Yummy首页</a></li>
+        <li class="home"><a href="index">Yummy首页</a></li>
         <li class="shoucang"><a href="http://?/">我的收藏</a></li>     
         <li class="shoppingCart"><a href="">我的购物车</a></li>
         <li class="MyYummy"><a href="accountCenter.jsp/">我的Yummy账户</a></li>
@@ -47,6 +47,8 @@ a:hover { color: #F00; }
     </ul>
         </div>
 	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>						                                                                                         
+	<br>
+	<a href="shop/addShopInfo.jsp">添加餐厅信息</a>
 	<br>
 	<form action="search">
 	    <label for="searchItem">输入您想要的宝贝</label>
@@ -92,8 +94,5 @@ a:hover { color: #F00; }
 				</form>
 				</c:forEach>
 	</table>
-
-
-
 </body>
 </html>
