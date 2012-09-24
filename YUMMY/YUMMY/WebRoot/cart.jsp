@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>
 	<h1>购物车</h1>
 	<hr>
 	<table border=1>

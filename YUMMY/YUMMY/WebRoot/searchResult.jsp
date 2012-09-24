@@ -10,6 +10,7 @@
 </head>
 <body>
 	<h1>搜索页面</h1>
+		 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>	
 	<hr>
 	<h2>搜索到的食物</h2>
 		<table border=1>

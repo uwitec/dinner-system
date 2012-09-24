@@ -32,6 +32,7 @@ a:hover { color: #F00; }
         <li class="MyYummy"><a href="http://?/">我的Yummy账户</a></li>
     </ul>
     </div>
+    	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>	
 <hr>
 	<table border=1>
 		<tr>
