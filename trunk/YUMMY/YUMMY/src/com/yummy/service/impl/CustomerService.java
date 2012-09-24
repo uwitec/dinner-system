@@ -29,13 +29,12 @@ public class CustomerService implements ICustomerService {
 			flag = true;
 		}
 		return flag;*/
-		String sql = "select new Customer(customer.username, customer.password) from Customer customer where customer.username = '"
-				+ username + "'";
-		System.out.println(sql);
+		
+		
 //		List<Customer> list = customerDAO.query(sql);
-		List<Customer> list = customerDAO.findAll();
+//		List<Customer> list = customerDAO.findAll();
+		List list = customerDAO.findByName(username, password);
 		if (list != null && list.size() > 0) {
-			Customer customer = list.get(0);
 			System.out.println("customer ´æÔÚ");
 			return true;
 		}

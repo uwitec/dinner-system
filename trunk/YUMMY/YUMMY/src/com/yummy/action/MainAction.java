@@ -37,8 +37,6 @@ public class MainAction extends ActionSupport {
 		session = ActionContext.getContext().getSession();
 		session.put("highQualifiedFoodsList", highQualifiedFoodsList);
 		
-		session.put("username", "jiahuiwen");
-		
 		return SUCCESS;
 	}
 	

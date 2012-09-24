@@ -26,6 +26,14 @@ public class CustomerInfo  implements java.io.Serializable {
     public CustomerInfo() {
     }
 
+    
+	public CustomerInfo(String telephone, String address) {
+		super();
+		this.telephone = telephone;
+		this.address = address;
+	}
+
+
 	/** minimal constructor */
     public CustomerInfo(Customer customer, String telephone, String address) {
         this.customer = customer;

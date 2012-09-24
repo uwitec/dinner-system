@@ -26,9 +26,6 @@ public class PayAction extends ActionSupport {
 	@Resource(name="orderService")
 	private OrderService orderService;
 	
-	@Resource(name="CustomerInfoDAO")
-	private CustomerInfoDAO customerInfoDAO;
-	
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
@@ -37,7 +34,7 @@ public class PayAction extends ActionSupport {
 		String username = (String) session.get("username");
 		List items = (List) session.get("items");
 		String shopname = (String) session.get("shopname");
-		System.out.println("0.1--> payAction取出shopname：" + shopname);
+//		System.out.println("0.1--> payAction取出shopname：" + shopname);
 		orderService.save(new OrderDTO(username, address, telephone, message,shopname, totalPrice, items));
 		session.remove("totalPrice");
 		session.remove("items");
