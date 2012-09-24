@@ -130,11 +130,13 @@
 		</property>
 	</bean>
 
+
 	<bean id="AddMyDishAction" class="com.yummy.action.AddMyDishAction" scope="prototype">
+
 		<property name="dishService">
 			<ref bean="DishService" />
 		</property>
-	</bean>
+	</bean> 
 	
 	<bean id="ShowAllMyDishAction" class="com.yummy.action.ShowAllMyDishAction" scope="prototype">
 		<property name="dishService">

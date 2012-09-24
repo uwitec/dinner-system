@@ -27,16 +27,6 @@
 			<tr>
 				<td>${info.telephone}</td>
 				<td>${info.address}</td>
-				<%--<form action="addToCart" method="get">
-						<input type="hidden" name="type" value="add"/>
-						<input type="hidden" name="id" value="${dish.dishId}"/>
-						<input type="hidden" name="shopname" value="${dish.shop.shopname}"/>
-						<input type="hidden" name="itemname" value="${dish.name}"/>
-						<input type="hidden" name="picPath" value="${dish.picOne}"/>
-						<input type="hidden" name="price" value="${dish.price}"/>
-					<td><input name="orderCount"/></td>
-					<td><input type="submit" value="加入"/></td>
-				</form>--%>
 			 </tr>
 		  </c:forEach>
 	</table>

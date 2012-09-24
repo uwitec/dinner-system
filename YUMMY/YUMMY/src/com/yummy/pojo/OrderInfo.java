@@ -12,8 +12,10 @@ public class OrderInfo implements java.io.Serializable {
 	private Order order;
 	private Dish dish;
 	private Integer account;
+	private String dishname;
 
 	// Constructors
+
 
 	/** default constructor */
 	public OrderInfo() {
@@ -64,6 +66,14 @@ public class OrderInfo implements java.io.Serializable {
 
 	public void setAccount(Integer account) {
 		this.account = account;
+	}
+
+	public String getDishname() {
+		return dishname;
+	}
+
+	public void setDishname(String dishname) {
+		this.dishname = dishname;
 	}
 
 }

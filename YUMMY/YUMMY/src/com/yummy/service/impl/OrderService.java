@@ -53,7 +53,7 @@ public class OrderService  {
 	public int saveOrder(OrderDTO orderDTO, int customerInfoID) {
 		// TODO Auto-generated method stub
 		return orderDAO.saveOrder(customerInfoID, orderDTO.getTotalPrice(),
-				orderDTO.getMessage(), orderDTO.getShopname());
+				orderDTO.getMessage(), orderDTO.getShopname(), orderDTO.getUsername());
 	}
 
 	public void saveOrderInfo(OrderDTO orderDTO, int orderID) {

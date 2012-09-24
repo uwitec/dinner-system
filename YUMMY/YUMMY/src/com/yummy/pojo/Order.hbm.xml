@@ -13,6 +13,9 @@
         <many-to-one name="shop" class="com.yummy.pojo.Shop" fetch="select">
             <column name="shopname" length="15" not-null="true" />
         </many-to-one>
+        <many-to-one name="customer" class="com.yummy.pojo.Customer" fetch="select">
+            <column name="username" length="15" not-null="true" />
+        </many-to-one>
         <many-to-one name="customerInfo" class="com.yummy.pojo.CustomerInfo" fetch="select">
             <column name="user_info" not-null="true" />
         </many-to-one>

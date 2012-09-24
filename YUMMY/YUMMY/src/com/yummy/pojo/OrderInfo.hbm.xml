@@ -19,5 +19,8 @@
         <property name="account" type="java.lang.Integer">
             <column name="account" />
         </property>
+        <property name="dishname" type="java.lang.String">
+            <column name="dishname" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -151,18 +151,35 @@ public class OrderInfoDAO extends HibernateDaoSupport {
 	public void saveOrderInfo(OrderDTO orderDTO, int orderID) {
 		List items = orderDTO.getItems();
 		if (items.size() > 0) {
-			String sql = "insert into `order_info` values(null, ?, ?, ?)";
+			String sql = "insert into `order_info` values(null, ?, ?, ?, ?)";
 			SQLQuery query = getSession().createSQLQuery(sql);
 			System.out.println("8.订单详细信息到数据库：" + sql);
 			for (int i = 0; i < items.size(); i++) {
 				ItemDTO item = (ItemDTO) items.get(i);
+				
+				String dishname = item.getItemname();
 				int dishID = item.getId();
 				int quantities = item.getOrderCount();
+				
 				query.setParameter(0, orderID);
 				query.setParameter(1, dishID);
 				query.setParameter(2, quantities);
+				query.setParameter(3, dishname);
+				
 		    	query.executeUpdate();
 			}
 		}
+	}
+
+	public List getByID(int orderID) {
+		// TODO Auto-generated method stub
+		String sql = "select dishname, account from `order_info` where order_id = ?";
+		SQLQuery query = getSession().createSQLQuery(sql);
+		System.out.println("1. " + sql + orderID);
+		query.setParameter(0, orderID);
+		List list = query.list();
+		System.out.println("1. " + sql + orderID);
+		System.out.println("OrderInfoDAO---> getByID:" + orderID);
+		return list;
 	}
 }
