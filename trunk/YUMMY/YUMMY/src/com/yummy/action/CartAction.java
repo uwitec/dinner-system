@@ -29,6 +29,7 @@ public class CartAction extends ActionSupport {
 	private String itemname;
 	private String picPath;
 	private float price;
+	private String shopname;
 	
 	private String type;
 	@Resource(name="cartManager")
@@ -44,6 +45,8 @@ public class CartAction extends ActionSupport {
 			itemList = new ArrayList<ItemDTO>();
 		}
 		manager.setItems(itemList);
+		
+		System.out.println("0. 接收到的餐厅名：" + shopname);
 
 		String returnType = "";
 		
@@ -142,6 +145,11 @@ public class CartAction extends ActionSupport {
 	public void updateMap(ICartManager manager) {
 		session.put("items", manager.getItems());
 		session.put("totalPrice", manager.getTotalPrice());
+		if (manager.getItems().size() != 0) {
+			session.put("shopname", shopname);
+		} else {
+			session.remove("shopname");
+		}
 	}
 	
 	public int getId() {
@@ -190,5 +198,13 @@ public class CartAction extends ActionSupport {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getShopname() {
+		return shopname;
+	}
+
+	public void setShopname(String shopname) {
+		this.shopname = shopname;
 	}
 }
