@@ -75,7 +75,14 @@
 		</action>
 	</package>
 
-	<package name="dish_pkg" namespace="dish">
+	<package name="dish_pkg" extends="struts-default"  namespace="/dish">
 		<action name="addMyDish" class="AddMyDishAction">
+			<result name="success" type="redirect">AddSuccess.jsp</result>
+		</action>
+		<action name="showAllMyDish" class="ShowAllMyDishAction">
+			<result name="success" type="dispatcher">showAllMydish.jsp</result>
+		</action>
+		<action name="updateMyDish" class="UpdateMyDishAction">
+			<result name="success" type="dispatcher">updateDish.jsp</result>
 		</action>
 	</package></struts>    

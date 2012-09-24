@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=GB2312">
 <title>添加菜单信息</title>
 <script type="text/javascript" src="./jquery-1.7.js"></script>
-<script type="text/javascript" src="./dishInfo.js"></script>
+<script type="text/javascript" src="./shopInfo.js"></script>
 </head>
 <body>
 
@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <input type="checkbox" name="category" value="9">川菜
                       <input type="checkbox" name="category" value="10">西餐
                         <input type="checkbox" name="category" value="11">快餐
-                          <input type="checkbox" name="category" value="12s">清真
+                          <input type="checkbox" name="category" value="12">清真
   </td></tr>
  <tr><td>标签<input type="text" name="tag"></td></tr>
  <tr><td>积分<input type="text" name="point"></td></tr>

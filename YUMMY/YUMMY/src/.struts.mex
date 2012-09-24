@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
   <package name="test" location="225,10" size="280,1050">
-    <action name="totest" location="65,57" size="150,41">
+    <action name="totest" location="85,77" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="test_success.jsp" />
       </result>
     </action>
-    <action name="index" location="65,162" size="150,41">
+    <action name="index" location="85,182" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="index.jsp" />
       </result>
     </action>
-    <action name="search" location="65,257" size="150,62">
+    <action name="search" location="85,277" size="150,62">
       <result name="success">
         <resourceEdge source="success" routing="0" target="searchResult.jsp" />
       </result>
@@ -19,7 +19,7 @@
         <resourceEdge source="error" routing="0" target="index.jsp" />
       </result>
     </action>
-    <action name="foodDetails" location="65,362" size="150,62">
+    <action name="foodDetails" location="85,382" size="150,62">
       <result name="success">
         <resourceEdge source="success" routing="0" target="dishDetails.jsp" />
       </result>
@@ -27,7 +27,7 @@
         <resourceEdge source="error" routing="0" target="index.jsp" />
       </result>
     </action>
-    <action name="shopDetails" location="65,467" size="150,62">
+    <action name="shopDetails" location="85,487" size="150,62">
       <result name="success">
         <resourceEdge source="success" routing="0" target="shopDetails.jsp" />
       </result>
@@ -35,7 +35,7 @@
         <resourceEdge source="error" routing="0" target="index.jsp" />
       </result>
     </action>
-    <action name="addToCart" location="65,572" size="150,62">
+    <action name="addToCart" location="85,592" size="150,62">
       <result name="success">
         <resourceEdge source="success" routing="0" target="cart.jsp" />
       </result>
@@ -43,7 +43,7 @@
         <resourceEdge source="error" routing="0" target="index.jsp" />
       </result>
     </action>
-    <action name="takeOrder" location="65,806" size="150,83">
+    <action name="takeOrder" location="85,826" size="150,83">
       <result name="success">
         <resourceEdge source="success" routing="0" target="cart.jsp" />
       </result>
@@ -54,7 +54,7 @@
         <resourceEdge source="none" routing="0" target="cart.jsp" />
       </result>
     </action>
-    <action name="login" location="65,957" size="150,62">
+    <action name="login" location="85,977" size="150,62">
       <result name="success">
         <resourceEdge source="success" routing="0" target="index.jsp" />
       </result>
@@ -64,19 +64,26 @@
     </action>
   </package>
   <package name="shop_pkg" location="10,1165" size="525,245">
-    <action name="showShop" location="65,162" size="150,41">
+    <action name="showShop" location="85,182" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="shopInfo.jsp" />
       </result>
     </action>
-    <action name="addShop" location="65,57" size="150,41">
+    <action name="addShop" location="85,77" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="showShop" namespace="/shop" />
       </result>
     </action>
-    <action name="saveShop" location="310,162" size="150,41">
+    <action name="saveShop" location="330,182" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="showShop" namespace="/shop" />
+      </result>
+    </action>
+  </package>
+  <package name="dish_pkg" location="559,1165" size="511,248">
+    <action name="addMyDish" location="30,38" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="shopInfo.jsp" />
       </result>
     </action>
   </package>
@@ -88,7 +95,5 @@
   <webResource name="cart.jsp" path="cart.jsp" location="570,717" size="150,55" />
   <webResource name="login.jsp" path="login.jsp" location="815,647" size="150,55" />
   <webResource name="shopInfo.jsp" path="/shop/shopInfo.jsp" location="75,1452" size="150,55" />
-  <package name="dish_pkg" location="559,1165" size="511,248" />
-  <webResource name="addMyDish.jsp" path="/dishes\addMyDish.jsp" location="574,1447" size="189,55" />
 </Struts2Diagram>
 

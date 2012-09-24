@@ -17,13 +17,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 
- <form action="addMyDish" method="post">
+ <form action="saveMyDish" method="post">
  <table>
- <tr><td>名称<input type="text" name="name"></td></tr>
- <tr><td>图片<input type="file" id="logo_file" name="picOne"><input type="button" id="upload" value="预览" /></td></tr>
- <tr><td colspan="5"><img id="logo_img" src="../images/dish/default_pic.jpg"></td></tr>
- <tr><td>介绍<textarea rows="5" cols="100" name="introduction"></textarea></td></tr>
- <tr><td>价格<input type="text" name="price">元</td></tr>
+ <tr><td>名称<input type="text" name="name" value="${dishUpade.name }"></td></tr>
+ <tr><td>图片<input type="file" id="logo_file" name="picOne"  value="${dishUpade.picOne }"><input type="button" id="upload" value="预览" /></td></tr>
+ <tr><td colspan="5"><img id="logo_img" src="${dishUpade.picOne }"></td></tr>
+ <tr><td>介绍<textarea rows="5" cols="100" name="introduction"  >${dishUpade.introduction}</textarea></td></tr>
+ <tr><td>价格<input type="text" name="price" value="${dishUpade.price }">元</td></tr>
   <tr><td>分类
   <input type="checkbox" name="category" value="0">粥
     <input type="checkbox" name="category" value="1">粉
@@ -40,12 +40,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <input type="checkbox" name="category" value="11">快餐
                           <input type="checkbox" name="category" value="12s">清真
   </td></tr>
- <tr><td>标签<input type="text" name="tag"></td></tr>
- <tr><td>积分<input type="text" name="point"></td></tr>
+ <tr><td>标签<input type="text" name="tag" value="${dishUpade.tag }"></td></tr>
+ <tr><td>积分<input type="text" name="point" value="${dishUpade.point }"></td></tr>
 <!-- --------还没有登录功能  默认用户为dfs------------------ -->
  <!-- <tr><td><input type="hidden" name="shopname" value="#myShop.shopname"></td></tr> 
  <tr><td><input type="hidden" name="shopname" value="dfs"></td></tr>-->
- <tr><td><input type="submit" value="发布" ></td></tr>
+ <tr><td><input type="submit" value="保存" ></td></tr>
  </table>
  </form>
 </body>

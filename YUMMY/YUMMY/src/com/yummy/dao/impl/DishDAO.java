@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.yummy.dao.IDishDAO;
 import com.yummy.pojo.Dish;
 
 /**
@@ -23,7 +24,7 @@ import com.yummy.pojo.Dish;
  * @author MyEclipse Persistence Tools
  */
 
-public class DishDAO extends HibernateDaoSupport {
+public class DishDAO extends HibernateDaoSupport implements IDishDAO{
 	private static final Logger log = LoggerFactory.getLogger(DishDAO.class);
 	// property constants
 	public static final String NAME = "name";
@@ -183,5 +184,22 @@ public class DishDAO extends HibernateDaoSupport {
 
 	public static DishDAO getFromApplicationContext(ApplicationContext ctx) {
 		return (DishDAO) ctx.getBean("DishDAO");
+	}
+
+	public List selectAllByShop(String shopName) {
+		// TODO Auto-generated method stub
+		log.debug("finding all Dish instances");
+		try {
+			String queryString = "from Dish where shopname='"+shopName+"'";
+			return getHibernateTemplate().find(queryString);
+		} catch (RuntimeException re) {
+			log.error("find all failed", re);
+			throw re;
+		}
+	}
+
+	public void updateById(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 }
