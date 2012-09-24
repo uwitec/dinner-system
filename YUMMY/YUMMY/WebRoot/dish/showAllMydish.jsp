@@ -10,22 +10,29 @@
 <script type="text/javascript" src="./dishInfo.js"></script>
 </head>
 <body>
+<a href="/addMyDish.jsp">添加</a>
 <table>
+<tr>
+<td>图片</td>
+<td>名称</td>
+<td>介绍</td>
+<td>价格</td>
+</tr>
 <% int i=0; %>
 <c:forEach var="dish_ite" items="${dishList}">
-<% if(i%4==0){ %>
 <tr>
-<%} %>
-<td>
-<a href="updateMyDish?dishId=${dish_ite.dishId}" id="enter"><img src="${dish_ite.picOne}"><br>${dish_ite.name}&nbsp;&nbsp;&nbsp;${dish_ite.price}&nbsp;&nbsp;&nbsp;<span id="change_btn"></span></a>
+<td><img src="${dish_ite.picOne}"></td>
+<td><a href="updateMyDish?dishId=${dish_ite.dishId}" id="enter">${dish_ite.name}</a></td>
+<td>${dish_ite.introduction}</td>
+<td>${dish_ite.price}</td>
+<td><a href="updateMyDish?dishId=${dish_ite.dishId}" >修改</a>
 </td>
-<% if((i+5)%4==0){ %>
+<td><a href="updateMyDish?dishId=${dish_ite.dishId}" >删除</a>
+</td>
 </tr>
-<%}
 
-i++; %>
 </c:forEach>
-</tr>
+
 </table>
 </body>
 </html>

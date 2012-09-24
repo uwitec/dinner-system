@@ -16,7 +16,7 @@ import com.yummy.service.IShopService;
 
 public class AddShopAction extends ActionSupport{
 	
-	private Shop shop;
+	private String shopname;
 	private String address;
 	private String telephone;
 	private String qq;
@@ -27,17 +27,16 @@ public class AddShopAction extends ActionSupport{
 	private String deliveryRange;
 	
 	private IShopService shopService;
-	
-	
 
-	public Shop getShop() {
-		return shop;
+
+	public String getShopname() {
+		return shopname;
 	}
 
 
 
-	public void setShop(Shop shop) {
-		this.shop = shop;
+	public void setShopname(String shopname) {
+		this.shopname = shopname;
 	}
 
 

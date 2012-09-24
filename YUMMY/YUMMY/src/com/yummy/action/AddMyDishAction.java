@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.yummy.pojo.Dish;
 import com.yummy.pojo.Shop;
@@ -145,9 +146,10 @@ public class AddMyDishAction extends ActionSupport {
 		// TODO Auto-generated method stub
 		HttpServletRequest request = ServletActionContext.getRequest();
 		//没登录 设定为...
-		request.getSession().setAttribute("shopName","dfs");
-		String shopname = (String) request.getSession().getAttribute("shopName");
-		
+		//request.getSession().setAttribute("shopName","dfs");
+		//String shopname = (String) request.getSession().getAttribute("shopName");
+		Shop shop = (Shop)ActionContext.getContext().getSession().get("shop_on");
+		String shopname = shop.getShopname();
 		if("".equals(picOne))picOne = ServletActionContext.getServletContext().getRealPath("/images/dish/default_pic.jpg");
 		
 		String img_type = picOne.substring(picOne.lastIndexOf('.'));
@@ -172,7 +174,7 @@ public class AddMyDishAction extends ActionSupport {
 		}
 		uploadTime = new Date();
 		String path = RealPath+"\\"+shopname+"\\"+fileName;
-		Dish dish = new Dish(shopname,name,point,price,introduction,category, tag, uploadTime,path);
+		Dish dish = new Dish(shop,name,point,price,introduction,category, tag, uploadTime,path);
 		
 		dishService.addDish(dish);
 
