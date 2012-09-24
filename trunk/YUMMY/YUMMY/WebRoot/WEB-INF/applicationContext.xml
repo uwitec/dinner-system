@@ -116,6 +116,11 @@
 			<ref bean="DishService" />
 		</property>
 	</bean>
+	<bean id="SaveMyDishAction" class="com.yummy.action.SaveMyDishAction" scope="prototype">
+		<property name="dishService">
+			<ref bean="DishService" />
+		</property>
+	</bean>
 
 	 <bean id="highQualifiedFoodDAO" class="com.yummy.dao.impl.HighQualifiedFoodDAO">
 	 	<property name="sessionFactory">

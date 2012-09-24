@@ -85,4 +85,7 @@
 		<action name="updateMyDish" class="UpdateMyDishAction">
 			<result name="success" type="dispatcher">updateDish.jsp</result>
 		</action>
+		<action name="saveMyDish" class="SaveMyDishAction">
+			<result name="success" type="redirect">AddSuccess.jsp</result>
+		</action>
 	</package></struts>    
