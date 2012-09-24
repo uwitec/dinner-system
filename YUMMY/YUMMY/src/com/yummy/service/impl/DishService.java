@@ -41,9 +41,9 @@ public class DishService implements IDishService {
 
 
 
-	public void updateDish(int id) {
+	public void updateDish(Dish dish) {
 		// TODO Auto-generated method stub
-		dishDAO.updateById(id);
+		dishDAO.updateById(dish);
 	}
 
 }

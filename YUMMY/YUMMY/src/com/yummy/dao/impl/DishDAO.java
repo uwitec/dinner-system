@@ -198,8 +198,15 @@ public class DishDAO extends HibernateDaoSupport implements IDishDAO{
 		}
 	}
 
-	public void updateById(int id) {
+	public void updateById(Dish instance) {
 		// TODO Auto-generated method stub
-		
+		log.debug("attaching dirty Dish instance");
+		try {
+			getHibernateTemplate().saveOrUpdate(instance);
+			log.debug("attach successful");
+		} catch (RuntimeException re) {
+			log.error("attach failed", re);
+			throw re;
+		}
 	}
 }

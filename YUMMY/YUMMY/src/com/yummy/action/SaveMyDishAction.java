@@ -17,7 +17,7 @@ import com.yummy.service.IDishService;
 
 public class SaveMyDishAction extends ActionSupport {
 	
-
+	private int dishId;
 	private String name;
 	private Integer point;
 	private Float price;
@@ -28,6 +28,19 @@ public class SaveMyDishAction extends ActionSupport {
 	private String picOne;
 	
 	private IDishService dishService;
+
+	
+
+	public int getDishId() {
+		return dishId;
+	}
+
+
+
+	public void setDishId(int dishId) {
+		this.dishId = dishId;
+	}
+
 
 
 	public String getName() {
@@ -145,8 +158,38 @@ public class SaveMyDishAction extends ActionSupport {
 		// TODO Auto-generated method stub
 		HttpServletRequest request = ServletActionContext.getRequest();
 		//没登录 设定为...
-		String dishid = request.getParameter("dish_ite");
-		dishService.updateDish(Integer.parseInt(dishid));
+		request.getSession().setAttribute("shopName","dfs");
+		String shopname = (String) request.getSession().getAttribute("shopName");
+		
+		if("".equals(picOne))picOne = ServletActionContext.getServletContext().getRealPath("/images/dish/default_pic.jpg");
+		
+		String img_type = picOne.substring(picOne.lastIndexOf('.'));
+		//Random ran = new Random(2);
+		String fileName = name+img_type;
+		File localfile = new File(picOne);
+		String RealPath = ServletActionContext.getServletContext().getRealPath("/images");
+		
+		
+		File file = new File(RealPath+"\\"+shopname);
+		
+		System.out.print(RealPath+"\\"+shopname);
+		
+		if(!file.exists()){
+			file.mkdirs();
+		}
+		try {
+			FileUtils.copyFile(localfile, new File(file,fileName));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		uploadTime = new Date();
+		String path = RealPath+"\\"+shopname+"\\"+fileName;
+		
+		
+		Dish dish = new Dish(shopname,name,point,price,introduction,category, tag, uploadTime,path);
+		dish.setDishId(dishId);
+		dishService.updateDish(dish);
 
 		return SUCCESS;
 	}

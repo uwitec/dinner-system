@@ -12,6 +12,6 @@ public interface IDishService {
 	
 	public List getAllMyDish(String shopName);
 	
-	public void updateDish(int id);
+	public void updateDish(Dish dish);
 
 }

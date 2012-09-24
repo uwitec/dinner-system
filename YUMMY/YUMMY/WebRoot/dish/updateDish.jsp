@@ -45,6 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- --------还没有登录功能  默认用户为dfs------------------ -->
  <!-- <tr><td><input type="hidden" name="shopname" value="#myShop.shopname"></td></tr> 
  <tr><td><input type="hidden" name="shopname" value="dfs"></td></tr>-->
+  <tr><td><input type="hidden" name="dishId" value="${dishUpade.dishId }"></td></tr>
  <tr><td><input type="submit" value="保存" ></td></tr>
  </table>
  </form>

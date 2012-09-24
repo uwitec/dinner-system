@@ -13,6 +13,6 @@ public interface IDishDAO {
 
 	public abstract List selectAllByShop(String shopName);
 	
-	public abstract void updateById(int id);
+	public abstract void updateById(Dish dish);
 
 }
