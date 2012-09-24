@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="index.jsp"><img src="/YUMMY/picture/logo.jpg" width="250" height="88"></a>
 	<h1>食物详细信息页面</h1>
 	<hr>
 	<table border=1>
