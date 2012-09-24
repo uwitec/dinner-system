@@ -7,6 +7,7 @@
 <title>餐厅信息管理</title>
 </head>
 <body>
+	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>	
 <ul>
 <li><a href="shop/showShop">我的餐厅</a></li>
 <li><a href="dish/showAllMyDish">我的菜单</a></li>

@@ -7,6 +7,7 @@
 <title>登录</title>
 </head>
 <body>
+	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>	
 <form action="shopLogin" >
 餐厅名称：<input type="text" name="shopname">
 密码：<input type="password" name="password">

@@ -47,6 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         %>
   <body> 
   店铺员工注册页面<br><br>
+  	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>	
   <form method="post" action="shopWorkerReg" name="shopWorkerReg">
   <table border="1" width="200">
   <tbody>

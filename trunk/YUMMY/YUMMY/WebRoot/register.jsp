@@ -8,6 +8,7 @@
 </head>
 <body>
 	  <h1>用户注册页面</h1>
+	  	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>	
 	  <%
         String er1 = "*";
         String er2 = "*";
