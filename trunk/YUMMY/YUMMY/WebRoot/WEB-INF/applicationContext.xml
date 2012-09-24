@@ -64,6 +64,28 @@
 		</property>
 	</bean>
 	 
+	 <bean id="ShopWorkerDAO" class="com.yummy.dao.impl.ShopWorkerDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	<bean id="ShopWorkerService" class="com.yummy.service.impl.ShopWorkerService">
+		<property name="shopWorkerDAO">
+			<ref bean="ShopWorkerDAO"/>
+		</property>
+	</bean>
+	 
+	<bean id="CustomerDAO" class="com.yummy.dao.impl.CustomerDAO">
+	 	<property name="sessionFactory">
+	 		<ref bean="sessionFactory" />
+	 	</property>
+	 </bean>
+	<bean id="CustomerService" class="com.yummy.service.impl.CustomerService">
+		<property name="customerDAO">
+			<ref bean="CustomerDAO"/>
+		</property>
+	</bean>
+	 
 	<bean id="ShopDAO" class="com.yummy.dao.impl.ShopDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -138,6 +160,20 @@
 	<!--  拦截用户搜索的action -->
 	 <bean id="searchAction" class="com.yummy.action.SearchAction" scope="prototype"/>
 	 
+	<!-- 注册的action -->
+	 <bean id="RegisterAction" class="com.yummy.action.RegisterAction" scope="prototype">
+		<property name="customerService">
+			<ref bean="CustomerService" />
+		</property>
+	 </bean>
+	 
+	 <!-- 店铺员工注册的action -->
+	 <bean id="shopWorkerRegAction" class="com.yummy.action.shopWorkerRegAction" scope="prototype">
+		<property name="shopWorkerService">
+			<ref bean="ShopWorkerService" />
+		</property>
+	 </bean>
+	 
 	<!--  查询Dao -->
 	 <bean id="searchDAO" class="com.yummy.dao.impl.SearchDAO" scope="prototype">
 	 	<property name="sessionFactory">
@@ -150,11 +186,7 @@
 	 		<ref bean="sessionFactory" />
 	 	</property>
 	 </bean>
-	 <bean id="CustomerDAO" class="com.yummy.dao.impl.CustomerDAO">
-	 	<property name="sessionFactory">
-	 		<ref bean="sessionFactory" />
-	 	</property>
-	 </bean>
+
 	 <bean id="CollectDishDAO" class="com.yummy.dao.impl.CollectDishDAO">
 	 	<property name="sessionFactory">
 	 		<ref bean="sessionFactory" />
@@ -192,9 +224,5 @@
 	 		<ref bean="sessionFactory" />
 	 	</property>
 	 </bean>
-	 <bean id="ShopWorkerDAO" class="com.yummy.pojo.ShopWorkerDAO">
-	 	<property name="sessionFactory">
-	 		<ref bean="sessionFactory" />
-	 	</property>
-	 </bean>
+
 </beans>
