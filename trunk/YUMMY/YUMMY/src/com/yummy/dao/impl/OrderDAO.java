@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.hibernate.LockMode;
+import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -164,20 +165,40 @@ public class OrderDAO extends HibernateDaoSupport {
 		return (OrderDAO) ctx.getBean("OrderDAO");
 	}
 	
-	public int saveOrder(int customerInfoID, float f, String message, String shopname) {
+	public int saveOrder(int customerInfoID, float f, String message, String shopname, String username) {
 		Timestamp time = new Timestamp(new Date().getTime());
 		String insertSQL = "insert into `order` values(null, '" + time +"', '"+ 1 +
-		"', '"+ customerInfoID +"', '"+ f +"', '" + message + "', '" + (int)f + "', '" + shopname +"')";
+		"', '"+ customerInfoID +"', '"+ f +"', '" + message + "', '" + (int)f + "', '" + shopname +"', '" + username + "')";
 		System.out.println("3. " + insertSQL);
 		SQLQuery query = getSession().createSQLQuery(insertSQL);
 		query.executeUpdate();
-		System.out.println("4. 已将订单基本信息插入数据库");
+//		System.out.println("4. 已将订单基本信息插入数据库");
 		
 		String searchSQL = "select order_id from `order` where order_time = '" + time + "' and user_info = '" +
 					customerInfoID + "'";
-		System.out.println("5. " +searchSQL);
+//		System.out.println("5. " +searchSQL);
 		query = getSession().createSQLQuery(searchSQL);
-		System.out.println("6. 已将订单详细信息插入数据库");
+//		System.out.println("6. 已将订单详细信息插入数据库");
 		return (Integer) query.list().get(0);
+	}
+
+	public List getCurrentOrder(String username) {
+		// TODO Auto-generated method stub
+		return queryByStatus(username, 1);
+	}
+
+	public List getFinishedOrder(String username) {
+		// TODO Auto-generated method stub
+		return queryByStatus(username, 5);
+	}
+
+	public List queryByStatus(String username, int type) {
+		String querySQL = "select order_id, order_time, user_info, total_price, shopname from " +
+					"`order` where username = ? and status = ?";
+				System.out.println("1. 查询订单语句：" + querySQL);
+				SQLQuery query = getSession().createSQLQuery(querySQL);
+				query.setParameter(0, username);
+				query.setParameter(1, type);
+				return query.list();
 	}
 }

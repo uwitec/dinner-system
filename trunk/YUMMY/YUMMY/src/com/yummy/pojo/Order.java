@@ -20,6 +20,7 @@ public class Order implements java.io.Serializable {
 	private Float totalPrice;
 	private String message;
 	private Integer grade;
+	private Customer customer;
 	private Set orderInfos = new HashSet(0);
 
 	// Constructors
@@ -124,6 +125,14 @@ public class Order implements java.io.Serializable {
 
 	public void setOrderInfos(Set orderInfos) {
 		this.orderInfos = orderInfos;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }
