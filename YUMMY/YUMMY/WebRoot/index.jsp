@@ -42,19 +42,21 @@ a:hover { color: #F00; }
         <li class="shoucang"><a href="collection.jsp">我的收藏</a></li>     
         <li class="shoppingCart"><a href="addToCart">我的购物车<s:property value="highQualifiedFoodsList.size()" /></a></li>
         <li class="MyYummy"><a href="accountCenter.jsp">我的Yummy账户</a></li>
+        <li class="search"><form action="search">
+	    <label for="searchItem">输入您想要的宝贝</label>
+		<input name="searchItem" id="searchItem" autocomplete="off" accesskey="s" />
+		<input type="button" id="search" value="搜索" />
+	</form> </li>
         <li class="login"><a href="login.jsp">登录</a></li>
         <li class="register"><a href="register.jsp">注册</a></li>
+        <li class="shop"><a href="shopBelong.jsp">餐厅员工入口</a></li>
     </ul>
 </div>
 	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>						                                                                                         
 	<br>
-	<a href="shop/addShopInfo.jsp">添加餐厅信息</a>
+	
 	<br>
-	<form action="search">
-	    <label for="searchItem">输入您想要的宝贝</label>
-		<input name="searchItem" id="searchItem" autocomplete="off" accesskey="s" />
-		<input type="button" id="search" value="搜索" />
-	</form>
+	
 	<br>
 	<hr>
 	<hr>
