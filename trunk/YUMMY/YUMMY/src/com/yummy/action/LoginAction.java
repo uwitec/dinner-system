@@ -38,12 +38,12 @@ public class LoginAction extends ActionSupport {
 	@Override
 	public void validate() {   
 		//检查用户输入的用户名合法性
-		if (username == null || username.length() < 4 || username.length() > 15) {
+		if (username == null || username.length() < 3 || username.length() > 15) {
 			addFieldError("username", "用户名长度不符合要求");
 			System.out.println("用户名不合符要求");
 		}
 		//检查输入密码的合法性
-		if (password == null || password.length() < 4 || password.length() > 15) {
+		if (password == null || password.length() < 3 || password.length() > 15) {
 			addFieldError("password", "密码长度不符合要求");
 			System.out.println("密码长度不符合要求");
 		} 
