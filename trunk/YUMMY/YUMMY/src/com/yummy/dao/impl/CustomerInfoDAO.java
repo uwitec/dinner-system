@@ -114,20 +114,22 @@ public class CustomerInfoDAO extends HibernateDaoSupport  {
     }    
     
     public int saveCustomerInfo(String username, String telephone, String address) {
-    	String sql = "insert into customer_info values(null,'" + username +
-    			"','" + telephone + "','" + address +"')";
-    	System.out.println(sql);
-    	SQLQuery query = getSession().createSQLQuery(sql);
+    	try {
+    		String sql = "insert into customer_info values(null,'" + username +
+        			"','" + telephone + "','" + address +"')";
+        	System.out.println(sql);
+        	SQLQuery query = getSession().createSQLQuery(sql);
+        	
+        	query.executeUpdate();
+        	String searchSQL = "select id from customer_info where username ='" + username +
+        			"' and telephone ='" + telephone + "' and address ='" + address +"'";
+        	query = getSession().createSQLQuery(searchSQL);
+        	return (Integer) query.list().get(0);
+		} catch (RuntimeException re) {
+			// TODO: handle exception
+			  throw re;
+		}
     	
-    	query.executeUpdate();
-  
-    	
-    	String searchSQL = "select id from customer_info where username ='" + username +
-    			"' and telephone ='" + telephone + "' and address ='" + address +"'";
-    	query = getSession().createSQLQuery(searchSQL);
-    	System.out.println("1. " + searchSQL);
-    	System.out.println("2. === " + query.list());
-    	return (Integer) query.list().get(0);
     }
     
     public List findByProperty(String propertyName, Object value) {

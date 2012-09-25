@@ -29,37 +29,35 @@ public class CenterService implements ICenterService {
 		// TODO Auto-generated method stub
 		
 		List currentOrderDetals = null;
-		System.out.println("用户名： " + username);
+//		System.out.println("CenterService--->用户名： " + username);
 		List currentOrders = orderDAO.getCurrentOrder(username);
 		if (currentOrders != null) {   
 			currentOrderDetals = new ArrayList();
-			System.out.println("CenterService---> currentOrders:" + currentOrders.size());
-			for (int i = 0; i < currentOrders.size(); i++) { System.out.println("for::: " + i);
+//			System.out.println("CenterService---> 当前为完成订单数:" + currentOrders.size()); 
+			for (int i = 0; i < currentOrders.size(); i++) { 
+//				System.out.println("CenterService --> 查询当前订单 --> 第" + i + "份未完成订单");
 				Object[] tempOrder = (Object[]) currentOrders.get(i);
 				OrderDetailsDTO orderDetail = new OrderDetailsDTO();
 				orderDetail.setTime((Timestamp) tempOrder[1]);
 				orderDetail.setTotalPrice((Float) tempOrder[3]);
 				orderDetail.setShopname((String) tempOrder[4]);
 				int orderID = (Integer) tempOrder[0];
-				System.out.println("orderID--> " + orderID);
+//				System.out.println("CenterService -->  第" + i + "份订单ID：" + orderID);
 				List orderInfos = orderInfoDAO.getByID(orderID);
-				System.out.println("搜索到orderInfo长度：" + orderInfos.size());
+//				System.out.println("CenterService -->  第" + i + "份订单食物数量：" + orderInfos.size());
 				List<ItemDTO> items = new ArrayList<ItemDTO>();
 				for (int j = 0; j < orderInfos.size(); j++) {
 					Object[] temp = (Object[]) orderInfos.get(j);
 					ItemDTO item = new ItemDTO();
 					item.setItemname((String) temp[0]);
 					item.setOrderCount((Integer) temp[1]);
+					item.setId((Integer)temp[2]);
 					items.add(item);
-					System.out.println("11=====");
 				}
 				orderDetail.setItems(items);
-				System.out.println("22=====");
 				currentOrderDetals.add(orderDetail);
-				System.out.println("33=====");
 			}
 		}
-		System.out.println("44=====");
 		return currentOrderDetals;
 	}
 

@@ -35,20 +35,12 @@ public class OrderService  {
 		// TODO Auto-generated method stub
 		//存储用户的信息，如地址，电话等。
 		int customerInfoID = saveCustomerInfo(orderDTO);
-		//获得用户信息的Id
-		//int customerInfoID = getCustomerInfoID(orderDTO);
-		
 		//存储订单信息
 		int orderID = saveOrder(orderDTO, customerInfoID);
-		//int orderID = getOrderID(orderDTO, time);
 		//存储订单详细信息
 		saveOrderInfo(orderDTO, orderID);
 	}
 
-	/*public int getOrderID(OrderDTO orderDTO, Timestamp time) {
-		// TODO Auto-generated method stub
-		return 0;
-	}*/
 
 	public int saveOrder(OrderDTO orderDTO, int customerInfoID) {
 		// TODO Auto-generated method stub

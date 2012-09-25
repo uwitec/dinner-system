@@ -58,7 +58,7 @@
 		<!-- 保存订单信息action -->
 		<action name="pay" class="payAction">
 		<!-- 	<result name="success" type="redirectAction">myCenter</result> -->
-			<result name="success" type="redirect">accountCenter.jsp</result>
+			<result name="success" type="chain">myCenter</result>
 			<result name="input" type="redirect">pay.jsp</result>
 			<result name="error" type="redirect">erreopage/orderError.jsp</result>
 		</action>

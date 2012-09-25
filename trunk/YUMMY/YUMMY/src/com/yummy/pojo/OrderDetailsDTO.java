@@ -3,7 +3,7 @@ package com.yummy.pojo;
 import java.sql.Timestamp;
 import java.util.List;
 
-public class OrderDetailsDTO {
+public class OrderDetailsDTO implements java.io.Serializable{
 	
 	private String shopname;
 	private List<ItemDTO> items;

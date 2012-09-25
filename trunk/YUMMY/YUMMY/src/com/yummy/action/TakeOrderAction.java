@@ -39,7 +39,6 @@ public class TakeOrderAction extends ActionSupport {
 			return ERROR;
 		}
 		List<CustomerInfo> customerInfos = customerInfoDAO.findByUsername(username);
-		System.out.println("用户填写过的地址： " + customerInfos.size());
 		session.put("customerInfos", customerInfos);
 		return SUCCESS;
 	}
