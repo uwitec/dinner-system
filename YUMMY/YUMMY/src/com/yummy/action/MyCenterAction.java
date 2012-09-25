@@ -31,11 +31,11 @@ public class MyCenterAction extends ActionSupport {
 		if (username == null || "".equals(username)) {
 			return ERROR; 
 		}
-		System.out.println("MyCenterAction--> username: " + username);
 		List currentOrders = centerService.getCurrentOrder(username);
 		List finishedOrders = centerService.getFinishedOrder(username);
 		session.put("currentOrders", currentOrders);
 		session.put("finishedOrders", finishedOrders);
+		System.out.println("MyCenterAction--->" + "已经查询数据库，准备跳转到accountCenter.jsp --〉currentOrders：size：" + currentOrders.size());
 		return SUCCESS;
 	}
 	

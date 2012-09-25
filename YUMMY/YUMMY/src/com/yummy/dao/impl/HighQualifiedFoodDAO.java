@@ -25,29 +25,12 @@ public class HighQualifiedFoodDAO extends HibernateDaoSupport implements IHighQu
 	 String sql = "select new Dish(dish.dishId, dish.shop, dish.name, dish.point, dish.price , dish.picOne) "
 			 + "from com.yummy.pojo.Dish dish order by dish.point asc, dish.name desc ";
 		
-//	 String sql = "from com.yummy.pojo.Dish dish order by dish.point asc, dish.name desc ";
-
-	 
 	 // 确保list是空
 	 if (highQualifiedFoods != null) {
 		 highQualifiedFoods.clear();
 	 }
 	 List highQualifiedFoods = getHibernateTemplate().find(sql);
 	 
-	 /*Query query = getSession().createQuery(sql);
-	 highQualifiedFoods = query.list();*/
-	 
-	 // 将从数据库中查询的dish对象转换成 highQualifiedFoodDTO对象
-	/* for (int i = 0; i < tempList.size(); i++) {
-		 HighQualifiedFoodDTO temp = new HighQualifiedFoodDTO();
-		 temp.setDishId(((Dish)tempList.get(i)).getDishId());
-		 temp.setName(((Dish)tempList.get(i)).getName());
-		 temp.setPrice(((Dish)tempList.get(i)).getPrice());
-		 temp.setPoint(((Dish)tempList.get(i)).getPoint());
-		 temp.setShopname(((Dish)tempList.get(i)).getShopname());
-		 temp.setPicOne(((Dish)tempList.get(i)).getPicOne());
-		 highQualifiedFoods.add(temp);
-	}*/
 	 return highQualifiedFoods;
 	}
 

@@ -20,7 +20,7 @@
 	 		<s:submit value="确定"/>
 	 </s:form>
 	<hr>
-	<table border=1>
+	<%-- <table border=1>
 		<tr>
 			<td>联系电话</td>
 			<td>送达地址</td>
@@ -31,7 +31,7 @@
 				<td>${info.address}</td>
 			 </tr>
 		  </c:forEach>
-	</table>
+	</table> --%>
 	</center>
 </body>
 </html>

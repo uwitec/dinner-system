@@ -46,8 +46,6 @@ public class CartAction extends ActionSupport {
 		}
 		manager.setItems(itemList);
 		
-		System.out.println("0. 接收到的餐厅名：" + shopname);
-
 		String returnType = "";
 		
 		if ("add".equalsIgnoreCase(type)) {

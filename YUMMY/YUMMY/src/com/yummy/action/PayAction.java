@@ -30,14 +30,17 @@ public class PayAction extends ActionSupport {
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		session = ActionContext.getContext().getSession();
-		float totalPrice = (Float) session.get("totalPrice");
+		Float totalPrice = (Float) session.get("totalPrice");
 		String username = (String) session.get("username");
 		List items = (List) session.get("items");
 		String shopname = (String) session.get("shopname");
-		System.out.println("0.1--> payActionÈ¡³öshopname£º" + shopname);
+		if (totalPrice == null || items == null || shopname == null) {
+			return INPUT;
+		}
 		orderService.save(new OrderDTO(username, address, telephone, message,shopname, totalPrice, items));
 		session.remove("totalPrice");
 		session.remove("items");
+		session.remove("shopname");
 		return SUCCESS;
 	}
 	@Override

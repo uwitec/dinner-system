@@ -3,6 +3,7 @@ package com.yummy.dao.impl;
 import java.util.List;
 import org.hibernate.LockMode;
 import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -173,13 +174,12 @@ public class OrderInfoDAO extends HibernateDaoSupport {
 
 	public List getByID(int orderID) {
 		// TODO Auto-generated method stub
-		String sql = "select dishname, account from `order_info` where order_id = ?";
-		SQLQuery query = getSession().createSQLQuery(sql);
-		System.out.println("1. " + sql + orderID);
+		String sql = "select dishname, account, dish_id from `order_info` where order_id = ?";
+		Session session = getSession();
+		SQLQuery query = session.createSQLQuery(sql);
 		query.setParameter(0, orderID);
 		List list = query.list();
-		System.out.println("1. " + sql + orderID);
-		System.out.println("OrderInfoDAO---> getByID:" + orderID);
+		session.close();
 		return list;
 	}
 }
