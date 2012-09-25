@@ -10,7 +10,7 @@
 <script type="text/javascript" src="./dishInfo.js"></script>
 </head>
 <body>
-<a href="dish/addMyDish.jsp">添加</a>
+<a href="addMyDish.jsp">添加</a>
 <table>
 <tr>
 <td>图片</td>
