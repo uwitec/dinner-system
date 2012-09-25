@@ -1,96 +1,86 @@
-<%@ page language="java" contentType="text/html; charset=GB2312"
-    pageEncoding="GB2312" import="com.yummy.dao.impl.*"%>
-<%@ taglib uri="/struts-tags" prefix="s" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8" import="com.yummy.dao.impl.*"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
-<title>ÎÒµÄ²ÍÌü</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>æˆ‘çš„é¤åŽ…</title>
 </head>
 <body>
-<h1>ÎÒµÄ²ÍÌü</h1>
-	 	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>	
-<%
- Boolean readOnly = (Boolean)request.getAttribute("ReadOnly");
- if(readOnly==null)
-  readOnly = false;
- if(readOnly){
- //	Shop myShop = (Shop)request.getAttribute("MyShop");
- %>
- <!-- 
- ²ÍÌüÃû³Æ£º$(myShop.shopname);
- ²ÍÌülogo£º$(myShop.logo);
- ²ÍÌü½éÉÜ£º$(myShop.introdution);
- µØÖ·£º$(myShop.address);
- µç»°£º$(myShop.telephone);
+	<h1>æˆ‘çš„é¤åŽ…</h1>
+	<a href="index.jsp"><img src="picture/logo.jpg" width="250"
+		height="88">
+	</a>
+	<%
+		Boolean readOnly = (Boolean) request.getAttribute("ReadOnly");
+		if (readOnly == null)
+			readOnly = false;
+		if (readOnly) {
+			//	Shop myShop = (Shop)request.getAttribute("MyShop");
+	%>
+	<!-- 
+ é¤åŽ…åç§°ï¼š$(myShop.shopname);
+ é¤åŽ…logoï¼š$(myShop.logo);
+ é¤åŽ…ä»‹ç»ï¼š$(myShop.introdution);
+ åœ°å€ï¼š$(myShop.address);
+ ç”µè¯ï¼š$(myShop.telephone);
  QQ:$(myShop.qq);
- ·þÎñ·¶Î§£º$(myShop.deliveryRange); -->
- 
- <table>
- <tr>
- <td> ²ÍÌüÃû³Æ£º
- </td>
- <td>
-<!--   <s:property value="#attr.myShop.shopname"/>-->
-${shop_on.shopname }
- </td>
- </tr>
-  <tr>
- <td>  ²ÍÌülogo£º
- </td>
- <td>
- <!--   <img alt="logo" src="<s:property value="#attr.myShop.logo"/>" >-->
- <img alt="logo" src="${shop_on.logo}" >
- </td>
- </tr>
-  <tr>
- <td>  ²ÍÌü½éÉÜ£º
- </td>
- <td>
- <!--    <s:property value="#attr.myShop.introduction"/>-->
- ${shop_on.introduction }
- </td>
- </tr>
-  <tr>
- <td>  ²ÍÌüµØÖ·£º
- </td>
- <td>
-<!--    <s:property value="#attr.myShop.address"/>-->
-${shop_on.address}
- </td>
- </tr>
-  <tr>
- <td>µç»°£º
- </td>
- <td>
- <!--   <s:property value="#attr.myShop.telephone"/>-->
- ${shop_on.telephone}
- </td>
- </tr>
-  <tr>
- <td>QQ:
- </td>
- <td>
-<!--    <s:property value="#attr.myShop.qq"/>-->
-${shop_on.qq }
- </td>
- </tr>
- <tr>
- <td>·þÎñ·¶Î§£º
- </td>
- <td>
-<!--    <s:property value="#attr.myShop.deliveryRange"/>-->
-${shop_on.deliveryRange }
- </td>
- </tr>
-  <tr>
-  <td><a href="./updateShopInfo.jsp">ÐÞ¸Ä</a></td>
- </tr>
- </table>
- 
-<%}else{ %>
-<h3>»¹Ã»ÓÐÌîÐ´²ÍÌüÐÅÏ¢,ÂíÉÏÈ¥ÌîÐ´°É</h3>
-<a href="./addShopInfo.jsp">±à¼­ÎÒµÄ²ÍÌü</a>
-<%} %>
+ æœåŠ¡èŒƒå›´ï¼š$(myShop.deliveryRange); -->
+
+	<table>
+		<tr>
+			<td>é¤åŽ…åç§°ï¼š</td>
+			<td>
+				<!--   <s:property value="#attr.myShop.shopname"/>-->
+				${shop_on.shopname }</td>
+		</tr>
+		<tr>
+			<td>é¤åŽ…logoï¼š</td>
+			<td>
+				<!--   <img alt="logo" src="<s:property value="#attr.myShop.logo"/>" >-->
+				<img alt="logo" src="${shop_on.logo}"></td>
+		</tr>
+		<tr>
+			<td>é¤åŽ…ä»‹ç»ï¼š</td>
+			<td>
+				<!--    <s:property value="#attr.myShop.introduction"/>-->
+				${shop_on.introduction }</td>
+		</tr>
+		<tr>
+			<td>é¤åŽ…åœ°å€ï¼š</td>
+			<td>
+				<!--    <s:property value="#attr.myShop.address"/>-->
+				${shop_on.address}</td>
+		</tr>
+		<tr>
+			<td>ç”µè¯ï¼š</td>
+			<td>
+				<!--   <s:property value="#attr.myShop.telephone"/>-->
+				${shop_on.telephone}</td>
+		</tr>
+		<tr>
+			<td>QQ:</td>
+			<td>
+				<!--    <s:property value="#attr.myShop.qq"/>--> ${shop_on.qq }</td>
+		</tr>
+		<tr>
+			<td>æœåŠ¡èŒƒå›´ï¼š</td>
+			<td>
+				<!--    <s:property value="#attr.myShop.deliveryRange"/>-->
+				${shop_on.deliveryRange }</td>
+		</tr>
+		<tr>
+			<td><a href="./updateShopInfo.jsp">ä¿®æ”¹</a>
+			</td>
+		</tr>
+	</table>
+
+	<%
+		} else {
+	%>
+	<h3>è¿˜æ²¡æœ‰å¡«å†™é¤åŽ…ä¿¡æ¯,é©¬ä¸ŠåŽ»å¡«å†™å§</h3>
+	<a href="./addShopInfo.jsp">ç¼–è¾‘æˆ‘çš„é¤åŽ…</a>
+	<%} %>
 </body>
 </html>
