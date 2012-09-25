@@ -16,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>在线点餐系统</title>
 <meta name="description" content="全宇宙最大、最安全的网上订餐系统，无污染，无残留，方便，有趣！" />
 	<meta name="keywords" content="订餐，外卖，美食，粥粉面饭，菜单，店铺" />
-	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 body { font-family: Verdana; font-size: 12px; line-height: 1.5; }
 a { color: #000; text-decoration: none; }
@@ -39,13 +39,13 @@ a:hover { color: #F00; }
 <div id="menu">
 	<ul>
         <li class="home"><a href="index">Yummy首页</a></li>
-        <li class="shoucang"><a href="http://?/">我的收藏</a></li>     
-        <li class="shoppingCart"><a href="">我的购物车</a></li>
-        <li class="MyYummy"><a href="accountCenter.jsp/">我的Yummy账户</a></li>
+        <li class="shoucang"><a href="collection.jsp">我的收藏</a></li>     
+        <li class="shoppingCart"><a href="addToCart">我的购物车<s:property value="highQualifiedFoodsList.size()" /></a></li>
+        <li class="MyYummy"><a href="accountCenter.jsp">我的Yummy账户</a></li>
         <li class="login"><a href="login.jsp">登录</a></li>
         <li class="register"><a href="register.jsp">注册</a></li>
     </ul>
-        </div>
+</div>
 	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>						                                                                                         
 	<br>
 	<a href="shop/addShopInfo.jsp">添加餐厅信息</a>
@@ -56,16 +56,8 @@ a:hover { color: #F00; }
 		<input type="button" id="search" value="搜索" />
 	</form>
 	<br>
-
-	<br>
-	<a href="accountCenter.jsp">我的账户</a>
-	<br>
-	<a href="giftCenter.jsp">礼品中心</a>
 	<hr>
-	<s:property value="highQualifiedFoodsList.size()" />
 	<hr>
-
-
 	<table border=1>
 		<tr>
 			<td>物品名称</td>

@@ -10,6 +10,7 @@
 </head>
 <body>
 	 <a href="index.jsp"><img src="picture/logo.jpg" width="250" height="88"></a>	
+	 <center>
 	<h1>下单中心</h1>
 	<hr>
 	<s:form action="pay" method="post" >
@@ -31,5 +32,6 @@
 			 </tr>
 		  </c:forEach>
 	</table>
+	</center>
 </body>
 </html>
