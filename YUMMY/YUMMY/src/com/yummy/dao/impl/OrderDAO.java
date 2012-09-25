@@ -169,7 +169,7 @@ public class OrderDAO extends HibernateDaoSupport {
 		Timestamp time = new Timestamp(new Date().getTime());
 		String insertSQL = "insert into `order` values(null, '" + time +"', '"+ 1 +
 		"', '"+ customerInfoID +"', '"+ f +"', '" + message + "', '" + (int)f + "', '" + shopname +"', '" + username + "')";
-		System.out.println("3. " + insertSQL);
+//		System.out.println("3. " + insertSQL);
 		SQLQuery query = getSession().createSQLQuery(insertSQL);
 		query.executeUpdate();
 //		System.out.println("4. 已将订单基本信息插入数据库");
@@ -195,7 +195,7 @@ public class OrderDAO extends HibernateDaoSupport {
 	public List queryByStatus(String username, int type) {
 		String querySQL = "select order_id, order_time, user_info, total_price, shopname from " +
 					"`order` where username = ? and status = ?";
-				System.out.println("1. 查询订单语句：" + querySQL);
+//				System.out.println("1. 查询订单语句：" + querySQL);
 				SQLQuery query = getSession().createSQLQuery(querySQL);
 				query.setParameter(0, username);
 				query.setParameter(1, type);
