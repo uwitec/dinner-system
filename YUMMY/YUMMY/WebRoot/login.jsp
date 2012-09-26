@@ -10,7 +10,7 @@
 <meta name="description" content="全宇宙最大、最安全的网上订餐系统，无污染，无残留，方便，有趣！" />
 <meta name="keywords" content="订餐，外卖，美食，粥粉面饭，菜单，店铺" />
 </head>
-<body>
+<body  background="picture/test/background.jpg">
 	<a href="index.jsp"><img src="picture/logo.jpg" width="250"
 		height="88">
 	</a>
