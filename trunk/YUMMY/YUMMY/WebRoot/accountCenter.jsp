@@ -53,7 +53,7 @@ a:hover {
 	-->
 </head>
 
-<body background="text/background.jpg">
+<body  background="picture/test/background.jpg">
 	<div id="menu">
 		<ul>
 		<li class="logo"><a href="index.jsp"><img src="picture/logo.jpg" width="90" height="22"></a></li>

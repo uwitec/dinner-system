@@ -26,13 +26,13 @@ a:hover { color: #F00; }
 	-->
 </head>
 
-<body  background="text/background.jpg">
+<body  background="picture/test/background.jpg">
 <div id="menu">
 	<ul>
 		<li class="logo"><a href="index.jsp"><img src="picture/logo.jpg" width="90" height="22"></a></li>
         <li class="home"><a href="index">Yummy首页</a></li>
-        <li class="shoppingCart"><a href="">我的购物车</a></li>
-        <li class="MyYummy"><a href="accountCenter.jsp/">我的Yummy账户</a></li>
+        <li class="shoppingCart"><a href="cart.jsp">我的购物车</a></li>
+        <li class="MyYummy"><a href="accountCenter.jsp">我的Yummy账户</a></li>
     </ul>
 </div>
 

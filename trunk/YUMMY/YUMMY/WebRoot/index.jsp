@@ -1,4 +1,4 @@
-<%@page import="java.sql.Blob"%>
+<%@ page import="java.sql.Blob"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -35,7 +35,7 @@ a:hover { color: #F00; }
 	-->
 </head>
 
-<body  background="text/background.jpg">
+<body  background="picture/test/background.jpg">
 <div id="menu">
 	<ul>
         <li class="home"><a href="index">Yummy首页</a></li>
