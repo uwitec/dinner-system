@@ -46,6 +46,7 @@ public class ShopDetailsAction extends ActionSupport {
 		}
 		session = ActionContext.getContext().getSession();
 		Shop shop = shopService.getShop(shopname);
+		System.out.println("接收到的shoname--》" + shopname);
 		Set<Dish> dishs = shop.getDishs();
 		System.out.println("set size:" + dishs.size());
 		session.put("shop", shop);

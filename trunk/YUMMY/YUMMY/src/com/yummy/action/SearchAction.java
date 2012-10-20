@@ -47,6 +47,10 @@ public class SearchAction extends ActionSupport {
 		List searchFoods = searchDAO.getFoods(searchItem);
 		List searchShops = searchDAO.getShops(searchItem);
 		
+		if (searchShops == null || searchFoods.size() == 0) {
+			System.out.println("ËÑË÷µêÆÌ½á¹ûÎª¿Õ");
+		}
+		
 		session = ActionContext.getContext().getSession();
 		session.put("searchFoods", searchFoods);
 		session.put("searchShops", searchShops);
