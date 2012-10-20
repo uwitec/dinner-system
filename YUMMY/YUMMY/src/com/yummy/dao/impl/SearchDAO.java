@@ -22,6 +22,9 @@ public class SearchDAO extends HibernateDaoSupport implements ISearchDAO {
 				+ "'%" + searchItem + "%'";
 		System.out.println("查询食物：" + sql);
 		List searchFoods = getHibernateTemplate().find(sql);
+		if (searchFoods == null || searchFoods.size() == 0) {
+			System.out.println("查询食物 -- > 空");
+		}
 		/*if (temp != null) {
 			System.out.println("查询到的食物 ：" + temp.size());
 			int length = temp.size();
@@ -40,10 +43,16 @@ public class SearchDAO extends HibernateDaoSupport implements ISearchDAO {
 	public List getShops(String searchItem) {
 		// TODO Auto-generated method stub
 		String sql = "select new Shop(shop.shopname, shop.telephone, shop.introduction, shop.deliveryRange) from " +
-				"com.yummy.pojo.Shop shop where shop.shopname like " 
-				+ "'%" + searchItem + "%'";
+				"com.yummy.pojo.Shop shop " +
+				"where shop.shopname like ?";
+		Object[] objects = {"%" + searchItem + "%"};
+//				+ "'%" + searchItem + "%'";
 		System.out.println("查询店铺：" + sql);
-		List searchShops = getHibernateTemplate().find(sql);
+		List searchShops = getHibernateTemplate().find(sql, objects);
+		System.out.println();
+		if (searchShops == null || searchShops.size() == 0) {
+			System.out.println("查询餐厅-- > 空");
+		}
 		/*if (temp != null) {
 			System.out.println("查询到的食物 ：" + temp.size());
 			int length = temp.size();
